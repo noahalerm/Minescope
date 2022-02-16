@@ -1,6 +1,12 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+
+    //NAVIGATION
+    id 'androidx.navigation.safeargs.kotlin'
+
+    //ROOM
+    id 'kotlin-kapt'
 }
 
 android {
@@ -33,11 +39,59 @@ android {
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.3.2'
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'com.google.android.material:material:1.3.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    testImplementation 'junit:junit:4.+'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+
+    //ANIMATIONS (YOYO)
+    implementation 'com.daimajia.androidanimations:library:2.4@aar'
+
+    //VIEW MODEL
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1'
+
+    //FRAGMENTS
+    implementation "androidx.fragment:fragment-ktx:1.4.1"
+
+    //PREFERENCE FRAGMENTS
+    implementation 'androidx.preference:preference-ktx:1.2.0'
+
+    //NAVIGATION
+    implementation "androidx.navigation:navigation-fragment-ktx:2.4.1"
+    implementation "androidx.navigation:navigation-ui-ktx:2.4.1"
+
+    //RECYCLER VIEW
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+
+    //SWIPE DECORATOR
+    implementation 'it.xabaras.android:recyclerview-swipedecorator:1.2.3'
+
+    //PICASSO
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    //GLIDE
+    //Glide is usually faster than Picasso when loading the images.
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+
+    //RETROFIT2
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+
+    //GSON
+    implementation 'com.squareup.retrofit2:converter-gson:2.7.2'
+
+    //OKHTTP3
+    implementation 'com.squareup.okhttp3:okhttp:3.14.9'
+
+    //LIVE DATA
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.4.1")
+
+    //ROOM
+    implementation "androidx.room:room-runtime:2.4.1"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    kapt "androidx.room:room-compiler:2.4.1"
+
+    testImplementation 'junit:junit:'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 }
