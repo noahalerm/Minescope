@@ -6,6 +6,6 @@
 
     <fragment
         android:id="@+id/sampleFragment"
-        android:name="com.example.minescope.SampleFragment"
+        android:name="com.example.minescope.ui.views.SampleFragment"
         android:label="SampleFragment" />
 </navigation>
