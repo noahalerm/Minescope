@@ -45,6 +45,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="30dp"
             app:track="@drawable/custom_switch_track"
+            android:thumb="@drawable/custom_switch_thumb"
             app:trackTint="?attr/colorSecondary"
             app:thumbTint="?attr/colorPrimary"
             app:layout_constraintStart_toStartOf="parent"
