@@ -13,9 +13,15 @@ import com.squareup.picasso.Picasso
 class SampleFragment : Fragment(R.layout.fragment_sample) {
     //ATTRIBUTES
     private lateinit var image: ImageView
-    private lateinit var image2: ImageView
     private lateinit var switch: SwitchMaterial
     private lateinit var slider: Slider
+    private lateinit var backwardIcon: ImageView
+    private lateinit var forwardIcon: ImageView
+
+    //URL VARIABLES
+    private val firstValueLPNA = 3544
+    private val firstValueLPA = 3363
+    private var lpa = "LPNA"
 
     //ON VIEW CREATED
     override fun onViewCreated(view: View, savedInstanceState: Bundle?){
@@ -23,42 +29,24 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
 
         //IDs
         image = view.findViewById(R.id.image)
-        image2 = view.findViewById(R.id.imageView2)
         switch = view.findViewById(R.id.lpa_switch)
         slider = view.findViewById(R.id.slider)
-
-        //URL VARIABLES
-        val firstValueLPNA = 3544
-        val firstValueLPA = 3363
-        var lpa = "LPNA"
+        backwardIcon = view.findViewById(R.id.backward_icon)
+        forwardIcon = view.findViewById(R.id.forward_icon)
 
         //IMAGE INITIALIZATION
         Picasso.get().load("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/$lpa/IMG_${firstValueLPNA}.jpg")
             .noFade().placeholder(image.drawable).into(image)
 
         //ON CLICK
-        image2.setOnClickListener {
-            //IMAGE UPDATE
-            if (lpa == "LPNA") {
-                Picasso.get().load("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/$lpa/IMG_${firstValueLPNA+slider.value.toInt()+1}.jpg")
-                    .noFade().placeholder(image.drawable).into(image)
+        //Backward Icon
+        backwardIcon.setOnClickListener {
+            moveWithIcons(-1)
+        }
 
-                //SLIDER UPDATE
-                slider.value++
-
-                //LOG
-                println("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/$lpa/IMG_${firstValueLPNA+slider.value.toInt()}.jpg")
-            }
-            else {
-                Picasso.get().load("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/$lpa/IMG_${firstValueLPA+slider.value.toInt()+1}.jpg")
-                    .noFade().placeholder(image.drawable).into(image)
-
-                //SLIDER UPDATE
-                slider.value++
-
-                //LOG
-                println("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/$lpa/IMG_${firstValueLPA+slider.value.toInt()}.jpg")
-            }
+        //Forward Icon
+        forwardIcon.setOnClickListener {
+            moveWithIcons(1)
         }
 
         //SWITCH
@@ -88,6 +76,35 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
 
             //LOG
             println("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/$lpa/IMG_${firstValueLPNA + value.toInt()}.jpg")
+        }
+    }
+
+    //METHODS
+    /**
+     * This method is used to go to the next or the previous photo by tapping the backward or forward icons.
+     * @param value It indicates if the movement is backwards or forwards. It can be 1 or -1.
+     */
+    private fun moveWithIcons(value: Int) {
+        //IMAGE UPDATE
+        if (lpa == "LPNA") {
+            Picasso.get().load("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/$lpa/IMG_${firstValueLPNA+slider.value.toInt()+value}.jpg")
+                .noFade().placeholder(image.drawable).into(image)
+
+            //SLIDER UPDATE
+            slider.value += value
+
+            //LOG
+            println("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/$lpa/IMG_${firstValueLPNA+slider.value.toInt()}.jpg")
+        }
+        else {
+            Picasso.get().load("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/$lpa/IMG_${firstValueLPA+slider.value.toInt()+value}.jpg")
+                .noFade().placeholder(image.drawable).into(image)
+
+            //SLIDER UPDATE
+            slider.value += value
+
+            //LOG
+            println("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/$lpa/IMG_${firstValueLPA+slider.value.toInt()}.jpg")
         }
     }
 }
