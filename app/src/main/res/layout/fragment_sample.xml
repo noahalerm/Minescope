@@ -4,12 +4,363 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/sample_background">
+    android:background="@drawable/sample_background"
+    android:paddingVertical="5dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:ignore="ContentDescription">
+        tools:ignore="ContentDescription"
+        >
+
+        <TextView
+            android:id="@+id/sample_name"
+            android:layout_width="wrap_content"
+            android:maxWidth="370dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            tools:text="MINERAL"
+            android:textColor="?attr/colorSecondary"
+            android:textSize="50sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/sample_surname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:maxWidth="370dp"
+            android:textColor="?attr/colorSecondary"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sample_name"
+            tools:ignore="HardcodedText"
+            tools:text="MINERAL SURNAME" />
+
+        <TextView
+            android:id="@+id/sample_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:maxWidth="370dp"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sample_surname"
+            tools:ignore="HardcodedText"
+            android:text="This is the description of the sample" />
+
+        <TextView
+            android:id="@+id/sample_coloration_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:maxWidth="370dp"
+            android:textColor="?attr/colorSecondary"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sample_description"
+            tools:ignore="HardcodedText"
+            android:text="COLORATION" />
+
+        <TextView
+            android:id="@+id/sample_coloration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:maxWidth="370dp"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sample_coloration_title"
+            tools:ignore="HardcodedText"
+            android:text="This is the coloration of the sample" />
+
+        <TextView
+            android:id="@+id/sample_pleochroism_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:maxWidth="370dp"
+            android:textColor="?attr/colorSecondary"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sample_coloration"
+            tools:ignore="HardcodedText"
+            android:text="PLEOCHROISM" />
+
+        <TextView
+            android:id="@+id/sample_pleochroism"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:maxWidth="370dp"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sample_pleochroism_title"
+            tools:ignore="HardcodedText"
+            android:text="This is the pleochroism of the sample" />
+
+        <TextView
+            android:id="@+id/sample_abundance_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:maxWidth="370dp"
+            android:textColor="?attr/colorSecondary"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sample_pleochroism"
+            tools:ignore="HardcodedText"
+            android:text="ABUNDANCE" />
+
+        <TextView
+            android:id="@+id/sample_abundance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:maxWidth="370dp"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sample_abundance_title"
+            tools:ignore="HardcodedText"
+            android:text="This is the abundance of the sample" />
+
+        <TextView
+            android:id="@+id/sample_relief_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:maxWidth="370dp"
+            android:textColor="?attr/colorSecondary"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sample_abundance"
+            tools:ignore="HardcodedText"
+            android:text="RELIEF" />
+
+        <TextView
+            android:id="@+id/sample_relief"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:maxWidth="370dp"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sample_relief_title"
+            tools:ignore="HardcodedText"
+            android:text="This is the relief of the sample" />
+
+        <TextView
+            android:id="@+id/sample_exfoliation_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:maxWidth="370dp"
+            android:textColor="?attr/colorSecondary"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sample_relief"
+            tools:ignore="HardcodedText"
+            android:text="EXFOLIATION" />
+
+        <TextView
+            android:id="@+id/sample_exfoliation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:maxWidth="370dp"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sample_exfoliation_title"
+            tools:ignore="HardcodedText"
+            android:text="This is the exfoliation of the sample" />
+
+        <TextView
+            android:id="@+id/sample_alteration_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:maxWidth="370dp"
+            android:textColor="?attr/colorSecondary"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sample_exfoliation"
+            tools:ignore="HardcodedText"
+            android:text="ALTERATION" />
+
+        <TextView
+            android:id="@+id/sample_alteration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:maxWidth="370dp"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sample_alteration_title"
+            tools:ignore="HardcodedText"
+            android:text="This is the alteration of the sample" />
+
+        <TextView
+            android:id="@+id/sample_interference_colors_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:maxWidth="370dp"
+            android:textColor="?attr/colorSecondary"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sample_alteration"
+            tools:ignore="HardcodedText"
+            android:text="INTERFERENCE COLORS" />
+
+        <TextView
+            android:id="@+id/sample_interference_colors"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:maxWidth="370dp"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sample_interference_colors_title"
+            tools:ignore="HardcodedText"
+            android:text="This is the interference colors of the sample" />
+
+        <TextView
+            android:id="@+id/sample_extintion_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:maxWidth="370dp"
+            android:textColor="?attr/colorSecondary"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sample_interference_colors"
+            tools:ignore="HardcodedText"
+            android:text="EXTINTION" />
+
+        <TextView
+            android:id="@+id/sample_extintion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:maxWidth="370dp"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sample_extintion_title"
+            tools:ignore="HardcodedText"
+            android:text="This is the extintion of the sample" />
+
+        <TextView
+            android:id="@+id/sample_twinning_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:maxWidth="370dp"
+            android:textColor="?attr/colorSecondary"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sample_extintion"
+            tools:ignore="HardcodedText"
+            android:text="TWINNING" />
+
+        <TextView
+            android:id="@+id/sample_twinning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:maxWidth="370dp"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sample_twinning_title"
+            tools:ignore="HardcodedText"
+            android:text="This is the twinning of the sample" />
+
+        <TextView
+            android:id="@+id/sample_zoning_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:maxWidth="370dp"
+            android:textColor="?attr/colorSecondary"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sample_twinning"
+            tools:ignore="HardcodedText"
+            android:text="ZONING" />
+
+        <TextView
+            android:id="@+id/sample_zoning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:maxWidth="370dp"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sample_zoning_title"
+            tools:ignore="HardcodedText"
+            android:text="This is the zoning of the sample" />
+
+        <TextView
+            android:id="@+id/sample_crystal_shape_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:maxWidth="370dp"
+            android:textColor="?attr/colorSecondary"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sample_zoning"
+            tools:ignore="HardcodedText"
+            android:text="CRYSTAL SHAPE" />
+
+        <TextView
+            android:id="@+id/sample_crystal_shape"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:maxWidth="370dp"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sample_crystal_shape_title"
+            tools:ignore="HardcodedText"
+            android:text="This is the crystal shape of the sample" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card"
@@ -21,7 +372,7 @@
             app:cardCornerRadius="700dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/sample_crystal_shape">
 
             <ImageView
                 android:id="@+id/image"
@@ -56,7 +407,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:text="LPNA / LPA"
-            android:textColor="?attr/colorPrimary"
+            android:textColor="?attr/colorSecondary"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="@+id/lpa_switch"
             app:layout_constraintStart_toEndOf="@+id/lpa_switch"
