@@ -18,5 +18,8 @@
 
         //LAUNCH SCREEN
         <item name="android:windowBackground">@drawable/launch_screen</item>
+
+        //FONT
+        <item name="fontFamily">@font/permanent_marker</item>
     </style>
 </resources>
