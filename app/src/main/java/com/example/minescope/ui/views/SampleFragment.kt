@@ -86,25 +86,27 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
      */
     private fun moveWithIcons(value: Int) {
         //IMAGE UPDATE
-        if (lpa == "LPNA") {
-            Picasso.get().load("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/$lpa/IMG_${firstValueLPNA+slider.value.toInt()+value}.jpg")
-                .noFade().placeholder(image.drawable).into(image)
+        if (slider.value.toInt()+value in 0..143) {
+            if (lpa == "LPNA") {
+                Picasso.get().load("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/$lpa/IMG_${firstValueLPNA+slider.value.toInt()+value}.jpg")
+                    .noFade().placeholder(image.drawable).into(image)
 
-            //SLIDER UPDATE
-            slider.value += value
+                //SLIDER UPDATE
+                slider.value += value
 
-            //LOG
-            println("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/$lpa/IMG_${firstValueLPNA+slider.value.toInt()}.jpg")
-        }
-        else {
-            Picasso.get().load("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/$lpa/IMG_${firstValueLPA+slider.value.toInt()+value}.jpg")
-                .noFade().placeholder(image.drawable).into(image)
+                //LOG
+                println("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/$lpa/IMG_${firstValueLPNA+slider.value.toInt()}.jpg")
+            }
+            else {
+                Picasso.get().load("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/$lpa/IMG_${firstValueLPA+slider.value.toInt()+value}.jpg")
+                    .noFade().placeholder(image.drawable).into(image)
 
-            //SLIDER UPDATE
-            slider.value += value
+                //SLIDER UPDATE
+                slider.value += value
 
-            //LOG
-            println("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/$lpa/IMG_${firstValueLPA+slider.value.toInt()}.jpg")
+                //LOG
+                println("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/$lpa/IMG_${firstValueLPA+slider.value.toInt()}.jpg")
+            }
         }
     }
 }
