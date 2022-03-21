@@ -2,6 +2,7 @@ package com.example.minescope.ui.views
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Chronometer
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
@@ -11,6 +12,7 @@ import com.example.minescope.ui.viewmodel.MinescopeViewModel
 import com.google.android.material.slider.Slider
 import com.google.android.material.switchmaterial.SwitchMaterial
 import com.squareup.picasso.Picasso
+import java.util.*
 
 
 class SampleFragment : Fragment(R.layout.fragment_sample) {
@@ -19,6 +21,7 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
     private lateinit var switch: SwitchMaterial
     private lateinit var slider: Slider
     private lateinit var backwardIcon: ImageView
+    private lateinit var playIcon: ImageView
     private lateinit var forwardIcon: ImageView
     private val viewModel: MinescopeViewModel by activityViewModels()
     private lateinit var sampleName: TextView
@@ -73,6 +76,7 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
         switch = view.findViewById(R.id.lpa_switch)
         slider = view.findViewById(R.id.slider)
         backwardIcon = view.findViewById(R.id.backward_icon)
+        playIcon = view.findViewById(R.id.play_icon)
         forwardIcon = view.findViewById(R.id.forward_icon)
         sampleName = view.findViewById(R.id.sample_name)
         sampleSurname = view.findViewById(R.id.sample_surname)
@@ -122,6 +126,15 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
         //Backward Icon
         backwardIcon.setOnClickListener {
             moveWithIcons(-1)
+        }
+
+        //Play Icon
+        playIcon.setOnClickListener {
+            Timer().schedule(object : TimerTask() {
+                override fun run() {
+                    moveWithIcons(1)
+                }
+            }, 1000)
         }
 
         //Forward Icon

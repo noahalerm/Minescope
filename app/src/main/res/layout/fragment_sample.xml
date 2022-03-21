@@ -667,11 +667,22 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_gravity="center"
-            android:layout_marginTop="45dp"
-            android:layout_marginEnd="75dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginEnd="20dp"
             android:rotation="180"
             android:src="@drawable/forward_icon"
+            app:layout_constraintBottom_toBottomOf="@+id/play_icon"
+            app:layout_constraintEnd_toStartOf="@+id/play_icon"
+            app:layout_constraintTop_toTopOf="@+id/play_icon"
+            app:tint="?attr/colorSecondary" />
+
+        <ImageView
+            android:id="@+id/play_icon"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="45dp"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/play_icon"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -683,12 +694,11 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_gravity="center"
-            android:layout_marginStart="75dp"
+            android:layout_marginStart="20dp"
             android:src="@drawable/forward_icon"
-            app:layout_constraintBottom_toBottomOf="@+id/backward_icon"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/backward_icon"
+            app:layout_constraintBottom_toBottomOf="@+id/play_icon"
+            app:layout_constraintStart_toEndOf="@+id/play_icon"
+            app:layout_constraintTop_toTopOf="@+id/play_icon"
             app:tint="?attr/colorSecondary" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
