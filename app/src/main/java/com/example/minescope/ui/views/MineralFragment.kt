@@ -5,15 +5,17 @@ import android.view.View
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.minescope.R
+import com.example.minescope.ui.adapters.SamplesListAdapter
 import com.example.minescope.ui.viewmodel.MinescopeViewModel
 
 
 class MineralFragment : Fragment(R.layout.fragment_mineral) {
     //ATTRIBUTES
     private val viewModel: MinescopeViewModel by activityViewModels()
-    private  lateinit var recyclerView: RecyclerView
+    private lateinit var recyclerView: RecyclerView
     private lateinit var mineralName: TextView
     private lateinit var mineralChemicalFormula: TextView
     private lateinit var mineralColors: TextView
@@ -105,9 +107,22 @@ class MineralFragment : Fragment(R.layout.fragment_mineral) {
         mineralCleavage = view.findViewById(R.id.mineral_cleavage)
         mineralAsociatedMineralsTitle = view.findViewById(R.id.mineral_asociated_minerals_title)
         mineralAsociatedMinerals = view.findViewById(R.id.mineral_asociated_minerals)
+
+        //RECYCLER VIEW SET
+        recyclerView = view.findViewById(R.id.recycler_view)
+        recyclerView.layoutManager = LinearLayoutManager(view.context)
+
+
+
         //loadData()
+        //startFunc()
     }
 
+    private fun startFunc(){
+        val principalAdapter = SamplesListAdapter(viewModel)
+        viewModel.mineralsListLD.observe(viewLifecycleOwner,{principalAdapter.setMarkerList(it) })
+        recyclerView.adapter = principalAdapter
+    }
 
 
     private fun loadData(){

@@ -16,4 +16,12 @@
         android:id="@+id/filtersFragment"
         android:name="com.example.minescope.ui.views.FiltersFragment"
         android:label="FiltersFragment" />
+    <fragment
+        android:id="@+id/mineralFragment"
+        android:name="com.example.minescope.ui.views.MineralFragment"
+        android:label="MineralFragment" >
+        <action
+            android:id="@+id/mineralToSample"
+            app:destination="@id/sampleFragment" />
+    </fragment>
 </navigation>
