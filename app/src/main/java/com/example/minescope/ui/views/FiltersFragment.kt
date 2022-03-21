@@ -1,5 +1,6 @@
 package com.example.minescope.ui.views
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
@@ -12,6 +13,7 @@ class FiltersFragment : Fragment(R.layout.fragment_filters) {
     //ATTRIBUTES
     private lateinit var logo: ImageView
     private lateinit var checkIcon: ImageView
+    private lateinit var title: TextView
     private lateinit var tabLayout: TabLayout
 
     //Filters (Transparent)
@@ -42,6 +44,7 @@ class FiltersFragment : Fragment(R.layout.fragment_filters) {
         //IDs
         logo = view.findViewById(R.id.logo)
         checkIcon = view.findViewById(R.id.check_icon)
+        title = view.findViewById(R.id.title)
         tabLayout = view.findViewById(R.id.tab_layout)
         relief = view.findViewById(R.id.relief_filter)
         colorTransparent = view.findViewById(R.id.color_transparent_filter)
@@ -87,8 +90,11 @@ class FiltersFragment : Fragment(R.layout.fragment_filters) {
      * transparent or opaque minerals.
      * @param isTransparent
      */
+    @SuppressLint("SetTextI18n")
     private fun setUpLayout(isTransparent: Boolean) {
         if (isTransparent) {
+            title.text = "Transparent mineral identifiers"
+
             relief.visibility = View.VISIBLE
             colorTransparent.visibility = View.VISIBLE
             pleochroismTransparent.visibility = View.VISIBLE
@@ -109,6 +115,8 @@ class FiltersFragment : Fragment(R.layout.fragment_filters) {
             internalReflections.visibility = View.GONE
         }
         else {
+            title.text = "Opaque mineral identifiers"
+
             relief.visibility = View.GONE
             colorTransparent.visibility = View.GONE
             pleochroismTransparent.visibility = View.GONE
