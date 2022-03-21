@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.example.minescope.R
 import com.example.minescope.ui.viewmodel.MinescopeViewModel
 import com.google.android.material.slider.Slider
@@ -17,6 +18,7 @@ import java.util.*
 
 class SampleFragment : Fragment(R.layout.fragment_sample) {
     //ATTRIBUTES
+    lateinit var closeBtn: ImageView
     private lateinit var image: ImageView
     private lateinit var switch: SwitchMaterial
     private lateinit var slider: Slider
@@ -72,6 +74,7 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
         super.onViewCreated(view, savedInstanceState)
 
         //IDs
+        closeBtn = view.findViewById(R.id.close_btn)
         image = view.findViewById(R.id.image)
         switch = view.findViewById(R.id.lpa_switch)
         slider = view.findViewById(R.id.slider)
@@ -115,6 +118,10 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
         sampleInterferenceColors = view.findViewById(R.id.sample_interference_colors)
         sampleInternalReflectionsTitle = view.findViewById(R.id.sample_internal_reflections_title)
         sampleInternalReflections = view.findViewById(R.id.sample_internal_reflections)
+
+        closeBtn.setOnClickListener {
+            findNavController().popBackStack()
+        }
 
         //loadData()
 
