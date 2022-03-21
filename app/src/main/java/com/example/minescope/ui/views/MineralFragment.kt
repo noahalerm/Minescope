@@ -2,9 +2,11 @@ package com.example.minescope.ui.views
 
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.minescope.R
@@ -16,6 +18,8 @@ class MineralFragment : Fragment(R.layout.fragment_mineral) {
     //ATTRIBUTES
     private val viewModel: MinescopeViewModel by activityViewModels()
     private lateinit var recyclerView: RecyclerView
+    lateinit var closeBtn: ImageView
+
     private lateinit var mineralName: TextView
     private lateinit var mineralChemicalFormula: TextView
     private lateinit var mineralColors: TextView
@@ -112,7 +116,11 @@ class MineralFragment : Fragment(R.layout.fragment_mineral) {
         recyclerView = view.findViewById(R.id.recycler_view)
         recyclerView.layoutManager = LinearLayoutManager(view.context)
 
+        closeBtn = view.findViewById(R.id.close_btn)
 
+        closeBtn.setOnClickListener {
+            findNavController().popBackStack()
+        }
 
         //loadData()
         //startFunc()
