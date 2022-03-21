@@ -8,7 +8,7 @@
     android:background="?attr/colorPrimary">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/logo"
         android:layout_width="65dp"
         android:layout_height="65dp"
         android:layout_marginStart="15dp"

@@ -112,7 +112,7 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
         sampleInternalReflectionsTitle = view.findViewById(R.id.sample_internal_reflections_title)
         sampleInternalReflections = view.findViewById(R.id.sample_internal_reflections)
 
-        loadData()
+        //loadData()
 
         //IMAGE INITIALIZATION
         Picasso.get().load("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/$lpa/IMG_${firstValueLPNA}.jpg")
