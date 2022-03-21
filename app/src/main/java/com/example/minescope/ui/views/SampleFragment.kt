@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.example.minescope.R
-import com.example.minescope.viewmodel.MinescopeViewModel
+import com.example.minescope.ui.viewmodel.MinescopeViewModel
 import com.google.android.material.slider.Slider
 import com.google.android.material.switchmaterial.SwitchMaterial
 import com.squareup.picasso.Picasso
