@@ -13,7 +13,7 @@ import com.google.android.material.switchmaterial.SwitchMaterial
 import com.squareup.picasso.Picasso
 
 
-class SampleFragment : Fragment(R.layout.fragment_sample) {
+class MineralFragment : Fragment(R.layout.fragment_mineral) {
     //ATTRIBUTES
     private lateinit var image: ImageView
     private lateinit var switch: SwitchMaterial
