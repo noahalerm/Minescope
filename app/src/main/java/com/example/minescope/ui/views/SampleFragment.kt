@@ -190,8 +190,11 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
         }
     }
 
-    private fun loadData(){
-        if (!arguments?.isEmpty!!){
+    /**
+     * This method is used to load the sample's data into the fragment.
+     */
+    private fun loadData() {
+        if (!arguments?.isEmpty!!) {
             val id = arguments?.getInt("id")
             val mineral = viewModel.mineralsList.filter { it == id.toString() }[0]
 
