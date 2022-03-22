@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="?attr/colorPrimary"
+    tools:ignore="ContentDescription, HardcodedText">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="15dp"
+        android:src="@drawable/icon"
+        app:layout_constraintBottom_toTopOf="@+id/title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/check_icon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/check_icon"
+        app:layout_constraintBottom_toTopOf="@+id/title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="?attr/colorSecondary" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="Transparent mineral identifiers"
+        android:textColor="?attr/colorSecondary"
+        android:textSize="30sp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="100dp"
+        app:layout_constraintBottom_toTopOf="@+id/tab_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--  FILTERS  -->
+
+            <!--  TRANSPARENT  -->
+            <TextView
+                android:id="@+id/relief_filter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/filter_bg"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="10dp"
+                android:text="Relief: "
+                android:textColor="?attr/colorSecondary"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/color_transparent_filter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/filter_bg"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="10dp"
+                android:text="Color: "
+                android:textColor="?attr/colorSecondary"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/relief_filter" />
+
+            <TextView
+                android:id="@+id/pleochroism_transparent_filter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/filter_bg"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="10dp"
+                android:text="Pleochroism: "
+                android:textColor="?attr/colorSecondary"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/color_transparent_filter" />
+
+            <TextView
+                android:id="@+id/cleavage_directions_filter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/filter_bg"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="10dp"
+                android:text="Number of cleavage directions: "
+                android:textColor="?attr/colorSecondary"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/pleochroism_transparent_filter" />
+
+            <TextView
+                android:id="@+id/cleavage_angle_filter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/filter_bg"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="10dp"
+                android:text="Angle of cleavage: "
+                android:textColor="?attr/colorSecondary"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cleavage_directions_filter" />
+
+            <TextView
+                android:id="@+id/interference_color_order_filter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/filter_bg"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="10dp"
+                android:text="Interference color (order): "
+                android:textColor="?attr/colorSecondary"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cleavage_angle_filter" />
+
+            <TextView
+                android:id="@+id/extinction_filter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/filter_bg"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="10dp"
+                android:text="Extinction: "
+                android:textColor="?attr/colorSecondary"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/interference_color_order_filter" />
+
+            <TextView
+                android:id="@+id/twinning_filter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/filter_bg"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="10dp"
+                android:text="Twinning: "
+                android:textColor="?attr/colorSecondary"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/extinction_filter" />
+
+            <TextView
+                android:id="@+id/interference_figure_filter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/filter_bg"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="10dp"
+                android:text="Interference figure: "
+                android:textColor="?attr/colorSecondary"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/twinning_filter" />
+
+            <TextView
+                android:id="@+id/optical_sign_filter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/filter_bg"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="10dp"
+                android:text="Optical sign: "
+                android:textColor="?attr/colorSecondary"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/interference_figure_filter" />
+
+            <!--  OPAQUE  -->
+            <TextView
+                android:id="@+id/color_opaque_filter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/filter_bg"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="10dp"
+                android:text="Color: "
+                android:textColor="?attr/colorSecondary"
+                android:textSize="20sp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/optical_sign_filter" />
+
+            <TextView
+                android:id="@+id/reflectance_filter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/filter_bg"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="10dp"
+                android:text="Reflectance: "
+                android:textColor="?attr/colorSecondary"
+                android:textSize="20sp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/color_opaque_filter" />
+
+            <TextView
+                android:id="@+id/pleochroism_opaque_filter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/filter_bg"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="10dp"
+                android:text="Pleochroism: "
+                android:textColor="?attr/colorSecondary"
+                android:textSize="20sp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/reflectance_filter" />
+
+            <TextView
+                android:id="@+id/polishing_hardness_filter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/filter_bg"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="10dp"
+                android:text="Polishing hardness: "
+                android:textColor="?attr/colorSecondary"
+                android:textSize="20sp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/pleochroism_opaque_filter" />
+
+            <TextView
+                android:id="@+id/anisotropism_filter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/filter_bg"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="10dp"
+                android:text="Anisotropism: "
+                android:textColor="?attr/colorSecondary"
+                android:textSize="20sp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/polishing_hardness_filter" />
+
+            <TextView
+                android:id="@+id/interference_colors_filter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/filter_bg"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="10dp"
+                android:text="Interference colors: "
+                android:textColor="?attr/colorSecondary"
+                android:textSize="20sp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/anisotropism_filter" />
+
+            <TextView
+                android:id="@+id/internal_reflections_filter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/filter_bg"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="10dp"
+                android:text="Internal reflections: "
+                android:textColor="?attr/colorSecondary"
+                android:textSize="20sp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/interference_colors_filter" />
+
+            <!--  END  -->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:tabIndicatorColor="?attr/colorSecondary"
+        app:tabIndicatorGravity="top"
+        app:tabTextAppearance="@style/tab_text"
+        app:tabTextColor="?attr/colorSecondary">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/transparent_tab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TRANSPARENT" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/opaque_tab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OPAQUE" />
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="2dp"
+        android:layout_height="25dp"
+        android:background="?attr/colorSecondary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tab_layout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
