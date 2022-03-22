@@ -1,6 +1,9 @@
 package com.example.minescope.ui.views
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.util.Log
 import android.view.View
 import android.widget.Chronometer
 import android.widget.ImageView
@@ -25,7 +28,6 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
     private lateinit var backwardIcon: ImageView
     private lateinit var playIcon: ImageView
     private lateinit var forwardIcon: ImageView
-    private val viewModel: MinescopeViewModel by activityViewModels()
     private lateinit var sampleName: TextView
     private lateinit var sampleSurname: TextView
     private lateinit var sampleDescription: TextView
@@ -64,10 +66,13 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
     private lateinit var sampleInternalReflectionsTitle: TextView
     private lateinit var sampleInternalReflections: TextView
 
-    //URL VARIABLES
+    //Url Variables
     private val firstValueLPNA = 3544
     private val firstValueLPA = 3363
     private var lpa = "LPNA"
+
+    //View Model
+    private val viewModel: MinescopeViewModel by activityViewModels()
 
     //ON VIEW CREATED
     override fun onViewCreated(view: View, savedInstanceState: Bundle?){
@@ -132,20 +137,30 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
         //ON CLICK
         //Backward Icon
         backwardIcon.setOnClickListener {
+            viewModel.shouldPlay = false
             moveWithIcons(-1)
         }
 
         //Play Icon
         playIcon.setOnClickListener {
-            Timer().schedule(object : TimerTask() {
+            viewModel.shouldPlay = true
+            val handler = Handler()
+            var count = 0
+
+            val runnable: Runnable = object : Runnable {
                 override fun run() {
-                    moveWithIcons(1)
+                    if (count++ < 143 && viewModel.shouldPlay) {
+                        moveWithIcons(1)
+                        handler.postDelayed(this, 1000)
+                    }
                 }
-            }, 1000)
+            }
+            handler.post(runnable)
         }
 
         //Forward Icon
         forwardIcon.setOnClickListener {
+            viewModel.shouldPlay = false
             moveWithIcons(1)
         }
 
