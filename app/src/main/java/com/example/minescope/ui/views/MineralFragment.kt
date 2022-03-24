@@ -16,10 +16,12 @@ import com.example.minescope.ui.viewmodel.MinescopeViewModel
 
 class MineralFragment : Fragment(R.layout.fragment_mineral) {
     //ATTRIBUTES
-    private val viewModel: MinescopeViewModel by activityViewModels()
-    private lateinit var recyclerView: RecyclerView
-    lateinit var closeBtn: ImageView
 
+    //Layout Elements
+    private lateinit var closeBtn: ImageView
+    private lateinit var recyclerView: RecyclerView
+
+    //Data
     private lateinit var mineralName: TextView
     private lateinit var mineralChemicalFormula: TextView
     private lateinit var mineralColors: TextView
@@ -48,7 +50,6 @@ class MineralFragment : Fragment(R.layout.fragment_mineral) {
     private lateinit var mineralZoning: TextView
     private lateinit var mineralExfoliationTitle: TextView
     private lateinit var mineralExfoliation: TextView
-
     private lateinit var mineralReflectivityTitle: TextView
     private lateinit var mineralReflectivity: TextView
     private lateinit var mineralHardnessTitle: TextView
@@ -61,14 +62,18 @@ class MineralFragment : Fragment(R.layout.fragment_mineral) {
     private lateinit var mineralInternalReflections: TextView
     private lateinit var mineralCleavageTitle: TextView
     private lateinit var mineralCleavage: TextView
-    private lateinit var mineralAsociatedMineralsTitle: TextView
-    private lateinit var mineralAsociatedMinerals: TextView
+    private lateinit var mineralAssociatedMineralsTitle: TextView
+    private lateinit var mineralAssociatedMinerals: TextView
+
+    //View Model
+    private val viewModel: MinescopeViewModel by activityViewModels()
 
     //ON VIEW CREATED
     override fun onViewCreated(view: View, savedInstanceState: Bundle?){
         super.onViewCreated(view, savedInstanceState)
 
         //IDs
+        closeBtn = view.findViewById(R.id.close_btn)
         mineralName = view.findViewById(R.id.mineral_name)
         mineralChemicalFormula = view.findViewById(R.id.mineral_chemical_formula)
         mineralColors = view.findViewById(R.id.mineral_colors)
@@ -109,35 +114,36 @@ class MineralFragment : Fragment(R.layout.fragment_mineral) {
         mineralInternalReflections = view.findViewById(R.id.mineral_internal_reflections)
         mineralCleavageTitle = view.findViewById(R.id.mineral_cleavage_title)
         mineralCleavage = view.findViewById(R.id.mineral_cleavage)
-        mineralAsociatedMineralsTitle = view.findViewById(R.id.mineral_asociated_minerals_title)
-        mineralAsociatedMinerals = view.findViewById(R.id.mineral_asociated_minerals)
-
-        //RECYCLER VIEW SET
-        recyclerView = view.findViewById(R.id.recycler_view)
-        recyclerView.layoutManager = LinearLayoutManager(view.context)
-
-        closeBtn = view.findViewById(R.id.close_btn)
-
-        closeBtn.setOnClickListener {
-            findNavController().popBackStack()
-        }
+        mineralAssociatedMineralsTitle = view.findViewById(R.id.mineral_asociated_minerals_title)
+        mineralAssociatedMinerals = view.findViewById(R.id.mineral_asociated_minerals)
 
         //loadData()
         //startFunc()
+
+        //RECYCLER VIEW SET UP
+        recyclerView = view.findViewById(R.id.recycler_view)
+        recyclerView.layoutManager = LinearLayoutManager(view.context)
+
+        //ON CLICK
+        closeBtn.setOnClickListener {
+            findNavController().popBackStack()
+        }
     }
 
+    //METHODS
     private fun startFunc(){
         val principalAdapter = SamplesListAdapter(viewModel)
-        viewModel.mineralsListLD.observe(viewLifecycleOwner,{principalAdapter.setMarkerList(it) })
+        viewModel.mineralsListLD.observe(viewLifecycleOwner,{principalAdapter.setSampleList(it) })
         recyclerView.adapter = principalAdapter
     }
 
-
+    /**
+     * This method is used to load the mineral's data into the fragment.
+     */
     private fun loadData(){
         if (!arguments?.isEmpty!!){
             val id = arguments?.getInt("id")
             val mineral = viewModel.mineralsList.filter { it == id.toString() }[0]
-
 
             mineralName.text = ""
             mineralChemicalFormula.text = ""
@@ -170,6 +176,7 @@ class MineralFragment : Fragment(R.layout.fragment_mineral) {
                 mineralExfoliationTitle.text = ""
                 mineralExfoliation.text = ""
 
+                //LAYOUT UPDATE
                 mineralReflectivityTitle.visibility = View.GONE
                 mineralReflectivity.visibility = View.GONE
                 mineralHardnessTitle.visibility = View.GONE
@@ -182,8 +189,8 @@ class MineralFragment : Fragment(R.layout.fragment_mineral) {
                 mineralInternalReflections.visibility = View.GONE
                 mineralCleavageTitle.visibility = View.GONE
                 mineralCleavage.visibility = View.GONE
-                mineralAsociatedMineralsTitle.visibility = View.GONE
-                mineralAsociatedMinerals.visibility = View.GONE
+                mineralAssociatedMineralsTitle.visibility = View.GONE
+                mineralAssociatedMinerals.visibility = View.GONE
             }
             else if (mineral == "OPAQUE"){
                 mineralReflectivityTitle.text = ""
@@ -198,9 +205,10 @@ class MineralFragment : Fragment(R.layout.fragment_mineral) {
                 mineralInternalReflections.text = ""
                 mineralCleavageTitle.text = ""
                 mineralCleavage.text = ""
-                mineralAsociatedMineralsTitle.text = ""
-                mineralAsociatedMinerals.text = ""
+                mineralAssociatedMineralsTitle.text = ""
+                mineralAssociatedMinerals.text = ""
 
+                //LAYOUT UPDATE
                 mineralReliefTitle.visibility = View.GONE
                 mineralRelief.visibility = View.GONE
                 mineralExfoliationDirectionNameTitle.visibility = View.GONE
@@ -225,7 +233,6 @@ class MineralFragment : Fragment(R.layout.fragment_mineral) {
                 mineralZoning.visibility = View.GONE
                 mineralExfoliationTitle.visibility = View.GONE
                 mineralExfoliation.visibility = View.GONE
-
             }
         }
     }

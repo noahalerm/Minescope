@@ -20,6 +20,8 @@ import com.squareup.picasso.Picasso
 
 class SampleFragment : Fragment(R.layout.fragment_sample) {
     //ATTRIBUTES
+
+    //Layout Elements
     private lateinit var closeBtn: ImageView
     private lateinit var image: ImageView
     private lateinit var switch: SwitchMaterial
@@ -27,6 +29,8 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
     private lateinit var backwardIcon: ImageView
     private lateinit var playIcon: ImageView
     private lateinit var forwardIcon: ImageView
+
+    //Data
     private lateinit var sampleName: TextView
     private lateinit var sampleSurname: TextView
     private lateinit var sampleDescription: TextView
@@ -123,10 +127,6 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
         sampleInternalReflectionsTitle = view.findViewById(R.id.sample_internal_reflections_title)
         sampleInternalReflections = view.findViewById(R.id.sample_internal_reflections)
 
-        closeBtn.setOnClickListener {
-            findNavController().popBackStack()
-        }
-
         //loadData()
 
         //IMAGE INITIALIZATION
@@ -134,6 +134,11 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
             .noFade().placeholder(image.drawable).into(image)
 
         //ON CLICK
+        //Close Button
+        closeBtn.setOnClickListener {
+            findNavController().popBackStack()
+        }
+
         //Backward Icon
         backwardIcon.setOnClickListener {
             viewModel.shouldPlay = false
@@ -143,6 +148,7 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
 
         //Play Icon
         playIcon.setOnClickListener {
+            //PLAY
             if (!viewModel.shouldPlay) {
                 playIcon.setImageResource(R.drawable.pause_icon)
                 viewModel.shouldPlay = true
@@ -166,6 +172,7 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
                 }
                 handler.post(runnable)
             }
+            //PAUSE
             else {
                 playIcon.setImageResource(R.drawable.play_icon)
                 viewModel.shouldPlay = false
@@ -314,6 +321,7 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
                 sampleCrystalShapeTitle.text = ""
                 sampleCrystalShape.text = ""
 
+                //LAYOUT UPDATE
                 sampleShapeTitle.visibility = View.GONE
                 sampleShape.visibility = View.GONE
                 sampleCleavageTitle.visibility = View.GONE
@@ -345,6 +353,7 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
                 sampleInternalReflectionsTitle.text = ""
                 sampleInternalReflections.text = ""
 
+                //LAYOUT UPDATE
                 sampleReliefTitle.visibility = View.GONE
                 sampleRelief.visibility = View.GONE
                 sampleExfoliationTitle.visibility = View.GONE

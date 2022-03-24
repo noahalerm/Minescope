@@ -1,5 +1,6 @@
 package com.example.minescope.ui.adapters
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,51 +14,66 @@ import com.example.minescope.ui.views.MineralFragmentDirections
 import com.squareup.picasso.Picasso
 
 class SamplesListAdapter(private val viewModel: MinescopeViewModel) : RecyclerView.Adapter<SamplesListAdapter.SampleListViewHolder>(){
-    var samples = mutableListOf<String>()
+    //ATTRIBUTES
+    private var samples = mutableListOf<String>()
 
-    fun setMarkerList(markerList: MutableList<String>){
-        samples = markerList
+    //METHODS
+    /**
+     * This method is used to obtain a list of samples.
+     * @param sampleList List of samples
+     */
+    @SuppressLint("NotifyDataSetChanged")
+    fun setSampleList(sampleList: MutableList<String>){
+        samples = sampleList
         notifyDataSetChanged()
     }
 
+    //ADAPTER METHODS
+    /**
+     * This method is used to create a View Holder and to set up it's view.
+     * @param parent Adapter's parent (used to get context)
+     */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SampleListViewHolder {
-        // Estem creant la vista del layout del item
         val view = LayoutInflater.from(parent.context).inflate(R.layout.sample,parent,false)
 
-        // I retornem un FiewListViewHolder que gestionara aquesta vista
         return SampleListViewHolder(view)
     }
 
+    /**
+     * This method is used to set up the data of each item.
+     * @param holder View Holder
+     * @param position Current item
+     */
     override fun onBindViewHolder(holder: SampleListViewHolder, position: Int) {
-        // Cridarem al holder (FilmListViewHolder) pasanli per parametre un item de la llista
         holder.bindData(samples[position], viewModel)
 
+        //ON CLICK
         holder.itemView.setOnClickListener {
             val action = MineralFragmentDirections.mineralToSample(/*samples[position].id*/)
             Navigation.findNavController(holder.itemView).navigate(action)
         }
     }
 
-    override fun getItemCount(): Int {
-        // Retorno la mida de la llista
+    /**
+     * This method is used to get the total amount of items in the Recycler View.
+     */
+    override fun getItemCount() : Int {
         return samples.size
     }
 
-    // Aquesta clase representa una fila concreta del RecycleView i s'encarrega de dibuixar aquesta fila
-    inner class SampleListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private var sampleNameAndSurname: TextView
-        private var sampleShortDesc: TextView
-        private var sampleLPA: ImageView
-        private var sampleLPNA: ImageView
 
-        init {
-            sampleNameAndSurname = itemView.findViewById(R.id.sample_namesurname)
-            sampleShortDesc = itemView.findViewById(R.id.sample_short_description)
-            sampleLPA = itemView.findViewById(R.id.image)
-            sampleLPNA = itemView.findViewById(R.id.image2)
-        }
+    //VIEW HOLDER
+    class SampleListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        //ATTRIBUTES
+        private var sampleNameAndSurname: TextView = itemView.findViewById(R.id.sample_namesurname)
+        private var sampleShortDesc: TextView = itemView.findViewById(R.id.sample_short_description)
+        private var sampleLPA: ImageView = itemView.findViewById(R.id.image)
+        private var sampleLPNA: ImageView = itemView.findViewById(R.id.image2)
 
-        // Funcio que servira per assignar la informacio d'un item de la llista a la vista que el representa
+        //METHODS
+        /**
+         * This method is used to set up the data of each item of the sample list.
+         */
         fun bindData(sample: String, viewModel: MinescopeViewModel) {
             sampleNameAndSurname.text = sample
             sampleShortDesc.text = sample
@@ -65,7 +81,6 @@ class SamplesListAdapter(private val viewModel: MinescopeViewModel) : RecyclerVi
                 .noFade().placeholder(sampleLPA.drawable).into(sampleLPA)
             Picasso.get().load("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/LPNA/IMG_3544.jpg")
                 .noFade().placeholder(sampleLPNA.drawable).into(sampleLPNA)
-
         }
     }
 }
