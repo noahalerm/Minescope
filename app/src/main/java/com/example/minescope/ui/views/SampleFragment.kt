@@ -1,11 +1,12 @@
 package com.example.minescope.ui.views
 
+import android.graphics.Bitmap
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
 import android.view.View
-import android.widget.Chronometer
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
@@ -16,12 +17,10 @@ import com.example.minescope.ui.viewmodel.MinescopeViewModel
 import com.google.android.material.slider.Slider
 import com.google.android.material.switchmaterial.SwitchMaterial
 import com.squareup.picasso.Picasso
-import java.util.*
-
 
 class SampleFragment : Fragment(R.layout.fragment_sample) {
     //ATTRIBUTES
-    lateinit var closeBtn: ImageView
+    private lateinit var closeBtn: ImageView
     private lateinit var image: ImageView
     private lateinit var switch: SwitchMaterial
     private lateinit var slider: Slider
@@ -138,29 +137,45 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
         //Backward Icon
         backwardIcon.setOnClickListener {
             viewModel.shouldPlay = false
+            playIcon.setImageResource(R.drawable.play_icon)
             moveWithIcons(-1)
         }
 
         //Play Icon
         playIcon.setOnClickListener {
-            viewModel.shouldPlay = true
-            val handler = Handler()
-            var count = 0
+            if (!viewModel.shouldPlay) {
+                playIcon.setImageResource(R.drawable.pause_icon)
+                viewModel.shouldPlay = true
 
-            val runnable: Runnable = object : Runnable {
-                override fun run() {
-                    if (count++ < 143 && viewModel.shouldPlay) {
-                        moveWithIcons(1)
-                        handler.postDelayed(this, 1000)
+                //IMAGE LOOP
+                val handler = Handler(Looper.getMainLooper())
+                var count = 0
+
+                val runnable: Runnable = object : Runnable {
+                    override fun run() {
+                        if (count++ <= 143 && viewModel.shouldPlay) {
+                            moveWithIcons(1)
+                            handler.postDelayed(this, 1000)
+                        }
+
+                        if (slider.value.toInt() == 143) {
+                            playIcon.setImageResource(R.drawable.play_icon)
+                            viewModel.shouldPlay = false
+                        }
                     }
                 }
+                handler.post(runnable)
             }
-            handler.post(runnable)
+            else {
+                playIcon.setImageResource(R.drawable.play_icon)
+                viewModel.shouldPlay = false
+            }
         }
 
         //Forward Icon
         forwardIcon.setOnClickListener {
             viewModel.shouldPlay = false
+            playIcon.setImageResource(R.drawable.play_icon)
             moveWithIcons(1)
         }
 
@@ -202,25 +217,65 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
     private fun moveWithIcons(value: Int) {
         //IMAGE UPDATE
         if (slider.value.toInt()+value in 0..143) {
+            //LPNA
             if (lpa == "LPNA") {
-                Picasso.get().load("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/$lpa/IMG_${firstValueLPNA+slider.value.toInt()+value}.jpg")
-                    .noFade().placeholder(image.drawable).into(image)
+                //VIDEO
+                if (viewModel.shouldPlay) {
+                    Picasso.get().load("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/$lpa/IMG_${firstValueLPNA+slider.value.toInt()+value}.jpg")
+                        .noFade().placeholder(image.drawable).into(object : com.squareup.picasso.Target {
+                            override fun onBitmapFailed(e: Exception?, errorDrawable: Drawable?) {
+                                Log.d("FAIL", "Bitmap Failed")
+                            }
 
-                //SLIDER UPDATE
-                slider.value += value
+                            override fun onBitmapLoaded(bitmap: Bitmap?, from: Picasso.LoadedFrom?) {
+                                image.setImageBitmap(bitmap)
 
-                //LOG
-                println("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/$lpa/IMG_${firstValueLPNA+slider.value.toInt()}.jpg")
+                                //SLIDER UPDATE
+                                slider.value += value
+                            }
+
+                            override fun onPrepareLoad(placeHolderDrawable: Drawable?) {}
+
+                        })
+                }
+                //NEXT IMAGE
+                else {
+                    Picasso.get().load("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/$lpa/IMG_${firstValueLPNA+slider.value.toInt()+value}.jpg")
+                        .noFade().placeholder(image.drawable).into(image)
+
+                    //SLIDER UPDATE
+                    slider.value += value
+                }
             }
+            //LPA
             else {
-                Picasso.get().load("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/$lpa/IMG_${firstValueLPA+slider.value.toInt()+value}.jpg")
-                    .noFade().placeholder(image.drawable).into(image)
+                //VIDEO
+                if (viewModel.shouldPlay) {
+                    Picasso.get().load("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/$lpa/IMG_${firstValueLPA+slider.value.toInt()+value}.jpg")
+                        .noFade().placeholder(image.drawable).into(object : com.squareup.picasso.Target {
+                            override fun onBitmapFailed(e: Exception?, errorDrawable: Drawable?) {
+                                Log.d("FAIL", "Bitmap Failed")
+                            }
 
-                //SLIDER UPDATE
-                slider.value += value
+                            override fun onBitmapLoaded(bitmap: Bitmap?, from: Picasso.LoadedFrom?) {
+                                image.setImageBitmap(bitmap)
 
-                //LOG
-                println("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/$lpa/IMG_${firstValueLPA+slider.value.toInt()}.jpg")
+                                //SLIDER UPDATE
+                                slider.value += value
+                            }
+
+                            override fun onPrepareLoad(placeHolderDrawable: Drawable?) {}
+
+                        })
+                }
+                //NEXT IMAGE
+                else {
+                    Picasso.get().load("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/$lpa/IMG_${firstValueLPA+slider.value.toInt()+value}.jpg")
+                        .noFade().placeholder(image.drawable).into(image)
+
+                    //SLIDER UPDATE
+                    slider.value += value
+                }
             }
         }
     }
