@@ -46,8 +46,8 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
     private lateinit var sampleAlteration: TextView
     private lateinit var sampleInterferenceColorsOrderTitle: TextView
     private lateinit var sampleInterferenceColorsOrder: TextView
-    private lateinit var sampleExtintionTitle: TextView
-    private lateinit var sampleExtintion: TextView
+    private lateinit var sampleExtinctionTitle: TextView
+    private lateinit var sampleExtinction: TextView
     private lateinit var sampleTwinningTitle: TextView
     private lateinit var sampleTwinning: TextView
     private lateinit var sampleZoningTitle: TextView
@@ -104,8 +104,8 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
         sampleAlteration = view.findViewById(R.id.sample_alteration)
         sampleInterferenceColorsOrderTitle = view.findViewById(R.id.sample_interference_colors_order_title)
         sampleInterferenceColorsOrder = view.findViewById(R.id.sample_interference_colors_order)
-        sampleExtintionTitle = view.findViewById(R.id.sample_extintion_title)
-        sampleExtintion = view.findViewById(R.id.sample_extintion)
+        sampleExtinctionTitle = view.findViewById(R.id.sample_extintion_title)
+        sampleExtinction = view.findViewById(R.id.sample_extintion)
         sampleTwinningTitle = view.findViewById(R.id.sample_twinning_title)
         sampleTwinning = view.findViewById(R.id.sample_twinning)
         sampleZoningTitle = view.findViewById(R.id.sample_zoning_title)
@@ -161,7 +161,7 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
                     override fun run() {
                         if (count++ <= 143 && viewModel.shouldPlay) {
                             moveWithIcons(1)
-                            handler.postDelayed(this, 1000)
+                            handler.postDelayed(this, 700)
                         }
 
                         if (slider.value.toInt() == 143) {
@@ -312,8 +312,8 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
                 sampleAlteration.text = ""
                 sampleInterferenceColorsOrderTitle.text = ""
                 sampleInterferenceColorsOrder.text = ""
-                sampleExtintionTitle.text = ""
-                sampleExtintion.text = ""
+                sampleExtinctionTitle.text = ""
+                sampleExtinction.text = ""
                 sampleTwinningTitle.text = ""
                 sampleTwinning.text = ""
                 sampleZoningTitle.text = ""
@@ -362,8 +362,8 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
                 sampleAlteration.visibility = View.GONE
                 sampleInterferenceColorsOrderTitle.visibility = View.GONE
                 sampleInterferenceColorsOrder.visibility = View.GONE
-                sampleExtintionTitle.visibility = View.GONE
-                sampleExtintion.visibility = View.GONE
+                sampleExtinctionTitle.visibility = View.GONE
+                sampleExtinction.visibility = View.GONE
                 sampleTwinningTitle.visibility = View.GONE
                 sampleTwinning.visibility = View.GONE
                 sampleZoningTitle.visibility = View.GONE
