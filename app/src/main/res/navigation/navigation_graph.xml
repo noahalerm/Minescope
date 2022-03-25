@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/navigation_graph"
-    app:startDestination="@id/sampleFragment">
+    app:startDestination="@id/listFragment">
 
     <fragment
         android:id="@+id/sampleFragment"
@@ -11,7 +11,14 @@
     <fragment
         android:id="@+id/listFragment"
         android:name="com.example.minescope.ui.views.ListFragment"
-        android:label="ListFragment" />
+        android:label="ListFragment" >
+        <action
+            android:id="@+id/listToFilters"
+            app:destination="@id/filtersFragment" />
+        <action
+            android:id="@+id/listToMineral"
+            app:destination="@id/mineralFragment" />
+    </fragment>
     <fragment
         android:id="@+id/filtersFragment"
         android:name="com.example.minescope.ui.views.FiltersFragment"
@@ -23,5 +30,11 @@
         <action
             android:id="@+id/mineralToSample"
             app:destination="@id/sampleFragment" />
+        <argument
+            android:name="id"
+            app:argType="integer" />
+        <argument
+            android:name="isOpaque"
+            app:argType="boolean" />
     </fragment>
 </navigation>

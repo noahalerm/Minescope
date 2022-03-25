@@ -10,6 +10,8 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.minescope.R
+import com.example.minescope.data.models.OpaqueMineral
+import com.example.minescope.data.models.TransparentMineral
 import com.example.minescope.ui.adapters.SamplesListAdapter
 import com.example.minescope.ui.viewmodel.MinescopeViewModel
 
@@ -117,8 +119,7 @@ class MineralFragment : Fragment(R.layout.fragment_mineral) {
         mineralAssociatedMineralsTitle = view.findViewById(R.id.mineral_asociated_minerals_title)
         mineralAssociatedMinerals = view.findViewById(R.id.mineral_asociated_minerals)
 
-        //loadData()
-        //startFunc()
+        loadData()
 
         //RECYCLER VIEW SET UP
         recyclerView = view.findViewById(R.id.recycler_view)
@@ -130,51 +131,40 @@ class MineralFragment : Fragment(R.layout.fragment_mineral) {
         }
     }
 
-    //METHODS
-    private fun startFunc(){
-        val principalAdapter = SamplesListAdapter(viewModel)
-        viewModel.mineralsListLD.observe(viewLifecycleOwner,{principalAdapter.setSampleList(it) })
-        recyclerView.adapter = principalAdapter
-    }
-
     /**
      * This method is used to load the mineral's data into the fragment.
      */
     private fun loadData(){
         if (!arguments?.isEmpty!!){
             val id = arguments?.getInt("id")
-            val mineral = viewModel.mineralsList.filter { it == id.toString() }[0]
+            val isOpaque = arguments?.getBoolean("isOpaque")
 
-            mineralName.text = ""
-            mineralChemicalFormula.text = ""
-            mineralColors.text = ""
-            mineralPleochroism.text = ""
+            var opaqueMineral: OpaqueMineral? = null
+            var transparentMineral: TransparentMineral? = null
 
-            if (mineral == "TRANSPARENT"){
-                mineralReliefTitle.text = ""
-                mineralRelief.text = ""
-                mineralExfoliationDirectionNameTitle.text = ""
-                mineralExfoliationDirectionName.text = ""
-                mineralExfoliationDirectionAnglesTitle.text = ""
-                mineralExfoliationDirectionAngles.text = ""
-                mineralInterferenceColorsOrderTitle.text = ""
-                mineralInterferenceColorsOrder.text = ""
-                mineralExtintionTitle.text = ""
-                mineralExtintion.text = ""
-                mineralTwinningTitle.text = ""
-                mineralTwinning.text = ""
-                mineralInterferenceFigureTitle.text = ""
-                mineralInterferenceFigure.text = ""
-                mineralOpticSignTitle.text = ""
-                mineralOpticSign.text = ""
-                mineralCrystalShapeTitle.text = ""
-                mineralCrystalShape.text = ""
-                mineralAlterationTitle.text = ""
-                mineralAlteration.text = ""
-                mineralZoningTitle.text = ""
-                mineralZoning.text = ""
-                mineralExfoliationTitle.text = ""
-                mineralExfoliation.text = ""
+            if (isOpaque!!) {
+                 opaqueMineral = viewModel.opaqueMineralsList.filter { it.id == id }[0]
+            }else{
+                transparentMineral = viewModel.transparentMineralsList.filter { it.id == id }[0]
+            }
+
+            if (!isOpaque){
+                mineralName.text = transparentMineral?.name
+                mineralChemicalFormula.text = transparentMineral?.chemicalFormula
+                mineralColors.text = transparentMineral?.colors
+                mineralPleochroism.text = transparentMineral?.pleochroism
+                mineralRelief.text = transparentMineral?.relief
+                mineralExfoliationDirectionName.text = transparentMineral?.exfoliationDirectionName
+                mineralExfoliationDirectionAngles.text = transparentMineral?.exfoliationDirectionAngles
+                mineralInterferenceColorsOrder.text = transparentMineral?.interferenceColorsOrder
+                mineralExtintion.text = transparentMineral?.extinction
+                mineralTwinning.text = transparentMineral?.twinning
+                mineralInterferenceFigure.text = transparentMineral?.interferenceFigure
+                mineralOpticSign.text = transparentMineral?.opticSign
+                mineralCrystalShape.text = transparentMineral?.crystalShape
+                mineralAlteration.text = transparentMineral?.alteration
+                mineralZoning.text = transparentMineral?.zoning
+                mineralExfoliation.text = transparentMineral?.exfoliation
 
                 //LAYOUT UPDATE
                 mineralReflectivityTitle.visibility = View.GONE
@@ -192,21 +182,18 @@ class MineralFragment : Fragment(R.layout.fragment_mineral) {
                 mineralAssociatedMineralsTitle.visibility = View.GONE
                 mineralAssociatedMinerals.visibility = View.GONE
             }
-            else if (mineral == "OPAQUE"){
-                mineralReflectivityTitle.text = ""
-                mineralReflectivity.text = ""
-                mineralHardnessTitle.text = ""
-                mineralHardness.text = ""
-                mineralAnisotropyTitle.text = ""
-                mineralAnisotropy.text = ""
-                mineralInterferenceColorsTitle.text = ""
-                mineralInterferenceColors.text = ""
-                mineralInternalReflectionsTitle.text = ""
-                mineralInternalReflections.text = ""
-                mineralCleavageTitle.text = ""
-                mineralCleavage.text = ""
-                mineralAssociatedMineralsTitle.text = ""
-                mineralAssociatedMinerals.text = ""
+            else if (isOpaque){
+                mineralName.text = opaqueMineral?.name
+                mineralChemicalFormula.text = opaqueMineral?.chemicalFormula
+                mineralColors.text = opaqueMineral?.colors
+                mineralPleochroism.text = opaqueMineral?.pleochroism
+                mineralReflectivity.text = opaqueMineral?.reflectivity
+                mineralHardness.text = opaqueMineral?.hardness
+                mineralAnisotropy.text = opaqueMineral?.anisotropy
+                mineralInterferenceColors.text = opaqueMineral?.interferenceColors
+                mineralInternalReflections.text = opaqueMineral?.internalReflections
+                mineralCleavage.text = opaqueMineral?.cleavage
+                mineralAssociatedMinerals.text = opaqueMineral?.associatedMinerals
 
                 //LAYOUT UPDATE
                 mineralReliefTitle.visibility = View.GONE

@@ -290,87 +290,87 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
     /**
      * This method is used to load the sample's data into the fragment.
      */
-    private fun loadData() {
-        if (!arguments?.isEmpty!!) {
-            val id = arguments?.getInt("id")
-            val mineral = viewModel.mineralsList.filter { it == id.toString() }[0]
-
-            sampleName.text = ""
-            sampleSurname.text = ""
-            sampleDescription.text = ""
-            sampleColoration.text = ""
-            samplePleochroism.text = ""
-            sampleAbundance.text = ""
-            sampleOtherMinerals.text = ""
-
-            if (mineral == "TRANSPARENT"){
-                sampleReliefTitle.text = ""
-                sampleRelief.text = ""
-                sampleExfoliationTitle.text = ""
-                sampleExfoliation.text = ""
-                sampleAlterationTitle.text = ""
-                sampleAlteration.text = ""
-                sampleInterferenceColorsOrderTitle.text = ""
-                sampleInterferenceColorsOrder.text = ""
-                sampleExtinctionTitle.text = ""
-                sampleExtinction.text = ""
-                sampleTwinningTitle.text = ""
-                sampleTwinning.text = ""
-                sampleZoningTitle.text = ""
-                sampleZoning.text = ""
-                sampleCrystalShapeTitle.text = ""
-                sampleCrystalShape.text = ""
-
-                //LAYOUT UPDATE
-                sampleShapeTitle.visibility = View.GONE
-                sampleShape.visibility = View.GONE
-                sampleCleavageTitle.visibility = View.GONE
-                sampleCleavage.visibility = View.GONE
-                sampleReflectivityTitle.visibility = View.GONE
-                sampleReflectivity.visibility = View.GONE
-                sampleHardnessTitle.visibility = View.GONE
-                sampleHardness.visibility = View.GONE
-                sampleAnisotropyTitle.visibility = View.GONE
-                sampleAnisotropy.visibility = View.GONE
-                sampleInterferenceColorsTitle.visibility = View.GONE
-                sampleInterferenceColors.visibility = View.GONE
-                sampleInternalReflectionsTitle.visibility = View.GONE
-                sampleInternalReflections.visibility = View.GONE
-            }
-            else if (mineral == "OPAQUE"){
-                sampleShapeTitle.text = ""
-                sampleShape.text = ""
-                sampleCleavageTitle.text = ""
-                sampleCleavage.text = ""
-                sampleReflectivityTitle.text = ""
-                sampleReflectivity.text = ""
-                sampleHardnessTitle.text = ""
-                sampleHardness.text = ""
-                sampleAnisotropyTitle.text = ""
-                sampleAnisotropy.text = ""
-                sampleInterferenceColorsTitle.text = ""
-                sampleInterferenceColors.text = ""
-                sampleInternalReflectionsTitle.text = ""
-                sampleInternalReflections.text = ""
-
-                //LAYOUT UPDATE
-                sampleReliefTitle.visibility = View.GONE
-                sampleRelief.visibility = View.GONE
-                sampleExfoliationTitle.visibility = View.GONE
-                sampleExfoliation.visibility = View.GONE
-                sampleAlterationTitle.visibility = View.GONE
-                sampleAlteration.visibility = View.GONE
-                sampleInterferenceColorsOrderTitle.visibility = View.GONE
-                sampleInterferenceColorsOrder.visibility = View.GONE
-                sampleExtinctionTitle.visibility = View.GONE
-                sampleExtinction.visibility = View.GONE
-                sampleTwinningTitle.visibility = View.GONE
-                sampleTwinning.visibility = View.GONE
-                sampleZoningTitle.visibility = View.GONE
-                sampleZoning.visibility = View.GONE
-                sampleCrystalShapeTitle.visibility = View.GONE
-                sampleCrystalShape.visibility = View.GONE
-            }
-        }
-    }
+    //private fun loadData() {
+    //    if (!arguments?.isEmpty!!) {
+    //        val id = arguments?.getInt("id")
+    //        val mineral = viewModel.mineralsList.filter { it == id.toString() }[0]
+//
+    //        sampleName.text = ""
+    //        sampleSurname.text = ""
+    //        sampleDescription.text = ""
+    //        sampleColoration.text = ""
+    //        samplePleochroism.text = ""
+    //        sampleAbundance.text = ""
+    //        sampleOtherMinerals.text = ""
+//
+    //        if (mineral == "TRANSPARENT"){
+    //            sampleReliefTitle.text = ""
+    //            sampleRelief.text = ""
+    //            sampleExfoliationTitle.text = ""
+    //            sampleExfoliation.text = ""
+    //            sampleAlterationTitle.text = ""
+    //            sampleAlteration.text = ""
+    //            sampleInterferenceColorsOrderTitle.text = ""
+    //            sampleInterferenceColorsOrder.text = ""
+    //            sampleExtinctionTitle.text = ""
+    //            sampleExtinction.text = ""
+    //            sampleTwinningTitle.text = ""
+    //            sampleTwinning.text = ""
+    //            sampleZoningTitle.text = ""
+    //            sampleZoning.text = ""
+    //            sampleCrystalShapeTitle.text = ""
+    //            sampleCrystalShape.text = ""
+//
+    //            //LAYOUT UPDATE
+    //            sampleShapeTitle.visibility = View.GONE
+    //            sampleShape.visibility = View.GONE
+    //            sampleCleavageTitle.visibility = View.GONE
+    //            sampleCleavage.visibility = View.GONE
+    //            sampleReflectivityTitle.visibility = View.GONE
+    //            sampleReflectivity.visibility = View.GONE
+    //            sampleHardnessTitle.visibility = View.GONE
+    //            sampleHardness.visibility = View.GONE
+    //            sampleAnisotropyTitle.visibility = View.GONE
+    //            sampleAnisotropy.visibility = View.GONE
+    //            sampleInterferenceColorsTitle.visibility = View.GONE
+    //            sampleInterferenceColors.visibility = View.GONE
+    //            sampleInternalReflectionsTitle.visibility = View.GONE
+    //            sampleInternalReflections.visibility = View.GONE
+    //        }
+    //        else if (mineral == "OPAQUE"){
+    //            sampleShapeTitle.text = ""
+    //            sampleShape.text = ""
+    //            sampleCleavageTitle.text = ""
+    //            sampleCleavage.text = ""
+    //            sampleReflectivityTitle.text = ""
+    //            sampleReflectivity.text = ""
+    //            sampleHardnessTitle.text = ""
+    //            sampleHardness.text = ""
+    //            sampleAnisotropyTitle.text = ""
+    //            sampleAnisotropy.text = ""
+    //            sampleInterferenceColorsTitle.text = ""
+    //            sampleInterferenceColors.text = ""
+    //            sampleInternalReflectionsTitle.text = ""
+    //            sampleInternalReflections.text = ""
+//
+    //            //LAYOUT UPDATE
+    //            sampleReliefTitle.visibility = View.GONE
+    //            sampleRelief.visibility = View.GONE
+    //            sampleExfoliationTitle.visibility = View.GONE
+    //            sampleExfoliation.visibility = View.GONE
+    //            sampleAlterationTitle.visibility = View.GONE
+    //            sampleAlteration.visibility = View.GONE
+    //            sampleInterferenceColorsOrderTitle.visibility = View.GONE
+    //            sampleInterferenceColorsOrder.visibility = View.GONE
+    //            sampleExtinctionTitle.visibility = View.GONE
+    //            sampleExtinction.visibility = View.GONE
+    //            sampleTwinningTitle.visibility = View.GONE
+    //            sampleTwinning.visibility = View.GONE
+    //            sampleZoningTitle.visibility = View.GONE
+    //            sampleZoning.visibility = View.GONE
+    //            sampleCrystalShapeTitle.visibility = View.GONE
+    //            sampleCrystalShape.visibility = View.GONE
+    //        }
+    //    }
+    //}
 }
