@@ -1,12 +1,18 @@
 package com.example.minescope.ui.views
 
 import android.annotation.SuppressLint
+import android.app.AlertDialog
+import android.content.DialogInterface
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.minescope.R
+import com.example.minescope.ui.adapters.FilterOptionsAdapter
+import com.example.minescope.utils.DialogCustomizer
 import com.google.android.material.tabs.TabLayout
 
 class FiltersFragment : Fragment(R.layout.fragment_filters) {
@@ -82,6 +88,26 @@ class FiltersFragment : Fragment(R.layout.fragment_filters) {
             override fun onTabUnselected(tab: TabLayout.Tab?) {
             }
         })
+
+        //ON CLICK
+
+        //Relief
+        relief.setOnClickListener {
+            //CUSTOM DIALOG
+            val builder = AlertDialog.Builder(requireContext(), R.style.CustomDialog)
+            val viewDialog = layoutInflater.inflate(R.layout.relief_options_dialog, null)
+            builder.setView(viewDialog)
+            builder.setCustomTitle(DialogCustomizer.getCustomizedDialogTitle("Relief", requireContext()))
+            builder.setNegativeButton("CANCEL", null)
+            builder.setPositiveButton("FILTER") { _, _ ->
+                //ATTRIBUTES
+            }
+            builder.setCancelable(false)
+            val dialog = builder.create()
+            dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT)) //Set to Transparent to only see the custom bg.
+            dialog.window!!.attributes.windowAnimations = R.style.DialogAnimation
+            dialog.show()
+        }
     }
 
     //METHODS

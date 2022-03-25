@@ -28,4 +28,22 @@
         <item name="android:fontFamily">@font/permanent_marker</item>
         <item name="android:textSize">20dp</item>
     </style>
+
+    //CUSTOM DIALOG
+    <style name="CustomDialog" parent="ThemeOverlay.AppCompat.Dialog.Alert">
+        <item name="android:background">@drawable/custom_dialog_bg</item>
+        <item name="buttonBarButtonStyle">@style/CustomButtonStyle</item>
+        <item name="android:fontFamily">@font/permanent_marker</item>
+    </style>
+
+    //DIALOG BUTTONS STYLE
+    <style name="CustomButtonStyle" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">?attr/colorSecondary</item>
+    </style>
+
+    //DIALOG ANIMATIONS
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@android:anim/slide_in_left</item>
+        <item name="android:windowExitAnimation">@android:anim/slide_out_right</item>
+    </style>
 </resources>
