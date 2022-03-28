@@ -72,15 +72,13 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
     private lateinit var sampleInterferenceColors: TextView
     private lateinit var sampleInternalReflectionsTitle: TextView
     private lateinit var sampleInternalReflections: TextView
-
-    //Url Variables
-    private val firstValueLPNA = 3544
-    private val firstValueLPA = 3363
-    private var lpa = "LPNA"
-
+    
     //View Model
     private val viewModel: MinescopeViewModel by activityViewModels()
 
+    var type = false
+    private val firstValueLPNA = 3544
+    private val firstValueLPA = 3363
     //ON VIEW CREATED
     override fun onViewCreated(view: View, savedInstanceState: Bundle?){
         super.onViewCreated(view, savedInstanceState)
@@ -132,10 +130,6 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
         sampleInternalReflections = view.findViewById(R.id.sample_internal_reflections)
 
         loadData()
-
-        //IMAGE INITIALIZATION
-        Picasso.get().load("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/$lpa/IMG_${firstValueLPNA}.jpg")
-            .noFade().placeholder(image.drawable).into(image)
 
         //ON CLICK
         //Close Button
@@ -194,29 +188,28 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
         switch.setOnCheckedChangeListener { _, isChecked ->
             //LPA / LPNA CHECK
             if (isChecked){
-                lpa = "LPA"
-                Picasso.get().load("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/$lpa/IMG_${firstValueLPA + slider.value.toInt()}.jpg")
+                Picasso.get().load("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/LPA/IMG_${firstValueLPA + slider.value.toInt()}.jpg")
                     .noFade().placeholder(image.drawable).into(image)
             }
             else {
-                lpa = "LPNA"
-                Picasso.get().load("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/$lpa/IMG_${firstValueLPNA + slider.value.toInt()}.jpg")
+                Picasso.get().load("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/LPNA/IMG_${firstValueLPNA + slider.value.toInt()}.jpg")
                     .noFade().placeholder(image.drawable).into(image)
             }
+            type = !type
         }
 
         //SLIDER
         slider.addOnChangeListener { _, value, _ ->
             //IMAGE UPDATE
-            if (lpa == "LPNA")
-                Picasso.get().load("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/$lpa/IMG_${firstValueLPNA + value.toInt()}.jpg")
+            if (!type)
+                Picasso.get().load("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/LPNA/IMG_${firstValueLPNA + value.toInt()}.jpg")
                     .noFade().placeholder(image.drawable).into(image)
             else
-                Picasso.get().load("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/$lpa/IMG_${firstValueLPA + value.toInt()}.jpg")
+                Picasso.get().load("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/LPA/IMG_${firstValueLPA + value.toInt()}.jpg")
                     .noFade().placeholder(image.drawable).into(image)
 
             //LOG
-            println("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/$lpa/IMG_${firstValueLPNA + value.toInt()}.jpg")
+            //println("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/$lpa/IMG_${firstValueLPNA + value.toInt()}.jpg")
         }
     }
 
@@ -229,10 +222,10 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
         //IMAGE UPDATE
         if (slider.value.toInt()+value in 0..143) {
             //LPNA
-            if (lpa == "LPNA") {
+            if (!type) {
                 //VIDEO
                 if (viewModel.shouldPlay) {
-                    Picasso.get().load("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/$lpa/IMG_${firstValueLPNA+slider.value.toInt()+value}.jpg")
+                    Picasso.get().load("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/LPNA/IMG_${firstValueLPNA+slider.value.toInt()+value}.jpg")
                         .noFade().placeholder(image.drawable).into(object : com.squareup.picasso.Target {
                             override fun onBitmapFailed(e: Exception?, errorDrawable: Drawable?) {
                                 Log.d("FAIL", "Bitmap Failed")
@@ -251,7 +244,7 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
                 }
                 //NEXT IMAGE
                 else {
-                    Picasso.get().load("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/$lpa/IMG_${firstValueLPNA+slider.value.toInt()+value}.jpg")
+                    Picasso.get().load("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/LPNA/IMG_${firstValueLPNA+slider.value.toInt()+value}.jpg")
                         .noFade().placeholder(image.drawable).into(image)
 
                     //SLIDER UPDATE
@@ -262,7 +255,7 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
             else {
                 //VIDEO
                 if (viewModel.shouldPlay) {
-                    Picasso.get().load("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/$lpa/IMG_${firstValueLPA+slider.value.toInt()+value}.jpg")
+                    Picasso.get().load("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/LPA/IMG_${firstValueLPA+slider.value.toInt()+value}.jpg")
                         .noFade().placeholder(image.drawable).into(object : com.squareup.picasso.Target {
                             override fun onBitmapFailed(e: Exception?, errorDrawable: Drawable?) {
                                 Log.d("FAIL", "Bitmap Failed")
@@ -281,7 +274,7 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
                 }
                 //NEXT IMAGE
                 else {
-                    Picasso.get().load("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/$lpa/IMG_${firstValueLPA+slider.value.toInt()+value}.jpg")
+                    Picasso.get().load("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/LPA/IMG_${firstValueLPA+slider.value.toInt()+value}.jpg")
                         .noFade().placeholder(image.drawable).into(image)
 
                     //SLIDER UPDATE
@@ -308,24 +301,27 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
                 transparentMineralSample = viewModel.samplesOfTransparentMineralList.filter { it.id == id }[0]
             }
 
-
             if (!isOpaque){
-                sampleName.text = transparentMineralSample.name
-                sampleSurname.text = transparentMineralSample.
-                sampleDescription.text = transparentMineralSample.
-                sampleColoration.text = transparentMineralSample.
-                samplePleochroism.text = transparentMineralSample.
-                sampleAbundance.text = transparentMineralSample.
-                sampleOtherMinerals.text = transparentMineralSample.
-                sampleRelief.text = transparentMineralSample.
-                sampleExfoliation.text = transparentMineralSample.
-                sampleAlteration.text = transparentMineralSample.
-                sampleInterferenceColorsOrder.text = transparentMineralSample.
-                sampleExtinction.text = transparentMineralSample.
-                sampleTwinning.text = transparentMineralSample.
-                sampleZoning.text = transparentMineralSample.
-                sampleCrystalShape.text = transparentMineralSample.
-
+                sampleName.text = transparentMineralSample?.name
+                sampleSurname.text = transparentMineralSample?.name
+                sampleDescription.text = transparentMineralSample?.alteration
+                sampleColoration.text = transparentMineralSample?.coloration
+                samplePleochroism.text = transparentMineralSample?.pleochroism
+                sampleAbundance.text = transparentMineralSample?.abundance.toString()
+                sampleOtherMinerals.text = transparentMineralSample?.otherMinerals
+                sampleRelief.text = transparentMineralSample?.relief
+                sampleExfoliation.text = transparentMineralSample?.exfoliation
+                sampleAlteration.text = transparentMineralSample?.alteration
+                sampleInterferenceColorsOrder.text = transparentMineralSample?.interferenceColorsOrder
+                sampleExtinction.text = transparentMineralSample?.extinction
+                sampleTwinning.text = transparentMineralSample?.twinning
+                sampleZoning.text = transparentMineralSample?.zoning
+                sampleCrystalShape.text = transparentMineralSample?.crystalShape
+                //IMAGE INITIALIZATION
+                Picasso.get().load(transparentMineralSample?.imageLPNA+"{$firstValueLPNA}.jpg")
+                    .noFade().placeholder(image.drawable).into(image)
+                viewModel.actualLPA = transparentMineralSample?.imageLPA!!
+                viewModel.actualLPNA = transparentMineralSample.imageLPNA
                 //LAYOUT UPDATE
                 sampleShapeTitle.visibility = View.GONE
                 sampleShape.visibility = View.GONE
@@ -342,22 +338,26 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
                 sampleInternalReflectionsTitle.visibility = View.GONE
                 sampleInternalReflections.visibility = View.GONE
             }
-            else if (mineral == "OPAQUE"){
-                sampleShapeTitle.text = ""
-                sampleShape.text = ""
-                sampleCleavageTitle.text = ""
-                sampleCleavage.text = ""
-                sampleReflectivityTitle.text = ""
-                sampleReflectivity.text = ""
-                sampleHardnessTitle.text = ""
-                sampleHardness.text = ""
-                sampleAnisotropyTitle.text = ""
-                sampleAnisotropy.text = ""
-                sampleInterferenceColorsTitle.text = ""
-                sampleInterferenceColors.text = ""
-                sampleInternalReflectionsTitle.text = ""
-                sampleInternalReflections.text = ""
-
+            else if (isOpaque){
+                sampleName.text = opaqueMineralSample?.name
+                sampleSurname.text = opaqueMineralSample?.name
+                sampleDescription.text = opaqueMineralSample?.cleavage
+                sampleColoration.text = opaqueMineralSample?.coloration
+                samplePleochroism.text = opaqueMineralSample?.pleochroism
+                sampleAbundance.text = opaqueMineralSample?.abundance.toString()
+                sampleOtherMinerals.text = opaqueMineralSample?.otherMinerals
+                sampleShape.text = opaqueMineralSample?.shape
+                sampleCleavage.text = opaqueMineralSample?.cleavage
+                sampleReflectivity.text = opaqueMineralSample?.reflectivity
+                sampleHardness.text = opaqueMineralSample?.hardness
+                sampleAnisotropy.text = opaqueMineralSample?.anisotropy
+                sampleInterferenceColors.text = opaqueMineralSample?.interferenceColors
+                sampleInternalReflections.text = opaqueMineralSample?.internalReflections
+                //IMAGE INITIALIZATION
+                Picasso.get().load(opaqueMineralSample?.imageLPNA+"{$firstValueLPNA}.jpg")
+                    .noFade().placeholder(image.drawable).into(image)
+                viewModel.actualLPA = opaqueMineralSample?.imageLPA!!
+                viewModel.actualLPNA = opaqueMineralSample.imageLPNA
                 //LAYOUT UPDATE
                 sampleReliefTitle.visibility = View.GONE
                 sampleRelief.visibility = View.GONE

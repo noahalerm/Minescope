@@ -17,14 +17,16 @@ class MinescopeViewModel: ViewModel() {
     var samplesOfTransparentMineralListLD = MutableLiveData<MutableList<TransparentMineralSample>>()
     var samplesOfOpaqueMineralList = mutableListOf<OpaqueMineralSample>()
     var samplesOfOpaqueMineralListLD = MutableLiveData<MutableList<OpaqueMineralSample>>()
+    var actualLPA = ""
+    var actualLPNA = ""
     //Booleans
     var shouldPlay: Boolean = false
 
     init {
         for(m in 1..20){
-            samplesOfTransparentMineralList.add(TransparentMineralSample(m,m,"https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/LPA/IMG_3363.jpg", "https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/LPNA/IMG_3544.jpg","SAMPLE T $m","A","A",33.03F,"A","A","A","A","A","A","A","A","A"))
+            samplesOfTransparentMineralList.add(TransparentMineralSample(m,m,"https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/LPA/IMG_", "https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/LPNA/IMG_","SAMPLE T $m","A","A",33.03F,"A","A","A","A","A","A","A","A","A"))
             samplesOfTransparentMineralListLD.postValue(samplesOfTransparentMineralList)
-            samplesOfOpaqueMineralList.add(OpaqueMineralSample(m,m,"https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/LPA/IMG_3363.jpg", "https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/LPNA/IMG_3544.jpg","SAMPLE T $m","A","A",33.03F,"A","A","A","A","A","A","A","A"))
+            samplesOfOpaqueMineralList.add(OpaqueMineralSample(m,m,"https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/LPA/IMG_", "https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/LPNA/IMG_","SAMPLE T $m","A","A",33.03F,"A","A","A","A","A","A","A","A"))
             samplesOfOpaqueMineralListLD.postValue(samplesOfOpaqueMineralList)
         }
         for(m in 1..20){
