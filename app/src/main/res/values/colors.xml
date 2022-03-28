@@ -24,4 +24,7 @@
     <color name="darker_light">#AEBFC4</color>
     <color name="azure_x_11_web">#E0F2F7</color> //Color Palette
     //Lighter light is white
+
+    //TRANSPARENT
+    <color name="transparent">#0000FFFF</color>
 </resources>

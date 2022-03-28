@@ -2,7 +2,6 @@ package com.example.minescope.ui.views
 
 import android.annotation.SuppressLint
 import android.app.AlertDialog
-import android.content.DialogInterface
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
@@ -10,9 +9,11 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.minescope.R
+import com.example.minescope.data.models.FilterOption
 import com.example.minescope.ui.adapters.FilterOptionsAdapter
-import com.example.minescope.utils.DialogCustomizer
 import com.google.android.material.tabs.TabLayout
 
 class FiltersFragment : Fragment(R.layout.fragment_filters) {
@@ -44,6 +45,7 @@ class FiltersFragment : Fragment(R.layout.fragment_filters) {
     private lateinit var internalReflections: TextView
 
     //ON VIEW CREATED
+    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -95,18 +97,41 @@ class FiltersFragment : Fragment(R.layout.fragment_filters) {
         relief.setOnClickListener {
             //CUSTOM DIALOG
             val builder = AlertDialog.Builder(requireContext(), R.style.CustomDialog)
-            val viewDialog = layoutInflater.inflate(R.layout.relief_options_dialog, null)
+            val viewDialog = layoutInflater.inflate(R.layout.custom_filter_dialog, null)
             builder.setView(viewDialog)
-            builder.setCustomTitle(DialogCustomizer.getCustomizedDialogTitle("Relief", requireContext()))
-            builder.setNegativeButton("CANCEL", null)
-            builder.setPositiveButton("FILTER") { _, _ ->
-                //ATTRIBUTES
-            }
-            builder.setCancelable(false)
             val dialog = builder.create()
             dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT)) //Set to Transparent to only see the custom bg.
             dialog.window!!.attributes.windowAnimations = R.style.DialogAnimation
             dialog.show()
+
+            //ATTRIBUTES
+            val filter: TextView = viewDialog.findViewById(R.id.filter)
+            val recyclerView: RecyclerView = viewDialog.findViewById(R.id.recycler_view)
+
+            //SET UP
+            filter.text = "Relief"
+
+            recyclerView.layoutManager = LinearLayoutManager(requireContext())
+            recyclerView.adapter = FilterOptionsAdapter(listOf(FilterOption("Low", "The contour line of the mineral can not be seen"),
+                FilterOption("Medium", "The contour line of the mineral is poorly marked"),
+                FilterOption("High", "The contour line of the mineral can easily be seen")), relief, "Relief")
+        }
+
+        //Color Transparent
+        colorTransparent.setOnClickListener {
+            //SELECTED OPTION
+            var selectedOption: String
+
+            //CUSTOM DIALOG
+            val builder = AlertDialog.Builder(requireContext(), R.style.CustomDialog)
+            val viewDialog = layoutInflater.inflate(R.layout.custom_filter_dialog, null)
+            builder.setView(viewDialog)
+            val dialog = builder.create()
+            dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT)) //Set to Transparent to only see the custom bg.
+            dialog.window!!.attributes.windowAnimations = R.style.DialogAnimation
+            dialog.show()
+
+            //ATTRIBUTES
         }
     }
 
