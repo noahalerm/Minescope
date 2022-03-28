@@ -95,43 +95,207 @@ class FiltersFragment : Fragment(R.layout.fragment_filters) {
 
         //Relief
         relief.setOnClickListener {
-            //CUSTOM DIALOG
-            val builder = AlertDialog.Builder(requireContext(), R.style.CustomDialog)
-            val viewDialog = layoutInflater.inflate(R.layout.custom_filter_dialog, null)
-            builder.setView(viewDialog)
-            val dialog = builder.create()
-            dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT)) //Set to Transparent to only see the custom bg.
-            dialog.window!!.attributes.windowAnimations = R.style.DialogAnimation
-            dialog.show()
-
-            //ATTRIBUTES
-            val filter: TextView = viewDialog.findViewById(R.id.filter)
-            val recyclerView: RecyclerView = viewDialog.findViewById(R.id.recycler_view)
-
-            //SET UP
-            filter.text = "Relief"
-
-            recyclerView.layoutManager = LinearLayoutManager(requireContext())
-            recyclerView.adapter = FilterOptionsAdapter(listOf(FilterOption("Low", "The contour line of the mineral can not be seen"),
+            //OPTIONS LIST
+            val options = listOf(
+                FilterOption("Low", "The contour line of the mineral can not be seen"),
                 FilterOption("Medium", "The contour line of the mineral is poorly marked"),
-                FilterOption("High", "The contour line of the mineral can easily be seen")), relief, "Relief")
+                FilterOption("High", "The contour line of the mineral can easily be seen"))
+
+            buildFilterDialog("Relief", options, relief)
         }
 
         //Color Transparent
         colorTransparent.setOnClickListener {
-            //SELECTED OPTION
-            var selectedOption: String
+            //OPTIONS LIST
+            val options = listOf(
+                FilterOption("Colorless", "Includes all shades of gray and white (by the white light of the microscope), which may appear cloudy by inclusions and alteration"),
+                FilterOption("Yellow", "Yellowish tones"),
+                FilterOption("Pink", "Pinkish tones"),
+                FilterOption("Blue", "Lilac and bluish tones"),
+                FilterOption("Green", "Greenish tones"),
+                FilterOption("Brown", "Brown, orange and reddish tones"))
 
-            //CUSTOM DIALOG
-            val builder = AlertDialog.Builder(requireContext(), R.style.CustomDialog)
-            val viewDialog = layoutInflater.inflate(R.layout.custom_filter_dialog, null)
-            builder.setView(viewDialog)
-            val dialog = builder.create()
-            dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT)) //Set to Transparent to only see the custom bg.
-            dialog.window!!.attributes.windowAnimations = R.style.DialogAnimation
-            dialog.show()
+            buildFilterDialog("Color", options, colorTransparent)
+        }
 
-            //ATTRIBUTES
+        //Pleochroism Transparent
+        pleochroismTransparent.setOnClickListener {
+            //OPTIONS LIST
+            val options = listOf(
+                FilterOption("Without", "The color / tone of the mineral does not change when the orientation of the crystal changes with respect to the polarized incident light"),
+                FilterOption("Soft", "The color / tone of the crystal varies slightly as its orientation changes with respect to the polarized incident light"),
+                FilterOption("Strong", "The color / tone varies very markedly when the orientation of the crystal changes with respect to the polarized incident light"))
+
+            buildFilterDialog("Pleochroism", options, pleochroismTransparent)
+        }
+
+        //Cleavage Directions
+        cleavageDirections.setOnClickListener{
+            //OPTIONS LIST
+            val options = listOf(
+                FilterOption("0", "Absence of regular discontinuities in any section of the mineral, parallel to each other and related to the crystalline structure of the mineral"),
+                FilterOption("1", "Presence of only 1 direction of discontinuities parallel to each other and related to crystallographic directions of the mineral, but there may be sections without any direction of exfoliation"),
+                FilterOption("2", "Presence of up to 2 directions of discontinuities parallel to each other and related to crystallographic directions of the mineral (1 direction in elongated sections, 2 directions in other sections)"),
+                FilterOption("3 or more", "Presence of up to 3 or more directions of discontinuities parallel to each other and related to crystallographic directions of the mineral (two or more exfoliation directions can be seen in all sections)"))
+
+            buildFilterDialog("Number of cleavage directions", options, cleavageDirections)
+        }
+
+        //Cleavage Angle
+        cleavageAngle.setOnClickListener{
+            //OPTIONS LIST
+            val options = listOf(
+                FilterOption("Right", "(≈ 90°)"),
+                FilterOption("Acute", "(≠ 90°)"))
+
+            buildFilterDialog("Angle of cleavage", options, cleavageAngle)
+        }
+
+        //Interference Color Order
+        interferenceColorOrder.setOnClickListener{
+            //OPTIONS LIST
+            val options = listOf(
+                FilterOption("Isotropic", "Absence of colors, it looks black when interposed the analyzer"),
+                FilterOption("1st", "Greyish, white or yellow colors of 1st order are observed"),
+                FilterOption("2nd", "Presence of interference colors up to 2nd order (strong colors)"),
+                FilterOption("3rd", "Presence of interference colors up to 3rd order (light tones)"),
+                FilterOption("4th", "Presence of interference colors up to 4th order (pastel colors)"),
+                FilterOption("Anomalous", "Blues or purples that do not correspond to any order"),
+                FilterOption("Masked", "The color of the mineral itself hides the interference color"))
+
+            buildFilterDialog("Interference color (order)", options, interferenceColorOrder)
+        }
+
+        //Extinction
+        extinction.setOnClickListener{
+            //OPTIONS LIST
+            val options = listOf(
+                FilterOption("Total", "Complete extinction (light does not pass at any position of the crystal with respect to incident light), is observed in basal sections or in any section of isotropic minerals"),
+                FilterOption("Right", "No light passes when the longitudinal sections are oriented parallel to the polarization directions"),
+                FilterOption("Oblique", "No light passes when the longitudinal sections of the minerals are at a certain angle of the polarization directions"),
+                FilterOption("Undulose", "Anomalous extinction in which the crystal does not extinguish completely and homogeneously, by changing the orientation of the crystal with respect to the incident light the crystal gradually extinguishes along the crystal, appears with the deformation of the crystal"))
+
+            buildFilterDialog("Extinction", options, extinction)
+        }
+
+        //Twinning
+        twinning.setOnClickListener{
+            //OPTIONS LIST
+            val options = listOf(
+                FilterOption("Without", "Absence of twinnings"),
+                FilterOption("Simple", "Formed by two crystals"),
+                FilterOption("Polysynthetic", "Three or more crystalline planes are repeated alternately, according to the same law of twinning and with parallel twinning planes"),
+                FilterOption("Crossed", "Polysynthetic twinning in two directions and blurred"),
+                FilterOption("Cyclic", "When all the individuals of the twin are at a point"))
+
+            buildFilterDialog("Twinning", options, twinning)
+        }
+
+        //Interference Figure
+        interferenceFigure.setOnClickListener{
+            //OPTIONS LIST
+            val options = listOf(
+                FilterOption("Uniaxial", ""),
+                FilterOption("Biaxial", ""))
+
+            buildFilterDialog("Interference figure", options, interferenceFigure)
+        }
+
+        //Optical Sign
+        opticalSign.setOnClickListener{
+            //OPTIONS LIST
+            val options = listOf(
+                FilterOption("Positive", ""),
+                FilterOption("Negative", ""))
+
+            buildFilterDialog("Optical sign", options, opticalSign)
+        }
+
+        //Color Opaque
+        colorOpaque.setOnClickListener{
+            //OPTIONS LIST
+            val options = listOf(
+                FilterOption("White", "Whitish tones"),
+                FilterOption("Yellow", "Yellowish tones"),
+                FilterOption("Pink", "Beige, lilac and pinkish tones"),
+                FilterOption("Blue", "Bluish tones"),
+                FilterOption("Green", "Greenish tones"),
+                FilterOption("Brown", "Brown, orange and reddish tones"),
+                FilterOption("Gray", "Grayish tones that vary from dark to lighter"))
+
+            buildFilterDialog("Color", options, colorOpaque)
+        }
+
+        //Reflectance
+        reflectance.setOnClickListener{
+            //OPTIONS LIST
+            val options = listOf(
+                FilterOption("Low", "< 20%, little gleaming, it looks very dark"),
+                FilterOption("Medium", "20 - 40%, moderately gleaming"),
+                FilterOption("Strong", "40 - 60%, very gleaming"),
+                FilterOption("Very strong", "> 60%, extremely gleaming"))
+
+            buildFilterDialog("Reflectance", options, reflectance)
+        }
+
+        //Pleochroism Opaque
+        pleochroismOpaque.setOnClickListener {
+            //OPTIONS LIST
+            val options = listOf(
+                FilterOption("Without or weak", "The tone of the color does not change or change very little when the orientation of the glass changes with respect to the polarized incident light"),
+                FilterOption("Strong", "Change the tone of the color by changing the orientation with respect to the polarized incident light"))
+
+            buildFilterDialog("Pleochroism", options, pleochroismOpaque)
+        }
+
+        //Polishing Hardness
+        polishingHardness.setOnClickListener {
+            //OPTIONS LIST
+            val options = listOf(
+                FilterOption("Soft", "Crystals with a very marked scratch due to polishing and correspond to soft minerals (hardness less than 3 on the Mohs scale)"),
+                FilterOption("Medium", "Crystals with a slightly marked scratch due to polishing and correspond to medium hard minerals (hardness between 3 and 5 on the Mohs scale)"),
+                FilterOption("Hard", "Crystals with a scratch little or nothing marked due to polishing and correspond to hard minerals (hardness higher than 5 on the Mohs scale)"))
+
+            buildFilterDialog("Polishing hardness", options, polishingHardness)
+        }
+
+        //Anisotropism
+        anisotropism.setOnClickListener{
+            //OPTIONS LIST
+            val options = listOf(
+                FilterOption("Isotropic", "Does not reflect light when interposing the analyzer, section or mineral with high symmetry"),
+                FilterOption("Moderately anisotropic", "Little or moderately anisotropic, it reflects the light when interposing the analyzer and varies a lot of color by changing the orientation of the crystal with respect to the incident light"),
+                FilterOption("Strongly anisotropic", "Very anisotropic, reflects light when interposing the analyzer and varies a lot of color by changing the orientation of the crystal with respect to incident light"))
+
+            buildFilterDialog("Anisotropism", options, anisotropism)
+        }
+
+        //Interference Colors
+        interferenceColors.setOnClickListener{
+            //OPTIONS LIST
+            val options = listOf(
+                FilterOption("White", "Whitish tones"),
+                FilterOption("Yellow", "Yellowish tones"),
+                FilterOption("Pink", "Pinkish tones"),
+                FilterOption("Lilac", "Lilac tones"),
+                FilterOption("Blue", "Bluish tones"),
+                FilterOption("Green", "Greenish tones"),
+                FilterOption("Brown", "Brown, orange and reddish tones"),
+                FilterOption("Gray", "Grayish tones that vary from dark to lighter"),
+                FilterOption("Masked for internal reflections", "The colors of interference are not well appreciated due to the presence of internal reflections"),
+                FilterOption("Without", "Does not present interfering colors"))
+
+            buildFilterDialog("Interference colors", options, interferenceColors)
+        }
+
+        //Internal reflections
+        internalReflections.setOnClickListener{
+            //OPTIONS LIST
+            val options = listOf(
+                FilterOption("Yes", "Presence of light sparks when interposing the analyzer"),
+                FilterOption("No", "Absence of sparks of light when interposing the analyzer"))
+
+            buildFilterDialog("Internal reflections", options, internalReflections)
         }
     }
 
@@ -187,5 +351,32 @@ class FiltersFragment : Fragment(R.layout.fragment_filters) {
             interferenceColors.visibility = View.VISIBLE
             internalReflections.visibility = View.VISIBLE
         }
+    }
+
+    /**
+     * This method is used to build a filter's dialog.
+     * @param filterName Filter (e.g. relief, color...)
+     * @param options Filter's options (e.g. low, medium, high...)
+     * @param textView TextView
+     */
+    private fun buildFilterDialog(filterName: String, options: List<FilterOption>, textView: TextView) {
+        //CUSTOM DIALOG
+        val builder = AlertDialog.Builder(requireContext(), R.style.CustomDialog)
+        val viewDialog = layoutInflater.inflate(R.layout.custom_filter_dialog, null)
+        builder.setView(viewDialog)
+        val dialog = builder.create()
+        dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT)) //Set to Transparent to only see the custom bg.
+        dialog.window!!.attributes.windowAnimations = R.style.DialogAnimation
+        dialog.show()
+
+        //ATTRIBUTES
+        val filter: TextView = viewDialog.findViewById(R.id.filter)
+        val recyclerView: RecyclerView = viewDialog.findViewById(R.id.recycler_view)
+
+        //SET UP
+        filter.text = filterName
+
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        recyclerView.adapter = FilterOptionsAdapter(options, textView, filter.text.toString(), dialog)
     }
 }

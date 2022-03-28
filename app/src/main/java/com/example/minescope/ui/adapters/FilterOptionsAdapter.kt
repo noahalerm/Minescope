@@ -14,7 +14,8 @@ import com.example.minescope.R
 import com.example.minescope.data.models.FilterOption
 
 class FilterOptionsAdapter(private val options: List<FilterOption>, private val textView: TextView,
-                           private val filter: String) : RecyclerView.Adapter<FilterOptionsAdapter.FilterOptionsViewHolder>() {
+                           private val filter: String, private val dialog: AlertDialog)
+    : RecyclerView.Adapter<FilterOptionsAdapter.FilterOptionsViewHolder>() {
     //ADAPTER METHODS
     /**
      * This method is used to create a View Holder and to set up it's view.
@@ -32,7 +33,12 @@ class FilterOptionsAdapter(private val options: List<FilterOption>, private val 
      * @param position Current item
      */
     override fun onBindViewHolder(holder: FilterOptionsViewHolder, position: Int) {
-        holder.bindData(options[position], textView)
+        holder.bindData(options[position], textView, filter, dialog)
+
+        //ON CLICK
+        holder.itemView.setOnClickListener{
+            FilterOptionsViewHolder(it).dismissDialog(textView, filter, options[position].name, dialog)
+        }
     }
 
     /**
@@ -53,13 +59,18 @@ class FilterOptionsAdapter(private val options: List<FilterOption>, private val 
         /**
          * This method is used to set up the data of each item of the options list.
          */
-        fun bindData(option: FilterOption, textView: TextView, filter: String) {
+        fun bindData(option: FilterOption, textView: TextView, filter: String, dialog: AlertDialog) {
             optionText.text = option.name
 
             //ON CLICK
             //Option Text
             optionText.setOnClickListener {
-                //dismissDialog(textView, filter, optionText.text)
+                dismissDialog(textView, filter, optionText.text.toString(), dialog)
+            }
+
+            //Option Info
+            optionInfo.setOnClickListener {
+                setUpOptionInfoDialog(option.name, option.description)
             }
         }
 
@@ -71,15 +82,15 @@ class FilterOptionsAdapter(private val options: List<FilterOption>, private val 
          * @param dialog AlertDialog builder
          */
         @SuppressLint("SetTextI18n")
-        private fun dismissDialog(textView: TextView, filter: String, selectedOption: String, dialog: AlertDialog) {
+        fun dismissDialog(textView: TextView, filter: String, selectedOption: String, dialog: AlertDialog) {
             textView.text = "$filter: $selectedOption"
             dialog.dismiss()
         }
 
         /**
          * This method is used to create a dialog with the description of a given option.
-         * @param option Selected option
-         * @param description The option's description
+         * @param optionName Selected option
+         * @param descriptionText The option's description
          */
         private fun setUpOptionInfoDialog(optionName: String, descriptionText: String) {
             //CUSTOM DIALOG

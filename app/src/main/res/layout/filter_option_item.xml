@@ -9,20 +9,25 @@
         android:id="@+id/materialDivider"
         android:layout_width="match_parent"
         android:layout_height="1dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
         app:dividerColor="?attr/colorSecondary"
-        app:layout_constraintTop_toBottomOf="@+id/option"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/option" />
 
     <TextView
         android:id="@+id/option"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
+        android:layout_marginEnd="50dp"
         android:text="Option"
         android:textColor="?attr/colorSecondary"
         android:textSize="30sp"
+        app:layout_constraintEnd_toStartOf="@+id/option_info"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="HardcodedText" />
