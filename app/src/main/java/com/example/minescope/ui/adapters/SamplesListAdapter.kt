@@ -9,13 +9,20 @@ import android.widget.TextView
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.minescope.R
+import com.example.minescope.data.models.OpaqueMineral
+import com.example.minescope.data.models.OpaqueMineralSample
+import com.example.minescope.data.models.TransparentMineral
+import com.example.minescope.data.models.TransparentMineralSample
 import com.example.minescope.ui.viewmodel.MinescopeViewModel
+import com.example.minescope.ui.views.ListFragmentDirections
 import com.example.minescope.ui.views.MineralFragmentDirections
 import com.squareup.picasso.Picasso
+import kotlin.math.min
 
-class SamplesListAdapter(private val viewModel: MinescopeViewModel) : RecyclerView.Adapter<SamplesListAdapter.SampleListViewHolder>(){
+class SamplesListAdapter(private val isOpaque: Boolean) : RecyclerView.Adapter<SamplesListAdapter.MineralListViewHolder>(){
     //ATTRIBUTES
-    private var samples = mutableListOf<String>()
+    private var transparentMineralSamples = mutableListOf<TransparentMineralSample>()
+    private var opaqueMineralSamples = mutableListOf<OpaqueMineralSample>()
 
     //METHODS
     /**
@@ -23,8 +30,14 @@ class SamplesListAdapter(private val viewModel: MinescopeViewModel) : RecyclerVi
      * @param sampleList List of samples
      */
     @SuppressLint("NotifyDataSetChanged")
-    fun setSampleList(sampleList: MutableList<String>){
-        samples = sampleList
+    fun setTransparentMineralSamplesList(mineralList: MutableList<TransparentMineralSample>){
+        transparentMineralSamples = mineralList
+        notifyDataSetChanged()
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun setOpaqueMineralSamplesList(mineralList: MutableList<OpaqueMineralSample>){
+        opaqueMineralSamples = mineralList
         notifyDataSetChanged()
     }
 
@@ -33,10 +46,10 @@ class SamplesListAdapter(private val viewModel: MinescopeViewModel) : RecyclerVi
      * This method is used to create a View Holder and to set up it's view.
      * @param parent Adapter's parent (used to get context)
      */
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SampleListViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MineralListViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.sample,parent,false)
 
-        return SampleListViewHolder(view)
+        return MineralListViewHolder(view)
     }
 
     /**
@@ -44,13 +57,19 @@ class SamplesListAdapter(private val viewModel: MinescopeViewModel) : RecyclerVi
      * @param holder View Holder
      * @param position Current item
      */
-    override fun onBindViewHolder(holder: SampleListViewHolder, position: Int) {
-        holder.bindData(samples[position], viewModel)
-
-        //ON CLICK
-        holder.itemView.setOnClickListener {
-            val action = MineralFragmentDirections.mineralToSample(/*samples[position].id*/)
-            Navigation.findNavController(holder.itemView).navigate(action)
+    override fun onBindViewHolder(holder: MineralListViewHolder, position: Int) {
+        if (isOpaque) {
+            holder.bindData(null, opaqueMineralSamples[position])
+            holder.itemView.setOnClickListener {
+                val action = MineralFragmentDirections.mineralToSample(opaqueMineralSamples[position].id, isOpaque)
+                Navigation.findNavController(holder.itemView).navigate(action)
+            }
+        }else{
+            holder.bindData(transparentMineralSamples[position], null)
+            holder.itemView.setOnClickListener {
+                val action = MineralFragmentDirections.mineralToSample(transparentMineralSamples[position].id, isOpaque)
+                Navigation.findNavController(holder.itemView).navigate(action)
+            }
         }
     }
 
@@ -58,12 +77,15 @@ class SamplesListAdapter(private val viewModel: MinescopeViewModel) : RecyclerVi
      * This method is used to get the total amount of items in the Recycler View.
      */
     override fun getItemCount() : Int {
-        return samples.size
+        return if (isOpaque) {
+            opaqueMineralSamples.size
+        }else{
+            transparentMineralSamples.size
+        }
     }
 
-
     //VIEW HOLDER
-    class SampleListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class MineralListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         //ATTRIBUTES
         private var sampleNameAndSurname: TextView = itemView.findViewById(R.id.sample_namesurname)
         private var sampleShortDesc: TextView = itemView.findViewById(R.id.sample_short_description)
@@ -74,13 +96,22 @@ class SamplesListAdapter(private val viewModel: MinescopeViewModel) : RecyclerVi
         /**
          * This method is used to set up the data of each item of the sample list.
          */
-        fun bindData(sample: String, viewModel: MinescopeViewModel) {
-            sampleNameAndSurname.text = sample
-            sampleShortDesc.text = sample
-            Picasso.get().load("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/LPA/IMG_3363.jpg")
-                .noFade().placeholder(sampleLPA.drawable).into(sampleLPA)
-            Picasso.get().load("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/LPNA/IMG_3544.jpg")
-                .noFade().placeholder(sampleLPNA.drawable).into(sampleLPNA)
+        fun bindData(transparentMineralSample: TransparentMineralSample?, opaqueMineralSample: OpaqueMineralSample?) {
+            if (transparentMineralSample == null){
+                sampleNameAndSurname.text = opaqueMineralSample?.name
+                sampleShortDesc.text = opaqueMineralSample?.cleavage
+                Picasso.get().load(opaqueMineralSample?.image)
+                    .noFade().placeholder(sampleLPA.drawable).into(sampleLPA)
+                Picasso.get().load(opaqueMineralSample?.image)
+                    .noFade().placeholder(sampleLPNA.drawable).into(sampleLPNA)
+            }else{
+                sampleNameAndSurname.text = transparentMineralSample.name
+                sampleShortDesc.text = transparentMineralSample.alteration
+                Picasso.get().load(transparentMineralSample.image)
+                    .noFade().placeholder(sampleLPA.drawable).into(sampleLPA)
+                Picasso.get().load(transparentMineralSample.image)
+                    .noFade().placeholder(sampleLPNA.drawable).into(sampleLPNA)
+            }
         }
     }
 }

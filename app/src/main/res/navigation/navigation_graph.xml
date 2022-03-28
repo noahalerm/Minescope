@@ -2,13 +2,20 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/navigation_graph"
-    app:startDestination="@id/filtersFragment">
+    app:startDestination="@id/listFragment">
     app:startDestination="@id/listFragment">
 
     <fragment
         android:id="@+id/sampleFragment"
         android:name="com.example.minescope.ui.views.SampleFragment"
-        android:label="SampleFragment" />
+        android:label="SampleFragment" >
+        <argument
+            android:name="id"
+            app:argType="integer" />
+        <argument
+            android:name="isOpaque"
+            app:argType="boolean" />
+    </fragment>
     <fragment
         android:id="@+id/listFragment"
         android:name="com.example.minescope.ui.views.ListFragment"

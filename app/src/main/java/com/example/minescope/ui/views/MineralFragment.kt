@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.minescope.R
 import com.example.minescope.data.models.OpaqueMineral
 import com.example.minescope.data.models.TransparentMineral
+import com.example.minescope.ui.adapters.MineralsListAdapter
 import com.example.minescope.ui.adapters.SamplesListAdapter
 import com.example.minescope.ui.viewmodel.MinescopeViewModel
 
@@ -119,11 +120,11 @@ class MineralFragment : Fragment(R.layout.fragment_mineral) {
         mineralAssociatedMineralsTitle = view.findViewById(R.id.mineral_asociated_minerals_title)
         mineralAssociatedMinerals = view.findViewById(R.id.mineral_asociated_minerals)
 
-        loadData()
-
         //RECYCLER VIEW SET UP
         recyclerView = view.findViewById(R.id.recycler_view)
         recyclerView.layoutManager = LinearLayoutManager(view.context)
+
+        loadData()
 
         //ON CLICK
         closeBtn.setOnClickListener {
@@ -165,6 +166,9 @@ class MineralFragment : Fragment(R.layout.fragment_mineral) {
                 mineralAlteration.text = transparentMineral?.alteration
                 mineralZoning.text = transparentMineral?.zoning
                 mineralExfoliation.text = transparentMineral?.exfoliation
+                val principalAdapter = SamplesListAdapter(false)
+                viewModel.samplesOfTransparentMineralListLD.observe(viewLifecycleOwner,{principalAdapter.setTransparentMineralSamplesList(it) })
+                recyclerView.adapter = principalAdapter
 
                 //LAYOUT UPDATE
                 mineralReflectivityTitle.visibility = View.GONE
@@ -194,6 +198,9 @@ class MineralFragment : Fragment(R.layout.fragment_mineral) {
                 mineralInternalReflections.text = opaqueMineral?.internalReflections
                 mineralCleavage.text = opaqueMineral?.cleavage
                 mineralAssociatedMinerals.text = opaqueMineral?.associatedMinerals
+                val principalAdapter = SamplesListAdapter(true)
+                viewModel.samplesOfOpaqueMineralListLD.observe(viewLifecycleOwner,{principalAdapter.setOpaqueMineralSamplesList(it) })
+                recyclerView.adapter = principalAdapter
 
                 //LAYOUT UPDATE
                 mineralReliefTitle.visibility = View.GONE
