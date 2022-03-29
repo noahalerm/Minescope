@@ -70,7 +70,7 @@ class FilterOptionsAdapter(private val options: List<FilterOption>, private val 
 
             //Option Info
             optionInfo.setOnClickListener {
-                setUpOptionInfoDialog(option.name, option.description)
+                setUpOptionInfoDialog(option)
             }
         }
 
@@ -89,10 +89,9 @@ class FilterOptionsAdapter(private val options: List<FilterOption>, private val 
 
         /**
          * This method is used to create a dialog with the description of a given option.
-         * @param optionName Selected option
-         * @param descriptionText The option's description
+         * @param option Selected option
          */
-        private fun setUpOptionInfoDialog(optionName: String, descriptionText: String) {
+        private fun setUpOptionInfoDialog(option: FilterOption) {
             //CUSTOM DIALOG
             val infoBuilder = AlertDialog.Builder(optionText.context, R.style.CustomDialog)
             val viewInfoDialog = LayoutInflater.from(optionText.context).inflate(R.layout.filter_option_description_dialog, null)
@@ -103,11 +102,20 @@ class FilterOptionsAdapter(private val options: List<FilterOption>, private val 
             dialogInfo.show()
 
             //ATTRIBUTES
-            val option: TextView = viewInfoDialog.findViewById(R.id.option)
+            val optionView: TextView = viewInfoDialog.findViewById(R.id.option)
             val description: TextView = viewInfoDialog.findViewById(R.id.description)
+            val image1: ImageView = viewInfoDialog.findViewById(R.id.image1)
+            val image2: ImageView = viewInfoDialog.findViewById(R.id.image2)
+            val image3: ImageView = viewInfoDialog.findViewById(R.id.image3)
 
-            option.text = optionName
-            description.text = descriptionText
+            optionView.text = option.name
+            description.text = option.description
+
+            if (option.image1 != null) {
+                image1.setImageResource(option.image1)
+                image2.setImageResource(option.image2!!)
+                image3.setImageResource(option.image3!!)
+            }
         }
     }
 }

@@ -195,8 +195,8 @@ class FiltersFragment : Fragment(R.layout.fragment_filters) {
         interferenceFigure.setOnClickListener{
             //OPTIONS LIST
             val options = listOf(
-                FilterOption("Uniaxial", ""),
-                FilterOption("Biaxial", ""))
+                FilterOption("Uniaxial", "", R.drawable.interference_figure_1, R.drawable.interference_figure_2, R.drawable.interference_figure_3),
+                FilterOption("Biaxial", "", R.drawable.interference_figure_4, R.drawable.interference_figure_5, R.drawable.interference_figure_6))
 
             buildFilterDialog("Interference figure", options, interferenceFigure)
         }
@@ -205,8 +205,8 @@ class FiltersFragment : Fragment(R.layout.fragment_filters) {
         opticalSign.setOnClickListener{
             //OPTIONS LIST
             val options = listOf(
-                FilterOption("Positive", ""),
-                FilterOption("Negative", ""))
+                FilterOption("Positive", "", R.drawable.optical_sign_2, R.drawable.optical_sign_3, R.drawable.optical_sign_1),
+                FilterOption("Negative", "", R.drawable.optical_sign_5, R.drawable.optical_sign_6, R.drawable.optical_sign_4))
 
             buildFilterDialog("Optical sign", options, opticalSign)
         }

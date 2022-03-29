@@ -5,7 +5,8 @@
     android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/custom_dialog_bg"
-    android:padding="20dp">
+    android:padding="20dp"
+    tools:ignore="ContentDescription">
 
     <TextView
         android:id="@+id/option"
@@ -19,6 +20,7 @@
         tools:text="Option" />
 
     <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/materialDivider2"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         app:dividerColor="?attr/colorSecondary"
@@ -36,5 +38,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/option"
         tools:text="Description" />
+
+    <ImageView
+        android:id="@+id/image1"
+        android:layout_width="106dp"
+        android:layout_height="145dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/materialDivider2"
+        tools:src="@drawable/interference_figure_1" />
+
+    <ImageView
+        android:id="@+id/image2"
+        android:layout_width="106dp"
+        android:layout_height="145dp"
+        app:layout_constraintEnd_toStartOf="@+id/image3"
+        app:layout_constraintStart_toEndOf="@+id/image1"
+        app:layout_constraintTop_toBottomOf="@+id/materialDivider2"
+        tools:src="@drawable/interference_figure_2" />
+
+    <ImageView
+        android:id="@+id/image3"
+        android:layout_width="106dp"
+        android:layout_height="145dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/materialDivider2"
+        tools:src="@drawable/interference_figure_3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
