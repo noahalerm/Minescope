@@ -112,6 +112,10 @@ class FilterOptionsAdapter(private val options: List<FilterOption>, private val 
             description.text = option.description
 
             if (option.image1 != null) {
+                image1.visibility = View.VISIBLE
+                image2.visibility = View.VISIBLE
+                image3.visibility = View.VISIBLE
+
                 image1.setImageResource(option.image1)
                 image2.setImageResource(option.image2!!)
                 image3.setImageResource(option.image3!!)
