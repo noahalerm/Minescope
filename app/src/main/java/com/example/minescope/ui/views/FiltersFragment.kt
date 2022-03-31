@@ -9,11 +9,14 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.minescope.R
 import com.example.minescope.data.models.FilterOption
 import com.example.minescope.ui.adapters.FilterOptionsAdapter
+import com.example.minescope.ui.viewmodel.MinescopeViewModel
 import com.google.android.material.tabs.TabLayout
 
 class FiltersFragment : Fragment(R.layout.fragment_filters) {
@@ -44,6 +47,9 @@ class FiltersFragment : Fragment(R.layout.fragment_filters) {
     private lateinit var interferenceColors: TextView
     private lateinit var internalReflections: TextView
 
+    //View Model
+    private val viewModel: MinescopeViewModel by activityViewModels()
+
     //ON VIEW CREATED
     @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -73,13 +79,20 @@ class FiltersFragment : Fragment(R.layout.fragment_filters) {
         internalReflections = view.findViewById(R.id.internal_reflections_filter)
 
         //TABS
+        if (!viewModel.isTransparentFilters)
+            tabLayout.getTabAt(1)!!.select()
+
         tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             //SELECTED
             override fun onTabSelected(tab: TabLayout.Tab?) {
-                if (tab!!.position == 0)
+                if (tab!!.position == 0) {
                     setUpLayout(true)
-                else
+                    viewModel.isTransparentFilters = true
+                }
+                else {
                     setUpLayout(false)
+                    viewModel.isTransparentFilters = false
+                }
             }
 
             //RESELECTED
@@ -92,6 +105,12 @@ class FiltersFragment : Fragment(R.layout.fragment_filters) {
         })
 
         //ON CLICK
+
+        //Logo
+        logo.setOnClickListener {
+            //NAVIGATION
+            findNavController().popBackStack()
+        }
 
         //Relief
         relief.setOnClickListener {

@@ -14,12 +14,13 @@ import com.example.minescope.ui.viewmodel.MinescopeViewModel
 import com.google.android.material.tabs.TabLayout
 
 class ListFragment : Fragment(R.layout.fragment_list) {
-
-    //View Model
-    private val viewModel: MinescopeViewModel by activityViewModels()
+    //ATTRIBUTES
     private lateinit var recyclerView: RecyclerView
     private lateinit var filtersButton: ImageView
     private lateinit var tabLayout: TabLayout
+
+    //View Model
+    private val viewModel: MinescopeViewModel by activityViewModels()
 
     //ON VIEW CREATED
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -38,13 +39,20 @@ class ListFragment : Fragment(R.layout.fragment_list) {
         }
 
         //TABS
+        if (!viewModel.isTransparentFilters)
+            tabLayout.getTabAt(1)!!.select()
+
         tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             //SELECTED
             override fun onTabSelected(tab: TabLayout.Tab?) {
-                if (tab!!.position == 0)
+                if (tab!!.position == 0) {
                     loadTransparents()
-                else
+                    viewModel.isTransparentFilters = true
+                }
+                else {
                     loadOpaques()
+                    viewModel.isTransparentFilters = false
+                }
             }
 
             //RESELECTED
@@ -58,11 +66,18 @@ class ListFragment : Fragment(R.layout.fragment_list) {
     }
 
     //METHODS
+    /**
+     * This method is used to load the transparent minerals into the list.
+     */
     private fun loadTransparents(){
         val principalAdapter = MineralsListAdapter(false)
         viewModel.transparentMineralsListLD.observe(viewLifecycleOwner,{principalAdapter.setTransparentMineralsList(it) })
         recyclerView.adapter = principalAdapter
     }
+
+    /**
+     * This method is used to load the opaque minerals into the list.
+     */
     private fun loadOpaques(){
         val principalAdapter = MineralsListAdapter(true)
         viewModel.opaqueMineralsListLD.observe(viewLifecycleOwner,{principalAdapter.setOpaqueMineralsList(it) })

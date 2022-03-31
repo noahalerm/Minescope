@@ -19,8 +19,10 @@ class MinescopeViewModel: ViewModel() {
     var samplesOfOpaqueMineralListLD = MutableLiveData<MutableList<OpaqueMineralSample>>()
     var actualLPA = ""
     var actualLPNA = ""
+    
     //Booleans
     var shouldPlay: Boolean = false
+    var isTransparentFilters: Boolean = true
 
     init {
         for(m in 1..20){
