@@ -9,28 +9,36 @@ import com.example.minescope.data.models.TransparentMineralSample
 
 class MinescopeViewModel: ViewModel() {
     //ATTRIBUTES
+    //Lists
     var transparentMineralsList = mutableListOf<TransparentMineral>()
     var opaqueMineralsList = mutableListOf<OpaqueMineral>()
+    var samplesOfTransparentMineralList = mutableListOf<TransparentMineralSample>()
+    var samplesOfOpaqueMineralList = mutableListOf<OpaqueMineralSample>()
+
+    //Live Data
     var transparentMineralsListLD = MutableLiveData<MutableList<TransparentMineral>>()
     var opaqueMineralsListLD = MutableLiveData<MutableList<OpaqueMineral>>()
-    var samplesOfTransparentMineralList = mutableListOf<TransparentMineralSample>()
     var samplesOfTransparentMineralListLD = MutableLiveData<MutableList<TransparentMineralSample>>()
-    var samplesOfOpaqueMineralList = mutableListOf<OpaqueMineralSample>()
     var samplesOfOpaqueMineralListLD = MutableLiveData<MutableList<OpaqueMineralSample>>()
-    var actualLPA = ""
-    var actualLPNA = ""
+
+    //Sample Images
+    var currentLPA = ""
+    var currentLPNA = ""
     
     //Booleans
     var shouldPlay: Boolean = false
     var isTransparentFilters: Boolean = true
 
+    //INIT
     init {
+        //Samples
         for(m in 1..20){
             samplesOfTransparentMineralList.add(TransparentMineralSample(m,m,"https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/LPA/IMG_", "https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/LPNA/IMG_","SAMPLE T $m","A","A",33.03F,"A","A","A","A","A","A","A","A","A"))
             samplesOfTransparentMineralListLD.postValue(samplesOfTransparentMineralList)
             samplesOfOpaqueMineralList.add(OpaqueMineralSample(m,m,"https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/LPA/IMG_", "https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/LPNA/IMG_","SAMPLE O $m","A","A",33.03F,"A","A","A","A","A","A","A","A"))
             samplesOfOpaqueMineralListLD.postValue(samplesOfOpaqueMineralList)
         }
+        //Minerals
         for(m in 1..20){
             transparentMineralsList.add(TransparentMineral(m,"MINERAL T $m","WHITELESS AND REDS","WITHOUT","H20", "LOW","0/1/2","RIGHT","1st","Right / Undulose / Total","Without / Simple / Polysynthetic","Uniaxial","Positive","Hypidiomorphic with rectangular longitudinal sections and allotriomorphic crystals","Not present, it is altering previous minerals","Not present",null, samplesOfTransparentMineralList))
             transparentMineralsListLD.postValue(transparentMineralsList)
