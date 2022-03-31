@@ -188,11 +188,11 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
         switch.setOnCheckedChangeListener { _, isChecked ->
             //LPA / LPNA CHECK
             if (isChecked){
-                Picasso.get().load("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/LPA/IMG_${firstValueLPA + slider.value.toInt()}.jpg")
+                Picasso.get().load("${viewModel.actualLPA}${firstValueLPA + slider.value.toInt()}.jpg")
                     .noFade().placeholder(image.drawable).into(image)
             }
             else {
-                Picasso.get().load("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/LPNA/IMG_${firstValueLPNA + slider.value.toInt()}.jpg")
+                Picasso.get().load("${viewModel.actualLPNA}${firstValueLPNA + slider.value.toInt()}.jpg")
                     .noFade().placeholder(image.drawable).into(image)
             }
             type = !type
@@ -202,10 +202,10 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
         slider.addOnChangeListener { _, value, _ ->
             //IMAGE UPDATE
             if (!type)
-                Picasso.get().load("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/LPNA/IMG_${firstValueLPNA + value.toInt()}.jpg")
+                Picasso.get().load("${viewModel.actualLPNA}${firstValueLPNA + value.toInt()}.jpg")
                     .noFade().placeholder(image.drawable).into(image)
             else
-                Picasso.get().load("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/LPA/IMG_${firstValueLPA + value.toInt()}.jpg")
+                Picasso.get().load("${viewModel.actualLPA}${firstValueLPA + value.toInt()}.jpg")
                     .noFade().placeholder(image.drawable).into(image)
 
             //LOG
@@ -225,7 +225,7 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
             if (!type) {
                 //VIDEO
                 if (viewModel.shouldPlay) {
-                    Picasso.get().load("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/LPNA/IMG_${firstValueLPNA+slider.value.toInt()+value}.jpg")
+                    Picasso.get().load("${viewModel.actualLPNA}${firstValueLPNA+slider.value.toInt()+value}.jpg")
                         .noFade().placeholder(image.drawable).into(object : com.squareup.picasso.Target {
                             override fun onBitmapFailed(e: Exception?, errorDrawable: Drawable?) {
                                 Log.d("FAIL", "Bitmap Failed")
@@ -244,7 +244,7 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
                 }
                 //NEXT IMAGE
                 else {
-                    Picasso.get().load("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/LPNA/IMG_${firstValueLPNA+slider.value.toInt()+value}.jpg")
+                    Picasso.get().load("${viewModel.actualLPNA}${firstValueLPNA+slider.value.toInt()+value}.jpg")
                         .noFade().placeholder(image.drawable).into(image)
 
                     //SLIDER UPDATE
@@ -255,7 +255,7 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
             else {
                 //VIDEO
                 if (viewModel.shouldPlay) {
-                    Picasso.get().load("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/LPA/IMG_${firstValueLPA+slider.value.toInt()+value}.jpg")
+                    Picasso.get().load("${viewModel.actualLPA}${firstValueLPA+slider.value.toInt()+value}.jpg")
                         .noFade().placeholder(image.drawable).into(object : com.squareup.picasso.Target {
                             override fun onBitmapFailed(e: Exception?, errorDrawable: Drawable?) {
                                 Log.d("FAIL", "Bitmap Failed")
@@ -274,7 +274,7 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
                 }
                 //NEXT IMAGE
                 else {
-                    Picasso.get().load("https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/LPA/IMG_${firstValueLPA+slider.value.toInt()+value}.jpg")
+                    Picasso.get().load("${viewModel.actualLPA}${firstValueLPA+slider.value.toInt()+value}.jpg")
                         .noFade().placeholder(image.drawable).into(image)
 
                     //SLIDER UPDATE
@@ -318,7 +318,7 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
                 sampleZoning.text = transparentMineralSample?.zoning
                 sampleCrystalShape.text = transparentMineralSample?.crystalShape
                 //IMAGE INITIALIZATION
-                Picasso.get().load(transparentMineralSample?.imageLPNA+"{$firstValueLPNA}.jpg")
+                Picasso.get().load(transparentMineralSample?.imageLPNA+"$firstValueLPNA.jpg")
                     .noFade().placeholder(image.drawable).into(image)
                 viewModel.actualLPA = transparentMineralSample?.imageLPA!!
                 viewModel.actualLPNA = transparentMineralSample.imageLPNA
@@ -354,7 +354,7 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
                 sampleInterferenceColors.text = opaqueMineralSample?.interferenceColors
                 sampleInternalReflections.text = opaqueMineralSample?.internalReflections
                 //IMAGE INITIALIZATION
-                Picasso.get().load(opaqueMineralSample?.imageLPNA+"{$firstValueLPNA}.jpg")
+                Picasso.get().load(opaqueMineralSample?.imageLPNA+"$firstValueLPNA.jpg")
                     .noFade().placeholder(image.drawable).into(image)
                 viewModel.actualLPA = opaqueMineralSample?.imageLPA!!
                 viewModel.actualLPNA = opaqueMineralSample.imageLPNA

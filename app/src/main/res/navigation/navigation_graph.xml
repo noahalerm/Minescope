@@ -25,7 +25,9 @@
             app:destination="@id/filtersFragment" />
         <action
             android:id="@+id/listToMineral"
-            app:destination="@id/mineralFragment" />
+            app:destination="@id/mineralFragment"
+            app:enterAnim="@anim/push_up"
+            app:popExitAnim="@anim/push_down" />
     </fragment>
     <fragment
         android:id="@+id/filtersFragment"
@@ -37,7 +39,9 @@
         android:label="MineralFragment" >
         <action
             android:id="@+id/mineralToSample"
-            app:destination="@id/sampleFragment" />
+            app:destination="@id/sampleFragment"
+            app:enterAnim="@anim/push_up"
+            app:popExitAnim="@anim/push_down" />
         <argument
             android:name="id"
             app:argType="integer" />

@@ -11,7 +11,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.minescope.R
 import com.example.minescope.data.models.OpaqueMineral
+import com.example.minescope.data.models.OpaqueMineralSample
 import com.example.minescope.data.models.TransparentMineral
+import com.example.minescope.data.models.TransparentMineralSample
 import com.example.minescope.ui.adapters.MineralsListAdapter
 import com.example.minescope.ui.adapters.SamplesListAdapter
 import com.example.minescope.ui.viewmodel.MinescopeViewModel
@@ -167,7 +169,8 @@ class MineralFragment : Fragment(R.layout.fragment_mineral) {
                 mineralZoning.text = transparentMineral?.zoning
                 mineralExfoliation.text = transparentMineral?.exfoliation
                 val principalAdapter = SamplesListAdapter(false)
-                viewModel.samplesOfTransparentMineralListLD.observe(viewLifecycleOwner,{principalAdapter.setTransparentMineralSamplesList(it) })
+                viewModel.samplesOfTransparentMineralListLD.observe(viewLifecycleOwner,{principalAdapter.setTransparentMineralSamplesList(
+                    it.filter { min -> min.mineralId == id } as MutableList<TransparentMineralSample>) })
                 recyclerView.adapter = principalAdapter
 
                 //LAYOUT UPDATE
@@ -199,7 +202,8 @@ class MineralFragment : Fragment(R.layout.fragment_mineral) {
                 mineralCleavage.text = opaqueMineral?.cleavage
                 mineralAssociatedMinerals.text = opaqueMineral?.associatedMinerals
                 val principalAdapter = SamplesListAdapter(true)
-                viewModel.samplesOfOpaqueMineralListLD.observe(viewLifecycleOwner,{principalAdapter.setOpaqueMineralSamplesList(it) })
+                viewModel.samplesOfOpaqueMineralListLD.observe(viewLifecycleOwner,{principalAdapter.setOpaqueMineralSamplesList(
+                    it.filter { min -> min.mineralId == id } as MutableList<OpaqueMineralSample>) })
                 recyclerView.adapter = principalAdapter
 
                 //LAYOUT UPDATE

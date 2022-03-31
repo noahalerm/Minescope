@@ -26,7 +26,7 @@ class MinescopeViewModel: ViewModel() {
         for(m in 1..20){
             samplesOfTransparentMineralList.add(TransparentMineralSample(m,m,"https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/LPA/IMG_", "https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/LPNA/IMG_","SAMPLE T $m","A","A",33.03F,"A","A","A","A","A","A","A","A","A"))
             samplesOfTransparentMineralListLD.postValue(samplesOfTransparentMineralList)
-            samplesOfOpaqueMineralList.add(OpaqueMineralSample(m,m,"https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/LPA/IMG_", "https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/LPNA/IMG_","SAMPLE T $m","A","A",33.03F,"A","A","A","A","A","A","A","A"))
+            samplesOfOpaqueMineralList.add(OpaqueMineralSample(m,m,"https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/LPA/IMG_", "https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/LPNA/IMG_","SAMPLE O $m","A","A",33.03F,"A","A","A","A","A","A","A","A"))
             samplesOfOpaqueMineralListLD.postValue(samplesOfOpaqueMineralList)
         }
         for(m in 1..20){
