@@ -79,8 +79,10 @@ class FiltersFragment : Fragment(R.layout.fragment_filters) {
         internalReflections = view.findViewById(R.id.internal_reflections_filter)
 
         //TABS
-        if (!viewModel.isTransparentFilters)
+        if (!viewModel.isTransparentFilters) {
             tabLayout.getTabAt(1)!!.select()
+            setUpLayout(false)
+        }
 
         tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             //SELECTED

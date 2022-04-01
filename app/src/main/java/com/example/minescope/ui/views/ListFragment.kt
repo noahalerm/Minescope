@@ -32,25 +32,27 @@ class ListFragment : Fragment(R.layout.fragment_list) {
         recyclerView.layoutManager = LinearLayoutManager(view.context)
         tabLayout = view.findViewById(R.id.tab_layout)
 
-        loadTransparents()
+        loadMinerals(false)
 
         filtersButton.setOnClickListener {
             findNavController().navigate(R.id.listToFilters)
         }
 
         //TABS
-        if (!viewModel.isTransparentFilters)
+        if (!viewModel.isTransparentFilters) {
             tabLayout.getTabAt(1)!!.select()
+            loadMinerals(true)
+        }
 
         tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             //SELECTED
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 if (tab!!.position == 0) {
-                    loadTransparents()
+                    loadMinerals(false)
                     viewModel.isTransparentFilters = true
                 }
                 else {
-                    loadOpaques()
+                    loadMinerals(true)
                     viewModel.isTransparentFilters = false
                 }
             }
@@ -67,20 +69,19 @@ class ListFragment : Fragment(R.layout.fragment_list) {
 
     //METHODS
     /**
-     * This method is used to load the transparent minerals into the list.
+     * This method is used to load the minerals into the list.
+     * @param isOpaque Used to determine which minerals to load
      */
-    private fun loadTransparents(){
-        val principalAdapter = MineralsListAdapter(false)
-        viewModel.transparentMineralsListLD.observe(viewLifecycleOwner,{principalAdapter.setTransparentMineralsList(it) })
-        recyclerView.adapter = principalAdapter
-    }
-
-    /**
-     * This method is used to load the opaque minerals into the list.
-     */
-    private fun loadOpaques(){
-        val principalAdapter = MineralsListAdapter(true)
-        viewModel.opaqueMineralsListLD.observe(viewLifecycleOwner,{principalAdapter.setOpaqueMineralsList(it) })
-        recyclerView.adapter = principalAdapter
+    private fun loadMinerals(isOpaque: Boolean) {
+        if (isOpaque) {
+            val principalAdapter = MineralsListAdapter(isOpaque)
+            viewModel.opaqueMineralsListLD.observe(viewLifecycleOwner,{principalAdapter.setOpaqueMineralsList(it) })
+            recyclerView.adapter = principalAdapter
+        }
+        else {
+            val principalAdapter = MineralsListAdapter(isOpaque)
+            viewModel.transparentMineralsListLD.observe(viewLifecycleOwner,{principalAdapter.setTransparentMineralsList(it) })
+            recyclerView.adapter = principalAdapter
+        }
     }
 }
