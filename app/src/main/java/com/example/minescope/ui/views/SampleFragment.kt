@@ -19,6 +19,10 @@ import com.example.minescope.ui.viewmodel.MinescopeViewModel
 import com.google.android.material.slider.Slider
 import com.google.android.material.switchmaterial.SwitchMaterial
 import com.squareup.picasso.Picasso
+import android.util.DisplayMetrics
+
+
+
 
 class SampleFragment : Fragment(R.layout.fragment_sample) {
     //ATTRIBUTES
@@ -374,6 +378,13 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
                 sampleCrystalShapeTitle.visibility = View.GONE
                 sampleCrystalShape.visibility = View.GONE
             }
+
+            //IMAGE SET UP
+            val displayMetrics = DisplayMetrics()
+            activity!!.windowManager.defaultDisplay.getMetrics(displayMetrics)
+            val height = displayMetrics.heightPixels
+
+            image.setPadding(0, height/50, 0, 0)
         }
     }
 }
