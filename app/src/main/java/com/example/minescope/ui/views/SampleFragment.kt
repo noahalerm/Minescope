@@ -383,8 +383,9 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
             val displayMetrics = DisplayMetrics()
             activity!!.windowManager.defaultDisplay.getMetrics(displayMetrics)
             val height = displayMetrics.heightPixels
+            val width = displayMetrics.widthPixels
 
-            image.setPadding(0, height/50, 0, 0)
+            image.setPadding(0, width/30, 0, 0)
         }
     }
 }
