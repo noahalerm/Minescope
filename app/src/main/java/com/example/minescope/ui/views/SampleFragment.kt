@@ -78,9 +78,8 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
     //View Model
     private val viewModel: MinescopeViewModel by activityViewModels()
 
-    var type = false
-    private val firstValueLPNA = 3544
-    private val firstValueLPA = 3363
+    private var type = false
+
     //ON VIEW CREATED
     override fun onViewCreated(view: View, savedInstanceState: Bundle?){
         super.onViewCreated(view, savedInstanceState)
@@ -190,11 +189,11 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
         switch.setOnCheckedChangeListener { _, isChecked ->
             //LPA / LPNA CHECK
             if (isChecked){
-                Picasso.get().load("${viewModel.currentLPA}${firstValueLPA + slider.value.toInt()}.jpg")
+                Picasso.get().load("${viewModel.currentLPA}${slider.value.toInt()+1}.jpg")
                     .noFade().placeholder(image.drawable).into(image)
             }
             else {
-                Picasso.get().load("${viewModel.currentLPNA}${firstValueLPNA + slider.value.toInt()}.jpg")
+                Picasso.get().load("${viewModel.currentLPNA}${slider.value.toInt()+1}.jpg")
                     .noFade().placeholder(image.drawable).into(image)
             }
             type = !type
@@ -204,10 +203,10 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
         slider.addOnChangeListener { _, value, _ ->
             //IMAGE UPDATE
             if (!type)
-                Picasso.get().load("${viewModel.currentLPNA}${firstValueLPNA + value.toInt()}.jpg")
+                Picasso.get().load("${viewModel.currentLPNA}${value.toInt()+1}.jpg")
                     .noFade().placeholder(image.drawable).into(image)
             else
-                Picasso.get().load("${viewModel.currentLPA}${firstValueLPA + value.toInt()}.jpg")
+                Picasso.get().load("${viewModel.currentLPA}${value.toInt()+1}.jpg")
                     .noFade().placeholder(image.drawable).into(image)
 
             //LOG
@@ -227,7 +226,7 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
             if (!type) {
                 //VIDEO
                 if (viewModel.shouldPlay) {
-                    Picasso.get().load("${viewModel.currentLPNA}${firstValueLPNA+slider.value.toInt()+value}.jpg")
+                    Picasso.get().load("${viewModel.currentLPNA}${slider.value.toInt()+value+1}.jpg")
                         .noFade().placeholder(image.drawable).into(object : com.squareup.picasso.Target {
                             override fun onBitmapFailed(e: Exception?, errorDrawable: Drawable?) {
                                 Log.d("FAIL", "Bitmap Failed")
@@ -246,7 +245,7 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
                 }
                 //NEXT IMAGE
                 else {
-                    Picasso.get().load("${viewModel.currentLPNA}${firstValueLPNA+slider.value.toInt()+value}.jpg")
+                    Picasso.get().load("${viewModel.currentLPNA}${slider.value.toInt()+1+value}.jpg")
                         .noFade().placeholder(image.drawable).into(image)
 
                     //SLIDER UPDATE
@@ -257,7 +256,7 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
             else {
                 //VIDEO
                 if (viewModel.shouldPlay) {
-                    Picasso.get().load("${viewModel.currentLPA}${firstValueLPA+slider.value.toInt()+value}.jpg")
+                    Picasso.get().load("${viewModel.currentLPA}${slider.value.toInt()+1+value}.jpg")
                         .noFade().placeholder(image.drawable).into(object : com.squareup.picasso.Target {
                             override fun onBitmapFailed(e: Exception?, errorDrawable: Drawable?) {
                                 Log.d("FAIL", "Bitmap Failed")
@@ -276,7 +275,7 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
                 }
                 //NEXT IMAGE
                 else {
-                    Picasso.get().load("${viewModel.currentLPA}${firstValueLPA+slider.value.toInt()+value}.jpg")
+                    Picasso.get().load("${viewModel.currentLPA}${slider.value.toInt()+1+value}.jpg")
                         .noFade().placeholder(image.drawable).into(image)
 
                     //SLIDER UPDATE
@@ -320,7 +319,7 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
                 sampleZoning.text = transparentMineralSample?.zoning
                 sampleCrystalShape.text = transparentMineralSample?.crystalShape
                 //IMAGE INITIALIZATION
-                Picasso.get().load(transparentMineralSample?.imageLPNA+"$firstValueLPNA.jpg")
+                Picasso.get().load(transparentMineralSample?.imageLPNA+"1.jpg")
                     .noFade().placeholder(image.drawable).into(image)
                 viewModel.currentLPA = transparentMineralSample?.imageLPA!!
                 viewModel.currentLPNA = transparentMineralSample.imageLPNA
@@ -356,7 +355,7 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
                 sampleInterferenceColors.text = opaqueMineralSample?.interferenceColors
                 sampleInternalReflections.text = opaqueMineralSample?.internalReflections
                 //IMAGE INITIALIZATION
-                Picasso.get().load(opaqueMineralSample?.imageLPNA+"$firstValueLPNA.jpg")
+                Picasso.get().load(opaqueMineralSample?.imageLPNA+"1.jpg")
                     .noFade().placeholder(image.drawable).into(image)
                 viewModel.currentLPA = opaqueMineralSample?.imageLPA!!
                 viewModel.currentLPNA = opaqueMineralSample.imageLPNA
