@@ -33,11 +33,12 @@ class MinescopeViewModel: ViewModel() {
     init {
         //Samples
         for(m in 1..20){
-            samplesOfTransparentMineralList.add(TransparentMineralSample(m,m,"https://ddd.uab.cat/pub/minescope/seroli_lpa/seroli_lpa_", "https://ddd.uab.cat/pub/minescope/seroli_lpna/seroli_lpna_","SAMPLE T $m","A","A",33.03F,"A","A","A","A","A","A","A","A","A"))
+            samplesOfTransparentMineralList.add(TransparentMineralSample(m, m, "https://ddd.uab.cat/pub/minescope/seroli_lpa/seroli_lpa_", "https://ddd.uab.cat/pub/minescope/seroli_lpna/seroli_lpna_", "Serpentine with olivine", "Colorless", "Not present", 70F, "Olivine 30%", "Low", "Not appreciable", "Altering olivine", "1st order grays", "Not easily appreciable", "Not present", "Not present", "Fibrous aggregates in fractures altering olivine"))
             samplesOfTransparentMineralListLD.postValue(samplesOfTransparentMineralList)
-            samplesOfOpaqueMineralList.add(OpaqueMineralSample(m,m,"https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/LPA/IMG_", "https://ddd.uab.cat/pub/minescope/Serpentina_amb_olivina/LPNA/IMG_","SAMPLE O $m","A","A",33.03F,"A","A","A","A","A","A","A","A"))
+            samplesOfOpaqueMineralList.add(OpaqueMineralSample(m,m,"https://ddd.uab.cat/pub/minescope/ansmas_lpa/ansmas_lpa_", "https://ddd.uab.cat/pub/minescope/ansmas_lpna/ansmas_lpna_","Massive arsenopyrite","White with a slight creamy tone","Weak, It is easier to see in the center of the image",80F,"Gangue 20%","Allotriomorphic","Not visible","Strong","Not visible","Strong","Blue, gray and brownish tones","Not present"))
             samplesOfOpaqueMineralListLD.postValue(samplesOfOpaqueMineralList)
         }
+
         //Minerals
         for(m in 1..20){
             transparentMineralsList.add(TransparentMineral(m,"MINERAL T $m","WHITELESS AND REDS","WITHOUT","H20", "LOW","0/1/2","RIGHT","1st","Right / Undulose / Total","Without / Simple / Polysynthetic","Uniaxial","Positive","Hypidiomorphic with rectangular longitudinal sections and allotriomorphic crystals","Not present, it is altering previous minerals","Not present",null, samplesOfTransparentMineralList))
