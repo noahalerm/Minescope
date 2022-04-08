@@ -41,9 +41,9 @@ class MinescopeViewModel: ViewModel() {
 
         //Minerals
         for(m in 1..20){
-            transparentMineralsList.add(TransparentMineral(m,"MINERAL T $m","WHITELESS AND REDS","WITHOUT","H20", "LOW","0/1/2","RIGHT","1st","Right / Undulose / Total","Without / Simple / Polysynthetic","Uniaxial","Positive","Hypidiomorphic with rectangular longitudinal sections and allotriomorphic crystals","Not present, it is altering previous minerals","Not present",null, samplesOfTransparentMineralList))
+            transparentMineralsList.add(TransparentMineral(m,"Serpentine $m"," Colorless / Yellow / Green ","Without / Soft","(Mg,Al,Fe,Mn,Ni,Zn)2-3(Si,Al,Fe)2O5(OH)4", "LOW","0/1",null,"1st / Anomalous","Right / Total","Without","Biaxial","Negative / Positive","In parallel aggregates of fibrous crystals (asbestos) in fractures or massive","It is an alteration mineral","Not present","Not appreciable", samplesOfTransparentMineralList))
             transparentMineralsListLD.postValue(transparentMineralsList)
-            opaqueMineralsList.add(OpaqueMineral(m,"MINERAL O $m","WHITELESS AND REDS","WITHOUT","H20", "LOW","MUXA","RIGHT","uwu","Right / Undulose / Total","Without / Simple / Polysynthetic","Uniaxial", samplesOfOpaqueMineralList))
+            opaqueMineralsList.add(OpaqueMineral(m,"Arsenopyrite $m","White / Yellow / Pink","Without or weak","FeAsS", "Strong","Hard","Moderately anisotropic / Strongly anisotropic","Yellow / Blue / Green / Brown","No","Not visible","Chalcopyrite, cobaltite, cubanite, enargite, galena, gold, jamesonite, oleidite, pyrrhotite, sphalerite, stannite, wolframite, among others", samplesOfOpaqueMineralList))
             opaqueMineralsListLD.postValue(opaqueMineralsList)
         }
     }
