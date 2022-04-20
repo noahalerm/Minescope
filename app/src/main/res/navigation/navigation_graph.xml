@@ -28,6 +28,11 @@
             app:destination="@id/mineralFragment"
             app:enterAnim="@anim/push_up"
             app:popExitAnim="@anim/push_down" />
+        <action
+            android:id="@+id/listToSettings"
+            app:destination="@id/settingsFragment"
+            app:enterAnim="@anim/push_up"
+            app:popExitAnim="@anim/push_down"/>
     </fragment>
     <fragment
         android:id="@+id/filtersFragment"
@@ -49,4 +54,8 @@
             android:name="isOpaque"
             app:argType="boolean" />
     </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.minescope.ui.views.SettingsFragment"
+        android:label="SettingsFragment" />
 </navigation>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/sample_background"
+    android:paddingVertical="5dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="ContentDescription"
+        >
+
+        <ImageView
+            android:id="@+id/close_btn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/close"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="?attr/colorPrimary" />
+
+        <TextView
+            android:id="@+id/fragTIt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="370dp"
+            android:text="Settings"
+            android:textColor="?attr/colorSecondary"
+            android:textSize="50sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/close_btn"
+            tools:ignore="HardcodedText" />
+
+        <ImageView
+            android:id="@+id/itb"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/itb"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/menu"
+            app:tint="?attr/colorPrimary" />
+
+        <ImageView
+            android:id="@+id/uab"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="80dp"
+            android:src="@drawable/uab"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/itb"
+            app:tint="?attr/colorPrimary" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="60dp"
+            android:hint="Language"
+            android:textColorHint="?attr/colorSecondary"
+            app:hintTextColor="?attr/colorSecondary"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="30dp"
+            app:boxCornerRadiusBottomStart="30dp"
+            app:boxCornerRadiusTopEnd="30dp"
+            app:boxCornerRadiusTopStart="30dp"
+            app:boxStrokeColor="?attr/colorSecondary"
+            app:endIconMode="dropdown_menu"
+            app:endIconTint="?attr/colorSecondary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragTIt">
+
+            <AutoCompleteTextView
+                android:id="@+id/themeInput"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="none"
+                android:padding="20dp"
+                android:textColor="?attr/colorSecondary"
+                android:textSize="30sp">
+
+            </AutoCompleteTextView>
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

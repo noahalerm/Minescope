@@ -17,6 +17,7 @@ class ListFragment : Fragment(R.layout.fragment_list) {
     //ATTRIBUTES
     private lateinit var recyclerView: RecyclerView
     private lateinit var filtersButton: ImageView
+    private lateinit var settingsButton: ImageView
     private lateinit var tabLayout: TabLayout
 
     //View Model
@@ -29,6 +30,7 @@ class ListFragment : Fragment(R.layout.fragment_list) {
         //RECYCLER VIEW SET UP
         recyclerView = view.findViewById(R.id.recycler_view)
         filtersButton = view.findViewById(R.id.filters_icon)
+        settingsButton = view.findViewById(R.id.settings_icon)
         recyclerView.layoutManager = LinearLayoutManager(view.context)
         tabLayout = view.findViewById(R.id.tab_layout)
 
@@ -36,6 +38,10 @@ class ListFragment : Fragment(R.layout.fragment_list) {
 
         filtersButton.setOnClickListener {
             findNavController().navigate(R.id.listToFilters)
+        }
+
+        settingsButton.setOnClickListener {
+            findNavController().navigate(R.id.listToSettings)
         }
 
         //TABS
