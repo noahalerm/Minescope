@@ -14,7 +14,6 @@ import com.example.minescope.data.models.OpaqueMineral
 import com.example.minescope.data.models.OpaqueMineralSample
 import com.example.minescope.data.models.TransparentMineral
 import com.example.minescope.data.models.TransparentMineralSample
-import com.example.minescope.ui.adapters.MineralsListAdapter
 import com.example.minescope.ui.adapters.SamplesListAdapter
 import com.example.minescope.ui.viewmodel.MinescopeViewModel
 

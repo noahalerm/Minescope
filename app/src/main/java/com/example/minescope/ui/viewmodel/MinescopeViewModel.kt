@@ -14,6 +14,8 @@ class MinescopeViewModel: ViewModel() {
     var opaqueMineralsList = mutableListOf<OpaqueMineral>()
     var samplesOfTransparentMineralList = mutableListOf<TransparentMineralSample>()
     var samplesOfOpaqueMineralList = mutableListOf<OpaqueMineralSample>()
+    var langList = mutableListOf<String>("Español","Ingles","Catalán")
+
 
     //Live Data
     var transparentMineralsListLD = MutableLiveData<MutableList<TransparentMineral>>()

@@ -21,9 +21,6 @@ import com.google.android.material.switchmaterial.SwitchMaterial
 import com.squareup.picasso.Picasso
 import android.util.DisplayMetrics
 
-
-
-
 class SampleFragment : Fragment(R.layout.fragment_sample) {
     //ATTRIBUTES
 

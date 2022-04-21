@@ -41,6 +41,7 @@
             android:id="@+id/itb"
             android:layout_width="150dp"
             android:layout_height="150dp"
+            android:layout_marginTop="250dp"
             android:src="@drawable/itb"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -63,20 +64,19 @@
             android:id="@+id/menu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="60dp"
+            android:layout_marginStart="40dp"
             android:layout_marginTop="40dp"
-            android:layout_marginEnd="60dp"
+            android:layout_marginEnd="40dp"
             android:hint="Language"
             android:textColorHint="?attr/colorSecondary"
-            app:hintTextColor="?attr/colorSecondary"
+            app:boxBackgroundColor="@color/dark_gray"
             app:boxBackgroundMode="outline"
-            app:boxCornerRadiusBottomEnd="30dp"
-            app:boxCornerRadiusBottomStart="30dp"
             app:boxCornerRadiusTopEnd="30dp"
             app:boxCornerRadiusTopStart="30dp"
             app:boxStrokeColor="?attr/colorSecondary"
             app:endIconMode="dropdown_menu"
             app:endIconTint="?attr/colorSecondary"
+            app:hintTextColor="?attr/colorSecondary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/fragTIt">
@@ -87,8 +87,9 @@
                 android:layout_height="match_parent"
                 android:inputType="none"
                 android:padding="20dp"
-                android:textColor="?attr/colorSecondary"
-                android:textSize="30sp">
+                android:textColor="?attr/colorPrimary"
+                android:textSize="30sp"
+                >
 
             </AutoCompleteTextView>
         </com.google.android.material.textfield.TextInputLayout>
