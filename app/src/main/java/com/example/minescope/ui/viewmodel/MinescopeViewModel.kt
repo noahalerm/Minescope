@@ -31,6 +31,10 @@ class MinescopeViewModel: ViewModel() {
     var shouldPlay: Boolean = false
     var isTransparentFilters: Boolean = true
 
+    //Filters
+    var transparentFilters: TransparentMineral? = null
+    var opaqueFilters: OpaqueMineral? = null
+
     //INIT
     init {
         //Samples

@@ -5,6 +5,7 @@ import android.app.AlertDialog
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
@@ -15,6 +16,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.minescope.R
 import com.example.minescope.data.models.FilterOption
+import com.example.minescope.data.models.OpaqueMineral
+import com.example.minescope.data.models.TransparentMineral
 import com.example.minescope.ui.adapters.FilterOptionsAdapter
 import com.example.minescope.ui.viewmodel.MinescopeViewModel
 import com.google.android.material.tabs.TabLayout
@@ -112,6 +115,37 @@ class FiltersFragment : Fragment(R.layout.fragment_filters) {
         logo.setOnClickListener {
             //NAVIGATION
             findNavController().popBackStack()
+        }
+
+        //Check Icon
+        checkIcon.setOnClickListener {
+            if (viewModel.isTransparentFilters) {
+                viewModel.transparentFilters = TransparentMineral(0, "",
+                    colorTransparent.text.toString().split(": ").toMutableList()[1],
+                    pleochroismTransparent.text.toString().split(": ").toMutableList()[1], "",
+                    relief.text.toString().split(": ").toMutableList()[1],
+                    cleavageDirections.text.toString().split(": ").toMutableList()[1],
+                    cleavageAngle.text.toString().split(": ").toMutableList()[1],
+                    interferenceColorOrder.text.toString().split(": ").toMutableList()[1],
+                    extinction.text.toString().split(": ").toMutableList()[1],
+                    twinning.text.toString().split(": ").toMutableList()[1],
+                    interferenceFigure.text.toString().split(": ").toMutableList()[1],
+                    opticalSign.text.toString().split(": ").toMutableList()[1], "", "", "", "", null)
+                Log.d("FILTERS TRANSPARENT", viewModel.transparentFilters.toString())
+            }
+            else {
+                viewModel.opaqueFilters = OpaqueMineral(0, "",
+                    colorOpaque.text.toString().split(": ").toMutableList()[1],
+                    pleochroismOpaque.text.toString().split(": ").toMutableList()[1], "",
+                    reflectance.text.toString().split(": ").toMutableList()[1],
+                    polishingHardness.text.toString().split(": ").toMutableList()[1],
+                    anisotropism.text.toString().split(": ").toMutableList()[1],
+                    interferenceColors.text.toString().split(": ").toMutableList()[1],
+                    internalReflections.text.toString().split(": ").toMutableList()[1], "", "", null)
+                Log.d("FILTERS OPAQUE", viewModel.opaqueFilters.toString())
+            }
+
+            findNavController().navigate(R.id.listFragment)
         }
 
         //Relief

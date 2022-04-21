@@ -103,28 +103,24 @@ class ListFragment : Fragment(R.layout.fragment_list) {
      */
     private fun loadMinerals(searchedText: String?) {
         if (isOpaque) {
-            val principalAdapter = MineralsListAdapter(isOpaque)
+            val principalAdapter = MineralsListAdapter(isOpaque, viewModel)
 
-            if (searchedText != null) {
+            if (searchedText != null)
                 viewModel.opaqueMineralsListLD.observe(viewLifecycleOwner,{principalAdapter.setOpaqueMineralsList(it.filter { mineral -> mineral.name.lowercase().contains(searchedText.lowercase()) }.toMutableList()) })
-                recyclerView.adapter = principalAdapter
-            }
-            else {
+            else
                 viewModel.opaqueMineralsListLD.observe(viewLifecycleOwner,{principalAdapter.setOpaqueMineralsList(it) })
-                recyclerView.adapter = principalAdapter
-            }
+
+            recyclerView.adapter = principalAdapter
         }
         else {
-            val principalAdapter = MineralsListAdapter(isOpaque)
+            val principalAdapter = MineralsListAdapter(isOpaque, viewModel)
 
-            if (searchedText != null) {
+            if (searchedText != null)
                 viewModel.transparentMineralsListLD.observe(viewLifecycleOwner,{principalAdapter.setTransparentMineralsList(it.filter { mineral -> mineral.name.lowercase().contains(searchedText.lowercase()) }.toMutableList()) })
-                recyclerView.adapter = principalAdapter
-            }
-            else {
+            else
                 viewModel.transparentMineralsListLD.observe(viewLifecycleOwner,{principalAdapter.setTransparentMineralsList(it) })
-                recyclerView.adapter = principalAdapter
-            }
+
+            recyclerView.adapter = principalAdapter
         }
     }
 }
