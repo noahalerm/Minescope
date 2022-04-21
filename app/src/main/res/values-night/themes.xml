@@ -14,7 +14,7 @@
         <!-- Customize your theme here. -->
 
         //LOGO IMAGE
-        <item name="logo_image">@drawable/logo_dark</item>
+        <item name="logo_image">@drawable/launch_screen_dark_vertical</item>
 
         //LAUNCH SCREEN
         <item name="android:windowBackground">@drawable/launch_screen</item>
