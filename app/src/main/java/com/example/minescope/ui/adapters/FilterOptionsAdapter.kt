@@ -62,6 +62,21 @@ class FilterOptionsAdapter(private val options: List<FilterOption>, private val 
         fun bindData(option: FilterOption, textView: TextView, filter: String, dialog: AlertDialog) {
             optionText.text = option.name
 
+            if (option.name == "White")
+                optionText.setTextColor(Color.parseColor("#ffffff"))
+            if (option.name == "Yellow")
+                optionText.setTextColor(Color.parseColor("#ebdf0c"))
+            if (option.name == "Pink")
+                optionText.setTextColor(Color.parseColor("#ffb5fa"))
+            if (option.name == "Blue")
+                optionText.setTextColor(Color.parseColor("#3690ff"))
+            if (option.name == "Green")
+                optionText.setTextColor(Color.parseColor("#1bd127"))
+            if (option.name == "Brown")
+                optionText.setTextColor(Color.parseColor("#a85f27"))
+            if (option.name == "Gray")
+                optionText.setTextColor(Color.parseColor("#8a8a8a"))
+
             //ON CLICK
             //Option Text
             optionText.setOnClickListener {
