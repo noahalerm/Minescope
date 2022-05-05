@@ -10,6 +10,11 @@
     //SEARCH
     <string name="search_bar">Search</string>
 
+    //LANGUAGES
+    <string name="en_lang">English</string>
+    <string name="es_lang">Spanish</string>
+    <string name="cat_lang">Catalan</string>
+
     //TABS
     <string name="transparent_tab">TRANSPARENT</string>
     <string name="opaque_tab">OPAQUE</string>
@@ -35,6 +40,26 @@
     <string name="interference_colors">Interference colors</string>
     <string name="internal_reflections">Internal reflections</string>
 
+    //FILTER OPTIONS
+
+    //Transparent
+
+    //Opaque
+
+    //MINERAL DATA
+    <string name="crystal_shape">Crystal\'s shape</string>
+    <string name="alteration">Alteration</string>
+    <string name="zonation">Zonation</string>
+    <string name="cleavage">Cleavage</string>
+    <string name="polishing_cleavage">Polishing cleavage</string>
+    <string name="associated_minerals">Associated minerals</string>
+
+    //SAMPLE DATA
+    <string name="abundance">Abundance</string>
+    <string name="other_minerals">Other minerals</string>
+    <string name="morphology">Morphology</string>
+
     //OTHERS
     <string name="language_input">Language</string>
+    <string name="petrographic_microscope">PETROGRAPHIC MICROSCOPE</string>
 </resources>

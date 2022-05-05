@@ -16,17 +16,22 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
     //ATTRIBUTES
     //Layout Elements
     private lateinit var closeBtn: ImageView
+    private lateinit var themeInput: AutoCompleteTextView
+
+    //View Model
     private val viewModel: MinescopeViewModel by activityViewModels()
 
     //ON VIEW CREATED
     override fun onViewCreated(view: View, savedInstanceState: Bundle?){
         super.onViewCreated(view, savedInstanceState)
 
-
         //IDs
         closeBtn = view.findViewById(R.id.close_btn)
-        val themeInput: AutoCompleteTextView = view.findViewById(R.id.themeInput)
-        themeInput.setAdapter(ArrayAdapter(requireContext(), R.layout.support_simple_spinner_dropdown_item, viewModel.langList))
+        themeInput = view.findViewById(R.id.themeInput)
+
+        //LANGUAGES
+        val langList = mutableListOf(getString(R.string.es_lang),getString(R.string.en_lang),getString(R.string.cat_lang))
+        themeInput.setAdapter(ArrayAdapter(requireContext(), R.layout.support_simple_spinner_dropdown_item, langList))
 
         //ON CLICK
         closeBtn.setOnClickListener {

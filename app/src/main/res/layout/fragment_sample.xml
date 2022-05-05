@@ -75,7 +75,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sample_description"
             tools:ignore="HardcodedText"
-            android:text="COLORATION" />
+            android:textAllCaps="true"
+            android:text="@string/color" />
 
         <TextView
             android:id="@+id/sample_coloration"
@@ -103,7 +104,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sample_coloration"
             tools:ignore="HardcodedText"
-            android:text="PLEOCHROISM" />
+            android:textAllCaps="true"
+            android:text="@string/pleochroism" />
 
         <TextView
             android:id="@+id/sample_pleochroism"
@@ -131,7 +133,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sample_pleochroism"
             tools:ignore="HardcodedText"
-            android:text="ABUNDANCE" />
+            android:textAllCaps="true"
+            android:text="@string/abundance"/>
 
         <TextView
             android:id="@+id/sample_abundance"
@@ -159,7 +162,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sample_abundance"
             tools:ignore="HardcodedText"
-            android:text="OTHER MINERALS" />
+            android:textAllCaps="true"
+            android:text="@string/other_minerals"/>
 
         <TextView
             android:id="@+id/sample_other_minerals"
@@ -187,7 +191,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sample_other_minerals"
             tools:ignore="HardcodedText"
-            android:text="RELIEF" />
+            android:textAllCaps="true"
+            android:text="@string/relief" />
 
         <TextView
             android:id="@+id/sample_relief"
@@ -215,7 +220,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sample_relief"
             tools:ignore="HardcodedText"
-            android:text="EXFOLIATION" />
+            android:textAllCaps="true"
+            android:text="@string/cleavage"/>
 
         <TextView
             android:id="@+id/sample_exfoliation"
@@ -243,7 +249,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sample_exfoliation"
             tools:ignore="HardcodedText"
-            android:text="ALTERATION" />
+            android:textAllCaps="true"
+            android:text="@string/alteration" />
 
         <TextView
             android:id="@+id/sample_alteration"
@@ -271,7 +278,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sample_alteration"
             tools:ignore="HardcodedText"
-            android:text="INTERFERENCE COLORS ORDER" />
+            android:textAllCaps="true"
+            android:text="@string/interference_color_order"/>
 
         <TextView
             android:id="@+id/sample_interference_colors_order"
@@ -299,7 +307,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sample_interference_colors_order"
             tools:ignore="HardcodedText"
-            android:text="EXTINTION" />
+            android:textAllCaps="true"
+            android:text="@string/extinction"/>
 
         <TextView
             android:id="@+id/sample_extintion"
@@ -327,7 +336,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sample_extintion"
             tools:ignore="HardcodedText"
-            android:text="TWINNING" />
+            android:textAllCaps="true"
+            android:text="@string/twinning"/>
 
         <TextView
             android:id="@+id/sample_twinning"
@@ -355,7 +365,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sample_twinning"
             tools:ignore="HardcodedText"
-            android:text="ZONING" />
+            android:textAllCaps="true"
+            android:text="@string/zonation"/>
 
         <TextView
             android:id="@+id/sample_zoning"
@@ -383,7 +394,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sample_zoning"
             tools:ignore="HardcodedText"
-            android:text="CRYSTAL SHAPE" />
+            android:textAllCaps="true"
+            android:text="@string/crystal_shape"/>
 
         <TextView
             android:id="@+id/sample_crystal_shape"
@@ -413,7 +425,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sample_crystal_shape"
             tools:ignore="HardcodedText"
-            android:text="SHAPE" />
+            android:textAllCaps="true"
+            android:text="@string/morphology"/>
 
         <TextView
             android:id="@+id/sample_shape"
@@ -441,7 +454,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sample_shape"
             tools:ignore="HardcodedText"
-            android:text="CLEAVAGE" />
+            android:textAllCaps="true"
+            android:text="@string/polishing_cleavage"/>
 
         <TextView
             android:id="@+id/sample_cleavage"
@@ -469,7 +483,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sample_cleavage"
             tools:ignore="HardcodedText"
-            android:text="REFLECTIVITY" />
+            android:textAllCaps="true"
+            android:text="@string/reflectance"/>
 
         <TextView
             android:id="@+id/sample_reflectivity"
@@ -497,7 +512,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sample_reflectivity"
             tools:ignore="HardcodedText"
-            android:text="HARDNESS" />
+            android:textAllCaps="true"
+            android:text="@string/polishing_hardness" />
 
         <TextView
             android:id="@+id/sample_hardness"
@@ -525,7 +541,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sample_hardness"
             tools:ignore="HardcodedText"
-            android:text="ANISOTROPY" />
+            android:textAllCaps="true"
+            android:text="@string/anisotropism" />
 
         <TextView
             android:id="@+id/sample_anisotropy"
@@ -553,7 +570,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sample_anisotropy"
             tools:ignore="HardcodedText"
-            android:text="INTERFERENCE COLORS" />
+            android:textAllCaps="true"
+            android:text="@string/interference_colors" />
 
         <TextView
             android:id="@+id/sample_interference_colors"
@@ -581,7 +599,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sample_interference_colors"
             tools:ignore="HardcodedText"
-            android:text="INTERNAL REFLECTIONS" />
+            android:textAllCaps="true"
+            android:text="@string/internal_reflections" />
 
         <TextView
             android:id="@+id/sample_internal_reflections"

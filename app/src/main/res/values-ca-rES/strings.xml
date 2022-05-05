@@ -11,6 +11,11 @@
     //SEARCH
     <string name="search_bar">Cerca</string>
 
+    //LANGUAGES
+    <string name="en_lang">Anglés</string>
+    <string name="es_lang">Espanyol</string>
+    <string name="cat_lang">Català</string>
+
     //TABS
     <string name="transparent_tab">TRANSPARENT</string>
     <string name="opaque_tab">OPAC</string>
@@ -36,6 +41,26 @@
     <string name="interference_colors">Colors d\'interferència</string>
     <string name="internal_reflections">Reflexions internes</string>
 
+    //FILTER OPTIONS
+
+    //Transparent
+
+    //Opaque
+
+    //MINERAL DATA
+    <string name="crystal_shape">Forma dels cristalls</string>
+    <string name="alteration">Alteració</string>
+    <string name="zonation">Zonació</string>
+    <string name="cleavage">Exfoliació</string>
+    <string name="polishing_cleavage">Exfoliació al polit</string>
+    <string name="associated_minerals">Minerals associats</string>
+
+    //SAMPLE DATA
+    <string name="abundance">Abundància</string>
+    <string name="other_minerals">Altres minerals</string>
+    <string name="morphology">Forma</string>
+
     //OTHERS
     <string name="language_input">Idioma</string>
+    <string name="petrographic_microscope">MICROSCOPI PETROGRÀFIC</string>
 </resources>

@@ -62,7 +62,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_chemical_formula"
             tools:ignore="HardcodedText"
-            android:text="COLORS" />
+            android:textAllCaps="true"
+            android:text="@string/color" />
 
         <TextView
             android:id="@+id/mineral_colors"
@@ -90,7 +91,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_colors"
             tools:ignore="HardcodedText"
-            android:text="PLEOCHROISM" />
+            android:textAllCaps="true"
+            android:text="@string/pleochroism" />
 
         <TextView
             android:id="@+id/mineral_pleochroism"
@@ -118,7 +120,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_pleochroism"
             tools:ignore="HardcodedText"
-            android:text="RELIEF" />
+            android:textAllCaps="true"
+            android:text="@string/relief"/>
 
         <TextView
             android:id="@+id/mineral_relief"
@@ -146,7 +149,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_relief"
             tools:ignore="HardcodedText"
-            android:text="EXFOLIATION DIRECTION NAME" />
+            android:textAllCaps="true"
+            android:text="@string/num_cleavage_directions"/>
 
         <TextView
             android:id="@+id/mineral_exfoliation_direction_name"
@@ -174,7 +178,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_exfoliation_direction_name"
             tools:ignore="HardcodedText"
-            android:text="EXFOLIATION DIRECTION ANGLES" />
+            android:textAllCaps="true"
+            android:text="@string/angle_cleavage" />
 
         <TextView
             android:id="@+id/mineral_exfoliation_direction_angles"
@@ -202,7 +207,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_exfoliation_direction_angles"
             tools:ignore="HardcodedText"
-            android:text="INTERFERENCE COLORS ORDER" />
+            android:textAllCaps="true"
+            android:text="@string/interference_color_order" />
 
         <TextView
             android:id="@+id/mineral_interference_colors_order"
@@ -230,7 +236,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_interference_colors_order"
             tools:ignore="HardcodedText"
-            android:text="EXTINTION" />
+            android:textAllCaps="true"
+            android:text="@string/extinction" />
 
         <TextView
             android:id="@+id/mineral_extintion"
@@ -258,7 +265,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_extintion"
             tools:ignore="HardcodedText"
-            android:text="TWINNING" />
+            android:textAllCaps="true"
+            android:text="@string/twinning" />
 
         <TextView
             android:id="@+id/mineral_twinning"
@@ -286,7 +294,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_twinning"
             tools:ignore="HardcodedText"
-            android:text="INTERFERENCE FIGURE" />
+            android:textAllCaps="true"
+            android:text="@string/interference_figure" />
 
         <TextView
             android:id="@+id/mineral_interference_figure"
@@ -314,7 +323,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_interference_figure"
             tools:ignore="HardcodedText"
-            android:text="OPTIC SIGN" />
+            android:textAllCaps="true"
+            android:text="@string/optical_sign" />
 
         <TextView
             android:id="@+id/mineral_optic_sign"
@@ -342,7 +352,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_optic_sign"
             tools:ignore="HardcodedText"
-            android:text="CRYSTAL SHAPE" />
+            android:textAllCaps="true"
+            android:text="@string/crystal_shape" />
 
         <TextView
             android:id="@+id/mineral_crystal_shape"
@@ -370,7 +381,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_crystal_shape"
             tools:ignore="HardcodedText"
-            android:text="ALTERATION" />
+            android:textAllCaps="true"
+            android:text="@string/alteration" />
 
         <TextView
             android:id="@+id/mineral_alteration"
@@ -398,7 +410,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_alteration"
             tools:ignore="HardcodedText"
-            android:text="ZONING" />
+            android:textAllCaps="true"
+            android:text="@string/zonation"/>
 
         <TextView
             android:id="@+id/mineral_zoning"
@@ -426,7 +439,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_zoning"
             tools:ignore="HardcodedText"
-            android:text="EXFOLIATION" />
+            android:textAllCaps="true"
+            android:text="@string/cleavage" />
 
         <TextView
             android:id="@+id/mineral_exfoliation"
@@ -456,7 +470,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_exfoliation"
             tools:ignore="HardcodedText"
-            android:text="REFLECTIVITY" />
+            android:textAllCaps="true"
+            android:text="@string/reflectance"/>
 
         <TextView
             android:id="@+id/mineral_reflectivity"
@@ -484,7 +499,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_reflectivity"
             tools:ignore="HardcodedText"
-            android:text="HARDNESS" />
+            android:textAllCaps="true"
+            android:text="@string/polishing_hardness"/>
 
         <TextView
             android:id="@+id/mineral_hardness"
@@ -512,7 +528,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_hardness"
             tools:ignore="HardcodedText"
-            android:text="ANISOTROPY" />
+            android:textAllCaps="true"
+            android:text="@string/anisotropism"/>
 
         <TextView
             android:id="@+id/mineral_anisotropy"
@@ -540,7 +557,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_anisotropy"
             tools:ignore="HardcodedText"
-            android:text="INTERFERENCE COLORS" />
+            android:textAllCaps="true"
+            android:text="@string/interference_colors" />
 
         <TextView
             android:id="@+id/mineral_interference_colors"
@@ -568,7 +586,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_interference_colors"
             tools:ignore="HardcodedText"
-            android:text="INTERNAL REFLECTIONS" />
+            android:textAllCaps="true"
+            android:text="@string/internal_reflections" />
 
         <TextView
             android:id="@+id/mineral_internal_reflections"
@@ -596,7 +615,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_internal_reflections"
             tools:ignore="HardcodedText"
-            android:text="CLEAVAGE" />
+            android:textAllCaps="true"
+            android:text="@string/polishing_cleavage" />
 
         <TextView
             android:id="@+id/mineral_cleavage"
@@ -624,7 +644,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_cleavage"
             tools:ignore="HardcodedText"
-            android:text="ASOCIATED MINERALS" />
+            android:textAllCaps="true"
+            android:text="@string/associated_minerals"/>
 
         <TextView
             android:id="@+id/mineral_asociated_minerals"
@@ -647,7 +668,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:maxWidth="695dp"
-            android:text="PETROGRAPHIC MICROSCOPE"
+            android:text="@string/petrographic_microscope"
             android:textColor="?attr/colorSecondary"
             android:textSize="30sp"
             app:layout_constraintStart_toStartOf="parent"
