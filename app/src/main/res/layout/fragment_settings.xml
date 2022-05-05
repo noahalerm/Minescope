@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/sample_background"
-    android:paddingVertical="5dp">
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:ignore="ContentDescription"
-        >
+    android:paddingVertical="5dp"
+    tools:ignore="ContentDescription">
 
         <ImageView
             android:id="@+id/close_btn"
@@ -29,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:maxWidth="370dp"
-            android:text="Settings"
+            android:text="@string/settings_title"
             android:textColor="?attr/colorSecondary"
             android:textSize="50sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -37,28 +32,41 @@
             app:layout_constraintTop_toBottomOf="@+id/close_btn"
             tools:ignore="HardcodedText" />
 
-        <ImageView
-            android:id="@+id/itb"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginTop="250dp"
-            android:src="@drawable/itb"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/menu"
-            app:tint="?attr/colorPrimary" />
+    <ImageView
+        android:id="@+id/itb"
+        android:layout_width="150dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/itb"
+        app:layout_constraintBottom_toTopOf="@+id/uab"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:tint="?attr/colorPrimary" />
 
-        <ImageView
-            android:id="@+id/uab"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginTop="80dp"
-            android:src="@drawable/uab"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.501"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/itb"
-            app:tint="?attr/colorPrimary" />
+    <ImageView
+        android:id="@+id/uab"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/uab"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:tint="?attr/colorPrimary" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:text="minescope.oficial@gmail.com"
+        android:textColor="?attr/colorPrimary"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="HardcodedText" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/menu"
@@ -67,7 +75,7 @@
             android:layout_marginStart="40dp"
             android:layout_marginTop="40dp"
             android:layout_marginEnd="40dp"
-            android:hint="Language"
+            android:hint="@string/language_input"
             android:textColorHint="?attr/colorSecondary"
             app:boxBackgroundColor="@color/dark_gray"
             app:boxBackgroundMode="outline"
@@ -88,11 +96,9 @@
                 android:inputType="none"
                 android:padding="20dp"
                 android:textColor="?attr/colorPrimary"
-                android:textSize="30sp"
-                >
+                android:textSize="30sp">
 
             </AutoCompleteTextView>
         </com.google.android.material.textfield.TextInputLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

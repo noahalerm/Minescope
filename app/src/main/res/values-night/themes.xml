@@ -20,12 +20,12 @@
         <item name="android:windowBackground">@drawable/launch_screen</item>
 
         //FONT
-        <item name="fontFamily">@font/permanent_marker</item>
+<!--        <item name="fontFamily">@font/permanent_marker</item>-->
     </style>
 
     //TABS
     <style name="tab_text" parent="@android:style/TextAppearance.Widget.TabWidget">
-        <item name="android:fontFamily">@font/permanent_marker</item>
+<!--        <item name="android:fontFamily">@font/permanent_marker</item>-->
         <item name="android:textSize">20dp</item>
     </style>
 
@@ -33,7 +33,7 @@
     <style name="CustomDialog" parent="ThemeOverlay.AppCompat.Dialog.Alert">
         <item name="android:background">@drawable/custom_dialog_bg</item>
         <item name="buttonBarButtonStyle">@style/CustomButtonStyle</item>
-        <item name="android:fontFamily">@font/permanent_marker</item>
+<!--        <item name="android:fontFamily">@font/permanent_marker</item>-->
     </style>
 
     //DIALOG BUTTONS STYLE

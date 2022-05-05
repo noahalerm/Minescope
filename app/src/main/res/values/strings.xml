@@ -1,3 +1,40 @@
 <resources>
+    //APP NAME
     <string name="app_name">Minescope</string>
+
+    //TITLES
+    <string name="transparent_minerals_filters_title">Transparent mineral identifiers</string>
+    <string name="opaque_minerals_filters_title">Opaque mineral identifiers</string>
+    <string name="settings_title">Settings</string>
+
+    //SEARCH
+    <string name="search_bar">Search</string>
+
+    //TABS
+    <string name="transparent_tab">TRANSPARENT</string>
+    <string name="opaque_tab">OPAQUE</string>
+
+    //FILTERS
+
+    //Transparent
+    <string name="relief">Relief</string>
+    <string name="color">Color</string>
+    <string name="pleochroism">Pleochroism</string>
+    <string name="num_cleavage_directions">Number of cleavage directions</string>
+    <string name="angle_cleavage">Angle of cleavage</string>
+    <string name="interference_color_order">Interference color (order)</string>
+    <string name="extinction">Extinction</string>
+    <string name="twinning">Twinning</string>
+    <string name="interference_figure">Interference figure</string>
+    <string name="optical_sign">Optical sign</string>
+
+    //Opaque
+    <string name="reflectance">Reflectance</string>
+    <string name="polishing_hardness">Polishing hardness</string>
+    <string name="anisotropism">Anisotropism</string>
+    <string name="interference_colors">Interference colors</string>
+    <string name="internal_reflections">Internal reflections</string>
+
+    //OTHERS
+    <string name="language_input">Language</string>
 </resources>

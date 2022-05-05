@@ -3,6 +3,7 @@ package com.itb.minescope.ui.adapters
 import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.graphics.Color
+import android.graphics.Typeface
 import android.graphics.drawable.ColorDrawable
 import android.view.LayoutInflater
 import android.view.View
@@ -76,6 +77,12 @@ class FilterOptionsAdapter(private val options: List<FilterOption>, private val 
                 optionText.setTextColor(Color.parseColor("#a85f27"))
             if (option.name == "Gray")
                 optionText.setTextColor(Color.parseColor("#8a8a8a"))
+            if (filter == "Relief") {
+                if (option.name == "High")
+                    optionText.setTypeface(textView.typeface, Typeface.BOLD)
+                else if (option.name == "Low")
+                    optionText.setTypeface(textView.typeface, Typeface.ITALIC)
+            }
 
             //ON CLICK
             //Option Text

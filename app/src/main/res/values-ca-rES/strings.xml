@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    //APP NAME
+    <string name="app_name">Minescope</string>
+
+    //TITLES
+    <string name="transparent_minerals_filters_title">Identificadors de minerals transparents</string>
+    <string name="opaque_minerals_filters_title">Identificadors de minerals opacs</string>
+    <string name="settings_title">Configuració</string>
+
+    //SEARCH
+    <string name="search_bar">Cerca</string>
+
+    //TABS
+    <string name="transparent_tab">TRANSPARENT</string>
+    <string name="opaque_tab">OPAC</string>
+
+    //FILTERS
+
+    //Transparent
+    <string name="relief">Relleu</string>
+    <string name="color">Colors</string>
+    <string name="pleochroism">Pleocroisme</string>
+    <string name="num_cleavage_directions">Nombre de direccions d\'exfoliació</string>
+    <string name="angle_cleavage">Angle entre direccions d\'exfoliació</string>
+    <string name="interference_color_order">Colors d\'interferència (ordre)</string>
+    <string name="extinction">Extinció</string>
+    <string name="twinning">Maclat</string>
+    <string name="interference_figure">Figura d\'interferència</string>
+    <string name="optical_sign">Signe òptic</string>
+
+    //Opaque
+    <string name="reflectance">Reflectivitat</string>
+    <string name="polishing_hardness">Resistència al polit</string>
+    <string name="anisotropism">Anisotropia</string>
+    <string name="interference_colors">Colors d\'interferència</string>
+    <string name="internal_reflections">Reflexions internes</string>
+
+    //OTHERS
+    <string name="language_input">Idioma</string>
+</resources>

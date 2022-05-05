@@ -26,7 +26,7 @@
         android:background="@drawable/search_view_bg"
         android:iconifiedByDefault="false"
         android:queryBackground="@android:color/transparent"
-        android:queryHint="Search"
+        android:queryHint="@string/search_bar"
         app:layout_constraintBottom_toBottomOf="@+id/logo"
         app:layout_constraintEnd_toStartOf="@+id/filters_icon"
         app:layout_constraintStart_toEndOf="@+id/logo"
@@ -82,13 +82,13 @@
             android:id="@+id/transparent_tab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TRANSPARENT" />
+            android:text="@string/transparent_tab" />
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/opaque_tab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="OPAQUE" />
+            android:text="@string/opaque_tab" />
 
     </com.google.android.material.tabs.TabLayout>
 

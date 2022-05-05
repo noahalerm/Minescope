@@ -157,7 +157,7 @@ class FiltersFragment : Fragment(R.layout.fragment_filters) {
                 FilterOption("High", "The contour line of the mineral can easily be seen")
             )
 
-            buildFilterDialog("Relief", options, relief)
+            buildFilterDialog(getString(R.string.relief), options, relief)
         }
 
         //Color Transparent
@@ -172,7 +172,7 @@ class FiltersFragment : Fragment(R.layout.fragment_filters) {
                 FilterOption("Brown", "Brown, orange and reddish tones")
             )
 
-            buildFilterDialog("Color", options, colorTransparent)
+            buildFilterDialog(getString(R.string.color), options, colorTransparent)
         }
 
         //Pleochroism Transparent
@@ -184,7 +184,7 @@ class FiltersFragment : Fragment(R.layout.fragment_filters) {
                 FilterOption("Strong", "The color / tone varies very markedly when the orientation of the crystal changes with respect to the polarized incident light")
             )
 
-            buildFilterDialog("Pleochroism", options, pleochroismTransparent)
+            buildFilterDialog(getString(R.string.pleochroism), options, pleochroismTransparent)
         }
 
         //Cleavage Directions
@@ -197,7 +197,7 @@ class FiltersFragment : Fragment(R.layout.fragment_filters) {
                 FilterOption("3 or more", "Presence of up to 3 or more directions of discontinuities parallel to each other and related to crystallographic directions of the mineral (two or more exfoliation directions can be seen in all sections)")
             )
 
-            buildFilterDialog("Number of cleavage directions", options, cleavageDirections)
+            buildFilterDialog(getString(R.string.num_cleavage_directions), options, cleavageDirections)
         }
 
         //Cleavage Angle
@@ -208,7 +208,7 @@ class FiltersFragment : Fragment(R.layout.fragment_filters) {
                 FilterOption("Acute", "(≠ 90°)")
             )
 
-            buildFilterDialog("Angle of cleavage", options, cleavageAngle)
+            buildFilterDialog(getString(R.string.angle_cleavage), options, cleavageAngle)
         }
 
         //Interference Color Order
@@ -224,7 +224,7 @@ class FiltersFragment : Fragment(R.layout.fragment_filters) {
                 FilterOption("Masked", "The color of the mineral itself hides the interference color")
             )
 
-            buildFilterDialog("Interference color (order)", options, interferenceColorOrder)
+            buildFilterDialog(getString(R.string.interference_color_order), options, interferenceColorOrder)
         }
 
         //Extinction
@@ -237,7 +237,7 @@ class FiltersFragment : Fragment(R.layout.fragment_filters) {
                 FilterOption("Undulose", "Anomalous extinction in which the crystal does not extinguish completely and homogeneously, by changing the orientation of the crystal with respect to the incident light the crystal gradually extinguishes along the crystal, appears with the deformation of the crystal")
             )
 
-            buildFilterDialog("Extinction", options, extinction)
+            buildFilterDialog(getString(R.string.extinction), options, extinction)
         }
 
         //Twinning
@@ -251,7 +251,7 @@ class FiltersFragment : Fragment(R.layout.fragment_filters) {
                 FilterOption("Cyclic", "When all the individuals of the twin are at a point")
             )
 
-            buildFilterDialog("Twinning", options, twinning)
+            buildFilterDialog(getString(R.string.twinning), options, twinning)
         }
 
         //Interference Figure
@@ -262,7 +262,7 @@ class FiltersFragment : Fragment(R.layout.fragment_filters) {
                 FilterOption("Biaxial", "", R.drawable.interference_figure_4, R.drawable.interference_figure_5, R.drawable.interference_figure_6)
             )
 
-            buildFilterDialog("Interference figure", options, interferenceFigure)
+            buildFilterDialog(getString(R.string.interference_figure), options, interferenceFigure)
         }
 
         //Optical Sign
@@ -273,7 +273,7 @@ class FiltersFragment : Fragment(R.layout.fragment_filters) {
                 FilterOption("Negative", "", R.drawable.optical_sign_5, R.drawable.optical_sign_6, R.drawable.optical_sign_4)
             )
 
-            buildFilterDialog("Optical sign", options, opticalSign)
+            buildFilterDialog(getString(R.string.optical_sign), options, opticalSign)
         }
 
         //Color Opaque
@@ -289,7 +289,7 @@ class FiltersFragment : Fragment(R.layout.fragment_filters) {
                 FilterOption("Gray", "Grayish tones that vary from dark to lighter")
             )
 
-            buildFilterDialog("Color", options, colorOpaque)
+            buildFilterDialog(getString(R.string.color), options, colorOpaque)
         }
 
         //Reflectance
@@ -302,7 +302,7 @@ class FiltersFragment : Fragment(R.layout.fragment_filters) {
                 FilterOption("Very strong", "> 60%, extremely gleaming")
             )
 
-            buildFilterDialog("Reflectance", options, reflectance)
+            buildFilterDialog(getString(R.string.reflectance), options, reflectance)
         }
 
         //Pleochroism Opaque
@@ -313,7 +313,7 @@ class FiltersFragment : Fragment(R.layout.fragment_filters) {
                 FilterOption("Strong", "Change the tone of the color by changing the orientation with respect to the polarized incident light")
             )
 
-            buildFilterDialog("Pleochroism", options, pleochroismOpaque)
+            buildFilterDialog(getString(R.string.pleochroism), options, pleochroismOpaque)
         }
 
         //Polishing Hardness
@@ -325,7 +325,7 @@ class FiltersFragment : Fragment(R.layout.fragment_filters) {
                 FilterOption("Hard", "Crystals with a scratch little or nothing marked due to polishing and correspond to hard minerals (hardness higher than 5 on the Mohs scale)")
             )
 
-            buildFilterDialog("Polishing hardness", options, polishingHardness)
+            buildFilterDialog(getString(R.string.polishing_hardness), options, polishingHardness)
         }
 
         //Anisotropism
@@ -337,7 +337,7 @@ class FiltersFragment : Fragment(R.layout.fragment_filters) {
                 FilterOption("Strongly anisotropic", "Very anisotropic, reflects light when interposing the analyzer and varies a lot of color by changing the orientation of the crystal with respect to incident light")
             )
 
-            buildFilterDialog("Anisotropism", options, anisotropism)
+            buildFilterDialog(getString(R.string.anisotropism), options, anisotropism)
         }
 
         //Interference Colors
@@ -356,7 +356,7 @@ class FiltersFragment : Fragment(R.layout.fragment_filters) {
                 FilterOption("Without", "Does not present interfering colors")
             )
 
-            buildFilterDialog("Interference colors", options, interferenceColors)
+            buildFilterDialog(getString(R.string.interference_colors), options, interferenceColors)
         }
 
         //Internal reflections
@@ -367,7 +367,7 @@ class FiltersFragment : Fragment(R.layout.fragment_filters) {
                 FilterOption("No", "Absence of sparks of light when interposing the analyzer")
             )
 
-            buildFilterDialog("Internal reflections", options, internalReflections)
+            buildFilterDialog(getString(R.string.internal_reflections), options, internalReflections)
         }
     }
 
@@ -380,7 +380,7 @@ class FiltersFragment : Fragment(R.layout.fragment_filters) {
     @SuppressLint("SetTextI18n")
     private fun setUpLayout(isTransparent: Boolean) {
         if (isTransparent) {
-            title.text = "Transparent mineral identifiers"
+            title.text = getString(R.string.transparent_minerals_filters_title)
 
             relief.visibility = View.VISIBLE
             colorTransparent.visibility = View.VISIBLE
@@ -402,7 +402,7 @@ class FiltersFragment : Fragment(R.layout.fragment_filters) {
             internalReflections.visibility = View.GONE
         }
         else {
-            title.text = "Opaque mineral identifiers"
+            title.text = getString(R.string.opaque_minerals_filters_title)
 
             relief.visibility = View.GONE
             colorTransparent.visibility = View.GONE
