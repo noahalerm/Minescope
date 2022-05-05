@@ -1,4 +1,4 @@
-package com.example.minescope.ui.views
+package com.itb.minescope.ui.views
 
 import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
@@ -12,14 +12,14 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
-import com.example.minescope.R
-import com.example.minescope.data.models.OpaqueMineralSample
-import com.example.minescope.data.models.TransparentMineralSample
-import com.example.minescope.ui.viewmodel.MinescopeViewModel
+import com.itb.minescope.data.models.OpaqueMineralSample
+import com.itb.minescope.data.models.TransparentMineralSample
+import com.itb.minescope.ui.viewmodel.MinescopeViewModel
 import com.google.android.material.slider.Slider
 import com.google.android.material.switchmaterial.SwitchMaterial
 import com.squareup.picasso.Picasso
 import android.util.DisplayMetrics
+import com.itb.minescope.R
 
 class SampleFragment : Fragment(R.layout.fragment_sample) {
     //ATTRIBUTES

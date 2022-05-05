@@ -1,4 +1,4 @@
-package com.example.minescope.ui.views
+package com.itb.minescope.ui.views
 
 import android.annotation.SuppressLint
 import android.app.AlertDialog
@@ -14,13 +14,13 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.minescope.R
-import com.example.minescope.data.models.FilterOption
-import com.example.minescope.data.models.OpaqueMineral
-import com.example.minescope.data.models.TransparentMineral
-import com.example.minescope.ui.adapters.FilterOptionsAdapter
-import com.example.minescope.ui.viewmodel.MinescopeViewModel
+import com.itb.minescope.data.models.FilterOption
+import com.itb.minescope.data.models.OpaqueMineral
+import com.itb.minescope.data.models.TransparentMineral
+import com.itb.minescope.ui.adapters.FilterOptionsAdapter
+import com.itb.minescope.ui.viewmodel.MinescopeViewModel
 import com.google.android.material.tabs.TabLayout
+import com.itb.minescope.R
 
 class FiltersFragment : Fragment(R.layout.fragment_filters) {
     //ATTRIBUTES
@@ -154,7 +154,8 @@ class FiltersFragment : Fragment(R.layout.fragment_filters) {
             val options = listOf(
                 FilterOption("Low", "The contour line of the mineral can not be seen"),
                 FilterOption("Medium", "The contour line of the mineral is poorly marked"),
-                FilterOption("High", "The contour line of the mineral can easily be seen"))
+                FilterOption("High", "The contour line of the mineral can easily be seen")
+            )
 
             buildFilterDialog("Relief", options, relief)
         }
@@ -168,7 +169,8 @@ class FiltersFragment : Fragment(R.layout.fragment_filters) {
                 FilterOption("Pink", "Pinkish tones"),
                 FilterOption("Blue", "Lilac and bluish tones"),
                 FilterOption("Green", "Greenish tones"),
-                FilterOption("Brown", "Brown, orange and reddish tones"))
+                FilterOption("Brown", "Brown, orange and reddish tones")
+            )
 
             buildFilterDialog("Color", options, colorTransparent)
         }
@@ -179,7 +181,8 @@ class FiltersFragment : Fragment(R.layout.fragment_filters) {
             val options = listOf(
                 FilterOption("Without", "The color / tone of the mineral does not change when the orientation of the crystal changes with respect to the polarized incident light"),
                 FilterOption("Soft", "The color / tone of the crystal varies slightly as its orientation changes with respect to the polarized incident light"),
-                FilterOption("Strong", "The color / tone varies very markedly when the orientation of the crystal changes with respect to the polarized incident light"))
+                FilterOption("Strong", "The color / tone varies very markedly when the orientation of the crystal changes with respect to the polarized incident light")
+            )
 
             buildFilterDialog("Pleochroism", options, pleochroismTransparent)
         }
@@ -191,7 +194,8 @@ class FiltersFragment : Fragment(R.layout.fragment_filters) {
                 FilterOption("0", "Absence of regular discontinuities in any section of the mineral, parallel to each other and related to the crystalline structure of the mineral"),
                 FilterOption("1", "Presence of only 1 direction of discontinuities parallel to each other and related to crystallographic directions of the mineral, but there may be sections without any direction of exfoliation"),
                 FilterOption("2", "Presence of up to 2 directions of discontinuities parallel to each other and related to crystallographic directions of the mineral (1 direction in elongated sections, 2 directions in other sections)"),
-                FilterOption("3 or more", "Presence of up to 3 or more directions of discontinuities parallel to each other and related to crystallographic directions of the mineral (two or more exfoliation directions can be seen in all sections)"))
+                FilterOption("3 or more", "Presence of up to 3 or more directions of discontinuities parallel to each other and related to crystallographic directions of the mineral (two or more exfoliation directions can be seen in all sections)")
+            )
 
             buildFilterDialog("Number of cleavage directions", options, cleavageDirections)
         }
@@ -201,7 +205,8 @@ class FiltersFragment : Fragment(R.layout.fragment_filters) {
             //OPTIONS LIST
             val options = listOf(
                 FilterOption("Right", "(≈ 90°)"),
-                FilterOption("Acute", "(≠ 90°)"))
+                FilterOption("Acute", "(≠ 90°)")
+            )
 
             buildFilterDialog("Angle of cleavage", options, cleavageAngle)
         }
@@ -216,7 +221,8 @@ class FiltersFragment : Fragment(R.layout.fragment_filters) {
                 FilterOption("3rd", "Presence of interference colors up to 3rd order (light tones)"),
                 FilterOption("4th", "Presence of interference colors up to 4th order (pastel colors)"),
                 FilterOption("Anomalous", "Blues or purples that do not correspond to any order"),
-                FilterOption("Masked", "The color of the mineral itself hides the interference color"))
+                FilterOption("Masked", "The color of the mineral itself hides the interference color")
+            )
 
             buildFilterDialog("Interference color (order)", options, interferenceColorOrder)
         }
@@ -228,7 +234,8 @@ class FiltersFragment : Fragment(R.layout.fragment_filters) {
                 FilterOption("Total", "Complete extinction (light does not pass at any position of the crystal with respect to incident light), is observed in basal sections or in any section of isotropic minerals"),
                 FilterOption("Right", "No light passes when the longitudinal sections are oriented parallel to the polarization directions"),
                 FilterOption("Oblique", "No light passes when the longitudinal sections of the minerals are at a certain angle of the polarization directions"),
-                FilterOption("Undulose", "Anomalous extinction in which the crystal does not extinguish completely and homogeneously, by changing the orientation of the crystal with respect to the incident light the crystal gradually extinguishes along the crystal, appears with the deformation of the crystal"))
+                FilterOption("Undulose", "Anomalous extinction in which the crystal does not extinguish completely and homogeneously, by changing the orientation of the crystal with respect to the incident light the crystal gradually extinguishes along the crystal, appears with the deformation of the crystal")
+            )
 
             buildFilterDialog("Extinction", options, extinction)
         }
@@ -241,7 +248,8 @@ class FiltersFragment : Fragment(R.layout.fragment_filters) {
                 FilterOption("Simple", "Formed by two crystals"),
                 FilterOption("Polysynthetic", "Three or more crystalline planes are repeated alternately, according to the same law of twinning and with parallel twinning planes"),
                 FilterOption("Crossed", "Polysynthetic twinning in two directions and blurred"),
-                FilterOption("Cyclic", "When all the individuals of the twin are at a point"))
+                FilterOption("Cyclic", "When all the individuals of the twin are at a point")
+            )
 
             buildFilterDialog("Twinning", options, twinning)
         }
@@ -251,7 +259,8 @@ class FiltersFragment : Fragment(R.layout.fragment_filters) {
             //OPTIONS LIST
             val options = listOf(
                 FilterOption("Uniaxial", "", R.drawable.interference_figure_1, R.drawable.interference_figure_2, R.drawable.interference_figure_3),
-                FilterOption("Biaxial", "", R.drawable.interference_figure_4, R.drawable.interference_figure_5, R.drawable.interference_figure_6))
+                FilterOption("Biaxial", "", R.drawable.interference_figure_4, R.drawable.interference_figure_5, R.drawable.interference_figure_6)
+            )
 
             buildFilterDialog("Interference figure", options, interferenceFigure)
         }
@@ -261,7 +270,8 @@ class FiltersFragment : Fragment(R.layout.fragment_filters) {
             //OPTIONS LIST
             val options = listOf(
                 FilterOption("Positive", "", R.drawable.optical_sign_2, R.drawable.optical_sign_3, R.drawable.optical_sign_1),
-                FilterOption("Negative", "", R.drawable.optical_sign_5, R.drawable.optical_sign_6, R.drawable.optical_sign_4))
+                FilterOption("Negative", "", R.drawable.optical_sign_5, R.drawable.optical_sign_6, R.drawable.optical_sign_4)
+            )
 
             buildFilterDialog("Optical sign", options, opticalSign)
         }
@@ -276,7 +286,8 @@ class FiltersFragment : Fragment(R.layout.fragment_filters) {
                 FilterOption("Blue", "Bluish tones"),
                 FilterOption("Green", "Greenish tones"),
                 FilterOption("Brown", "Brown, orange and reddish tones"),
-                FilterOption("Gray", "Grayish tones that vary from dark to lighter"))
+                FilterOption("Gray", "Grayish tones that vary from dark to lighter")
+            )
 
             buildFilterDialog("Color", options, colorOpaque)
         }
@@ -288,7 +299,8 @@ class FiltersFragment : Fragment(R.layout.fragment_filters) {
                 FilterOption("Low", "< 20%, little gleaming, it looks very dark"),
                 FilterOption("Medium", "20 - 40%, moderately gleaming"),
                 FilterOption("Strong", "40 - 60%, very gleaming"),
-                FilterOption("Very strong", "> 60%, extremely gleaming"))
+                FilterOption("Very strong", "> 60%, extremely gleaming")
+            )
 
             buildFilterDialog("Reflectance", options, reflectance)
         }
@@ -298,7 +310,8 @@ class FiltersFragment : Fragment(R.layout.fragment_filters) {
             //OPTIONS LIST
             val options = listOf(
                 FilterOption("Without or weak", "The tone of the color does not change or change very little when the orientation of the glass changes with respect to the polarized incident light"),
-                FilterOption("Strong", "Change the tone of the color by changing the orientation with respect to the polarized incident light"))
+                FilterOption("Strong", "Change the tone of the color by changing the orientation with respect to the polarized incident light")
+            )
 
             buildFilterDialog("Pleochroism", options, pleochroismOpaque)
         }
@@ -309,7 +322,8 @@ class FiltersFragment : Fragment(R.layout.fragment_filters) {
             val options = listOf(
                 FilterOption("Soft", "Crystals with a very marked scratch due to polishing and correspond to soft minerals (hardness less than 3 on the Mohs scale)"),
                 FilterOption("Medium", "Crystals with a slightly marked scratch due to polishing and correspond to medium hard minerals (hardness between 3 and 5 on the Mohs scale)"),
-                FilterOption("Hard", "Crystals with a scratch little or nothing marked due to polishing and correspond to hard minerals (hardness higher than 5 on the Mohs scale)"))
+                FilterOption("Hard", "Crystals with a scratch little or nothing marked due to polishing and correspond to hard minerals (hardness higher than 5 on the Mohs scale)")
+            )
 
             buildFilterDialog("Polishing hardness", options, polishingHardness)
         }
@@ -320,7 +334,8 @@ class FiltersFragment : Fragment(R.layout.fragment_filters) {
             val options = listOf(
                 FilterOption("Isotropic", "Does not reflect light when interposing the analyzer, section or mineral with high symmetry"),
                 FilterOption("Moderately anisotropic", "Little or moderately anisotropic, it reflects the light when interposing the analyzer and varies a lot of color by changing the orientation of the crystal with respect to the incident light"),
-                FilterOption("Strongly anisotropic", "Very anisotropic, reflects light when interposing the analyzer and varies a lot of color by changing the orientation of the crystal with respect to incident light"))
+                FilterOption("Strongly anisotropic", "Very anisotropic, reflects light when interposing the analyzer and varies a lot of color by changing the orientation of the crystal with respect to incident light")
+            )
 
             buildFilterDialog("Anisotropism", options, anisotropism)
         }
@@ -338,7 +353,8 @@ class FiltersFragment : Fragment(R.layout.fragment_filters) {
                 FilterOption("Brown", "Brown, orange and reddish tones"),
                 FilterOption("Gray", "Grayish tones that vary from dark to lighter"),
                 FilterOption("Masked for internal reflections", "The colors of interference are not well appreciated due to the presence of internal reflections"),
-                FilterOption("Without", "Does not present interfering colors"))
+                FilterOption("Without", "Does not present interfering colors")
+            )
 
             buildFilterDialog("Interference colors", options, interferenceColors)
         }
@@ -348,7 +364,8 @@ class FiltersFragment : Fragment(R.layout.fragment_filters) {
             //OPTIONS LIST
             val options = listOf(
                 FilterOption("Yes", "Presence of light sparks when interposing the analyzer"),
-                FilterOption("No", "Absence of sparks of light when interposing the analyzer"))
+                FilterOption("No", "Absence of sparks of light when interposing the analyzer")
+            )
 
             buildFilterDialog("Internal reflections", options, internalReflections)
         }

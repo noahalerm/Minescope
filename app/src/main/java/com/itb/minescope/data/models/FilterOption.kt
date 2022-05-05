@@ -1,4 +1,4 @@
-package com.example.minescope.data.models
+package com.itb.minescope.data.models
 
 data class FilterOption(
     val name: String,

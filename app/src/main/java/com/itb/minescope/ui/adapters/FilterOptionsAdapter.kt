@@ -1,4 +1,4 @@
-package com.example.minescope.ui.adapters
+package com.itb.minescope.ui.adapters
 
 import android.annotation.SuppressLint
 import android.app.AlertDialog
@@ -10,8 +10,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.minescope.R
-import com.example.minescope.data.models.FilterOption
+import com.itb.minescope.R
+import com.itb.minescope.data.models.FilterOption
 
 class FilterOptionsAdapter(private val options: List<FilterOption>, private val textView: TextView,
                            private val filter: String, private val dialog: AlertDialog)

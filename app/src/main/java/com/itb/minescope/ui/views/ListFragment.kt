@@ -1,4 +1,4 @@
-package com.example.minescope.ui.views
+package com.itb.minescope.ui.views
 
 import android.os.Bundle
 import android.view.View
@@ -9,10 +9,10 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.minescope.R
-import com.example.minescope.ui.adapters.MineralsListAdapter
-import com.example.minescope.ui.viewmodel.MinescopeViewModel
+import com.itb.minescope.ui.adapters.MineralsListAdapter
+import com.itb.minescope.ui.viewmodel.MinescopeViewModel
 import com.google.android.material.tabs.TabLayout
+import com.itb.minescope.R
 
 class ListFragment : Fragment(R.layout.fragment_list) {
     //ATTRIBUTES

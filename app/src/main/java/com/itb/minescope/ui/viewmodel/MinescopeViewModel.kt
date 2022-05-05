@@ -1,11 +1,11 @@
-package com.example.minescope.ui.viewmodel
+package com.itb.minescope.ui.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.minescope.data.models.TransparentMineral
-import com.example.minescope.data.models.OpaqueMineral
-import com.example.minescope.data.models.OpaqueMineralSample
-import com.example.minescope.data.models.TransparentMineralSample
+import com.itb.minescope.data.models.TransparentMineral
+import com.itb.minescope.data.models.OpaqueMineral
+import com.itb.minescope.data.models.OpaqueMineralSample
+import com.itb.minescope.data.models.TransparentMineralSample
 
 class MinescopeViewModel: ViewModel() {
     //ATTRIBUTES

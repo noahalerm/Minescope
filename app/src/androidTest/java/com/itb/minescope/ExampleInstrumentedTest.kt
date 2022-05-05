@@ -1,4 +1,4 @@
-package com.example.minescope
+package com.itb.minescope
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

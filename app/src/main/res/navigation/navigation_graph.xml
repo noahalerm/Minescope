@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/sampleFragment"
-        android:name="com.example.minescope.ui.views.SampleFragment"
+        android:name="com.itb.minescope.ui.views.SampleFragment"
         android:label="SampleFragment" >
         <argument
             android:name="id"
@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/listFragment"
-        android:name="com.example.minescope.ui.views.ListFragment"
+        android:name="com.itb.minescope.ui.views.ListFragment"
         android:label="ListFragment" >
         <action
             android:id="@+id/listToFilters"
@@ -36,11 +36,11 @@
     </fragment>
     <fragment
         android:id="@+id/filtersFragment"
-        android:name="com.example.minescope.ui.views.FiltersFragment"
+        android:name="com.itb.minescope.ui.views.FiltersFragment"
         android:label="FiltersFragment" />
     <fragment
         android:id="@+id/mineralFragment"
-        android:name="com.example.minescope.ui.views.MineralFragment"
+        android:name="com.itb.minescope.ui.views.MineralFragment"
         android:label="MineralFragment" >
         <action
             android:id="@+id/mineralToSample"
@@ -56,6 +56,6 @@
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.example.minescope.ui.views.SettingsFragment"
+        android:name="com.itb.minescope.ui.views.SettingsFragment"
         android:label="SettingsFragment" />
 </navigation>

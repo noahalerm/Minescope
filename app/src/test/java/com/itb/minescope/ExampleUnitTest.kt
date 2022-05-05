@@ -1,4 +1,4 @@
-package com.example.minescope
+package com.itb.minescope
 
 import org.junit.Test
 

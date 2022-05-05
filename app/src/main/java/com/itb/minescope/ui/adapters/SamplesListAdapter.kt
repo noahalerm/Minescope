@@ -1,4 +1,4 @@
-package com.example.minescope.ui.adapters
+package com.itb.minescope.ui.adapters
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
@@ -8,16 +8,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
-import com.example.minescope.R
-import com.example.minescope.data.models.OpaqueMineral
-import com.example.minescope.data.models.OpaqueMineralSample
-import com.example.minescope.data.models.TransparentMineral
-import com.example.minescope.data.models.TransparentMineralSample
-import com.example.minescope.ui.viewmodel.MinescopeViewModel
-import com.example.minescope.ui.views.ListFragmentDirections
-import com.example.minescope.ui.views.MineralFragmentDirections
+import com.itb.minescope.data.models.OpaqueMineralSample
+import com.itb.minescope.data.models.TransparentMineralSample
+import com.itb.minescope.R
+import com.itb.minescope.ui.views.MineralFragmentDirections
 import com.squareup.picasso.Picasso
-import kotlin.math.min
 
 class SamplesListAdapter(private val isOpaque: Boolean) : RecyclerView.Adapter<SamplesListAdapter.MineralListViewHolder>(){
     //ATTRIBUTES
