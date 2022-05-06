@@ -42,10 +42,134 @@
     <string name="internal_reflections">Reflexions internes</string>
 
     //FILTER OPTIONS
+    <string name="low">Baix</string>
+    <string name="medium">Mig</string>
+    <string name="high">Alt</string>
+    <string name="colorless">Incolor</string>
+    <string name="yellow">Grocs</string>
+    <string name="pink">Rosats</string>
+    <string name="blue">Blaus</string>
+    <string name="green">Verds</string>
+    <string name="brown">Marrons</string>
+    <string name="without">Sense</string>
+    <string name="soft">Dèbil</string>
+    <string name="strong">Fort</string>
+    <string name="three_or_more">3 o més</string>
+    <string name="right">Recte</string>
+    <string name="acute">Agut</string>
+    <string name="isotropic">Isòtrop</string>
+    <string name="first">1r</string>
+    <string name="second">2n</string>
+    <string name="third">3r</string>
+    <string name="fourth">4t</string>
+    <string name="anomalous">Anòmals</string>
+    <string name="masked">Emmascarats</string>
+    <string name="total">Total</string>
+    <string name="right_ex">Recta</string>
+    <string name="oblique">Obliqua</string>
+    <string name="undulose">Ondulant</string>
+    <string name="simple">Simple</string>
+    <string name="polysynthetic">Polisintètic</string>
+    <string name="crossed">Graella</string>
+    <string name="cyclic">Cíclic</string>
+    <string name="uniaxial">Uniaxial</string>
+    <string name="biaxial">Biaxial</string>
+    <string name="positive">Positiu</string>
+    <string name="negative">Negatiu</string>
+    <string name="white">Blancs</string>
+    <string name="gray">Grisos</string>
+    <string name="low_ref">Baixa</string>
+    <string name="medium_ref">Mitja</string>
+    <string name="strong_ref">Alta</string>
+    <string name="very_strong_ref">Molt alta</string>
+    <string name="without_or_weak">No en presenta o dèbil</string>
+    <string name="strong_pleo">Fort</string>
+    <string name="soft_pol_hard">Baixa</string>
+    <string name="medium_pol_hard">Mitja</string>
+    <string name="hard_pol_hard">Alta</string>
+    <string name="moderately_anisotropic">Dèbilment anisòtrop</string>
+    <string name="strongly_anisotropic">Fortament anisòtrop</string>
+    <string name="purple">Liles</string>
+    <string name="masked_inter_reflect">Emmascarats per les reflexions internes</string>
+    <string name="yes">Si</string>
+    <string name="no">No</string>
 
-    //Transparent
+    //FILTER OPTIONS DESCRIPTIONS
 
-    //Opaque
+    //Relief
+    <string name="low_relief">La línia de contorn del mineral no es veu</string>
+    <string name="medium_relief">La línia de contorn del mineral és poc marcada</string>
+    <string name="high_relief">La línia de contorn del mineral es veu molt bé</string>
+
+    //Color
+    <string name="colorless_color">Inclou tots els tons grisos i blancs (per la llum blanca del microscopi), que poden aparèixer tèrbols per inclusions i alteració</string>
+    <string name="yellow_color">Tons groguencs</string>
+    <string name="pink_color">Tons rosats</string>
+    <string name="blue_color">Tons blavosos, liles i morats</string>
+    <string name="green_color">Tons verdosos</string>
+    <string name="brown_color">Tons marronosos, ataronjats i vermellosos</string>
+    <string name="white_color">Tons blanquinosos</string>
+    <string name="pink_color_opaque">Tons rosats, beix i liles</string>
+    <string name="blue_color_opaque">Tons blavosos</string>
+    <string name="gray_color">Tons grisosos que varien de més fosc a més clar</string>
+    <string name="purple_color">Tons lilosos</string>
+    <string name="masked_color">No s\'aprecien bè els colors d\'interferència degut a la forta presència de reflexions internes</string>
+    <string name="without_color">No presenta colors d\'interferència</string>
+
+    //Pleochroism
+    <string name="without_pleochroism">No varia el color/tò del mineral en canviar l\'orientació del cristall respecte la llum incident polaritzada</string>
+    <string name="soft_pleochroism">Varia lleugerament el color/tò del cristall en canviar la seva orientació respecte la llum incident polaritzada</string>
+    <string name="strong_pleochroism">Varia molt marcadament el color/tò en canviar l\'orientació del cristall respecte la llum incident polaritzada</string>
+    <string name="without_or_weak_pleochroism">No canvia o varia molt poc el tò del color en canviar l\'orientació del cristall respecte la llum incident polaritzada</string>
+    <string name="strong_pleochroism_opaque">Canvia el tò del color en canviar l\'orientació respecte la llum incident polaritzada</string>
+
+    //Number of cleavage directions
+    <string name="zero_ncd">Absència de discontinuïtats regulars en qualsevol secció del mineral, paral·leles entre sí i relacionades amb l\'estructura cristal·lina del mineral</string>
+    <string name="one_ncd">Presència de només 1 direcció de discontinuitats paral·leles entre sí i relacionades amb direccions cristal·logràfiques del mineral, però pot haver-hi seccions sense cap direcció d\'exfoliació</string>
+    <string name="two_ncd">Presència de fins a 2 direccions de discontinuitats paral·leles entre sí i relacionades amb direccions cristal·logràfiques del mineral (1 direcció en seccions allargades, 2 direccions en altres seccions)</string>
+    <string name="three_or_more_ncd">Presència de fins a 3 o més direccions de discontinuitats paral·leles entre sí i relacionades amb direccions cristal·logràfiques del mineral (es poden veure dues o més direccions d\'exfoliació en totes les seccions)</string>
+
+    //Interference color (order)
+    <string name="isotropic_ico">Absència de colors, es veu negre en interposar l\'analitzador</string>
+    <string name="first_ico">S\'observen colors grisos, blancs o grocs de 1r ordre</string>
+    <string name="second_ico">Presència de colors d\'interferència fins a 2n ordre (colors intensos)</string>
+    <string name="third_ico">Presència de colors d\'interferència fins a 3r ordre (tons clars)</string>
+    <string name="fourth_ico">Presència de colors d\'interferència fins a 4t ordre (\'pastels\' o lletosos)</string>
+    <string name="anomalous_ico">Blaus o morats no corresponents a cap ordre</string>
+    <string name="masked_ico">El color propi del mineral amaga el color d\'interferència</string>
+
+    //Extinction
+    <string name="total_extinction">Extinció completa (no passa llum en cap posició del cristall respecte la llum incident), s\'observa en seccions basals o bé en qualsevol secció de minerals isòtrops</string>
+    <string name="right_extinction">No passa llum quan les seccions longitudinals estan orientades paralel·lament a les direccions de polarització</string>
+    <string name="oblique_extinction">No passa llum quan les seccions longitudinals dels minerals es troben a un cert angle de les direccions de polarització</string>
+    <string name="undulose_extinction">Extinció anòmala en que el cristall no s\'extingeix completament i homogènia, en canviar l\'orientació del cristall respecte a la llum incident el cristall es va extingint gradualment al llarg del cristall, apareix amb la deformació del cristall</string>
+
+    //Twinning
+    <string name="without_twinning">Absència de macles en els cristalls</string>
+    <string name="simple_twinning">Formada per dos cristalls</string>
+    <string name="polysynthetic_twinning">Tres o més plans cristalins es repeteixen alternativament, segons una mateixa llei de macla i amb plans de macla paral·lels</string>
+    <string name="crossed_twinning">Macla polisintètica en dues direccions i difuminat</string>
+    <string name="cyclic_twinning">Quan tots els individus de la macla es troben en un punt</string>
+
+    //Reflectance
+    <string name="low_reflectance">&lt; 20%, poc lluent, es veu molt fosc</string>
+    <string name="medium_reflectance">20 – 40%, moderadament lluent</string>
+    <string name="strong_reflectance">40 – 60%, molt lluent</string>
+    <string name="very_strong_reflectance">&gt; 60%, extremadament lluent</string>
+
+    //Polishing hardness
+    <string name="soft_polishing_hardness">Cristalls amb un ratllat molt marcat degut al polit i corresponen a minerals tous (duresa inferior a 3 en l\'escala de Mohs)</string>
+    <string name="medium_polishing_hardness">Cristalls amb un ratllat mitjanament marcat degut al polit i corresponen a minerals mitjanament durs (duresa entre 3 i 5 en l\'escala de Mohs)</string>
+    <string name="hard_polishing_hardness">Cristalls amb un ratllat poc o gens marcat degut al polit i corresponen a minerals durs (duresa superior a 5 en l\'escala de Mohs)</string>
+
+    //Anisotropism
+    <string name="isotropic_anisotropism">No reflecteix llum en interposar l\'analitzador, secció o mineral d\'alta simetria</string>
+    <string name="moderately_anisotropic_anisotropism">Poc o moderadament anisòtrop, reflecteix llum en interposar l\'analitzador i varia molt de color en canviar l\'orientació del cristall respecte la llum incident</string>
+    <string name="strongly_anisotropic_anisotropism">Molt anisòtrop, reflecteix llum en interposar l\'analitzador i varia molt de color en canviar l\'orientació del cristall respecte la llum incident</string>
+
+    //Internal reflections
+    <string name="yes_ir">Presència d\'espurnes de llum de color en interposar l\'analitzador</string>
+    <string name="no_ir">Absència d\'espurnes de llum en interposar l\'analitzador</string>
 
     //MINERAL DATA
     <string name="crystal_shape">Forma dels cristalls</string>

@@ -5,6 +5,7 @@ import android.app.AlertDialog
 import android.graphics.Color
 import android.graphics.Typeface
 import android.graphics.drawable.ColorDrawable
+import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -63,24 +64,32 @@ class FilterOptionsAdapter(private val options: List<FilterOption>, private val 
         fun bindData(option: FilterOption, textView: TextView, filter: String, dialog: AlertDialog) {
             optionText.text = option.name
 
-            if (option.name == "White")
+            if (option.name == optionText.context.getString(R.string.white))
                 optionText.setTextColor(Color.parseColor("#ffffff"))
-            if (option.name == "Yellow")
+            else if (option.name == optionText.context.getString(R.string.yellow))
                 optionText.setTextColor(Color.parseColor("#ebdf0c"))
-            if (option.name == "Pink")
+            else if (option.name == optionText.context.getString(R.string.pink))
                 optionText.setTextColor(Color.parseColor("#ffb5fa"))
-            if (option.name == "Blue")
+            else if (option.name == optionText.context.getString(R.string.blue))
                 optionText.setTextColor(Color.parseColor("#3690ff"))
-            if (option.name == "Green")
+            else if (option.name == optionText.context.getString(R.string.green))
                 optionText.setTextColor(Color.parseColor("#1bd127"))
-            if (option.name == "Brown")
+            else if (option.name == optionText.context.getString(R.string.brown))
                 optionText.setTextColor(Color.parseColor("#a85f27"))
-            if (option.name == "Gray")
+            else if (option.name == optionText.context.getString(R.string.gray))
                 optionText.setTextColor(Color.parseColor("#8a8a8a"))
+            else if (option.name == optionText.context.getString(R.string.purple))
+                optionText.setTextColor(Color.parseColor("#9c2be3"))
+            else {
+                val typedValue = TypedValue()
+                optionText.context.theme.resolveAttribute(R.attr.colorSecondary, typedValue, true)
+                optionText.setTextColor(typedValue.data)
+            }
+
             if (filter == optionText.context.getString(R.string.relief)) {
-                if (option.name == "High")
+                if (option.name == optionText.context.getString(R.string.high))
                     optionText.setTypeface(textView.typeface, Typeface.BOLD)
-                else if (option.name == "Low")
+                else if (option.name == optionText.context.getString(R.string.low))
                     optionText.setTypeface(textView.typeface, Typeface.ITALIC)
             }
 

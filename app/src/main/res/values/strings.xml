@@ -41,10 +41,134 @@
     <string name="internal_reflections">Internal reflections</string>
 
     //FILTER OPTIONS
+    <string name="low">Low</string>
+    <string name="medium">Medium</string>
+    <string name="high">High</string>
+    <string name="colorless">Colorless</string>
+    <string name="yellow">Yellow</string>
+    <string name="pink">Pink</string>
+    <string name="blue">Blue</string>
+    <string name="green">Green</string>
+    <string name="brown">Brown</string>
+    <string name="without">Without</string>
+    <string name="soft">Soft</string>
+    <string name="strong">Strong</string>
+    <string name="three_or_more">3 or more</string>
+    <string name="right">Right</string>
+    <string name="acute">Acute</string>
+    <string name="isotropic">Isotropic</string>
+    <string name="first">1st</string>
+    <string name="second">2nd</string>
+    <string name="third">3rd</string>
+    <string name="fourth">4th</string>
+    <string name="anomalous">Anomalous</string>
+    <string name="masked">Masked</string>
+    <string name="total">Total</string>
+    <string name="right_ex">Right</string>
+    <string name="oblique">Oblique</string>
+    <string name="undulose">Undulose</string>
+    <string name="simple">Simple</string>
+    <string name="polysynthetic">Polysynthetic</string>
+    <string name="crossed">Crossed</string>
+    <string name="cyclic">Cyclic</string>
+    <string name="uniaxial">Uniaxial</string>
+    <string name="biaxial">Biaxial</string>
+    <string name="positive">Positive</string>
+    <string name="negative">Negative</string>
+    <string name="white">White</string>
+    <string name="gray">Gray</string>
+    <string name="low_ref">Low</string>
+    <string name="medium_ref">Medium</string>
+    <string name="strong_ref">Strong</string>
+    <string name="very_strong_ref">Very Strong</string>
+    <string name="without_or_weak">Without or weak</string>
+    <string name="strong_pleo">Strong</string>
+    <string name="soft_pol_hard">Soft</string>
+    <string name="medium_pol_hard">Medium</string>
+    <string name="hard_pol_hard">Hard</string>
+    <string name="moderately_anisotropic">Moderately anisotropic</string>
+    <string name="strongly_anisotropic">Strongly anisotropic</string>
+    <string name="purple">Purple</string>
+    <string name="masked_inter_reflect">Masked for internal reflections</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
 
-    //Transparent
+    //FILTER OPTIONS DESCRIPTIONS
 
-    //Opaque
+    //Relief
+    <string name="low_relief">The contour line of the mineral can not be seen</string>
+    <string name="medium_relief">The contour line of the mineral is poorly marked</string>
+    <string name="high_relief">The contour line of the mineral can easily be seen</string>
+
+    //Color
+    <string name="colorless_color">Includes all shades of gray and white (by the white light of the microscope), which may appear cloudy by inclusions and alteration</string>
+    <string name="yellow_color">Yellowish tones</string>
+    <string name="pink_color">Pinkish tones</string>
+    <string name="blue_color">Lilac and bluish tones</string>
+    <string name="green_color">Greenish tones</string>
+    <string name="brown_color">Brown, orange and reddish tones</string>
+    <string name="white_color">Whitish tones</string>
+    <string name="pink_color_opaque">Beige, lilac and pinkish tones</string>
+    <string name="blue_color_opaque">Bluish tones</string>
+    <string name="gray_color">Grayish tones that vary from dark to lighter</string>
+    <string name="purple_color">Lilac tones</string>
+    <string name="masked_color">The colors of interference are not well appreciated due to the presence of internal reflections</string>
+    <string name="without_color">Does not present interfering colors</string>
+
+    //Pleochroism
+    <string name="without_pleochroism">The color / tone of the mineral does not change when the orientation of the crystal changes with respect to the polarized incident light</string>
+    <string name="soft_pleochroism">The color / tone of the crystal varies slightly as its orientation changes with respect to the polarized incident light</string>
+    <string name="strong_pleochroism">The color / tone varies very markedly when the orientation of the crystal changes with respect to the polarized incident light</string>
+    <string name="without_or_weak_pleochroism">The tone of the color does not change or change very little when the orientation of the glass changes with respect to the polarized incident light</string>
+    <string name="strong_pleochroism_opaque">Change the tone of the color by changing the orientation with respect to the polarized incident light</string>
+
+    //Number of cleavage directions
+    <string name="zero_ncd">Absence of regular discontinuities in any section of the mineral, parallel to each other and related to the crystalline structure of the mineral</string>
+    <string name="one_ncd">Presence of only 1 direction of discontinuities parallel to each other and related to crystallographic directions of the mineral, but there may be sections without any direction of exfoliation</string>
+    <string name="two_ncd">Presence of up to 2 directions of discontinuities parallel to each other and related to crystallographic directions of the mineral (1 direction in elongated sections, 2 directions in other sections)</string>
+    <string name="three_or_more_ncd">Presence of up to 3 or more directions of discontinuities parallel to each other and related to crystallographic directions of the mineral (two or more exfoliation directions can be seen in all sections)</string>
+
+    //Interference color (order)
+    <string name="isotropic_ico">Absence of colors, it looks black when interposed the analyzer</string>
+    <string name="first_ico">Greyish, white or yellow colors of 1st order are observed</string>
+    <string name="second_ico">Presence of interference colors up to 2nd order (strong colors)</string>
+    <string name="third_ico">Presence of interference colors up to 3rd order (light tones)</string>
+    <string name="fourth_ico">Presence of interference colors up to 4th order (pastel colors)</string>
+    <string name="anomalous_ico">Blues or purples that do not correspond to any order</string>
+    <string name="masked_ico">The color of the mineral itself hides the interference color</string>
+
+    //Extinction
+    <string name="total_extinction">Complete extinction (light does not pass at any position of the crystal with respect to incident light), is observed in basal sections or in any section of isotropic minerals</string>
+    <string name="right_extinction">No light passes when the longitudinal sections are oriented parallel to the polarization directions</string>
+    <string name="oblique_extinction">No light passes when the longitudinal sections of the minerals are at a certain angle of the polarization directions</string>
+    <string name="undulose_extinction">Anomalous extinction in which the crystal does not extinguish completely and homogeneously, by changing the orientation of the crystal with respect to the incident light the crystal gradually extinguishes along the crystal, appears with the deformation of the crystal</string>
+
+    //Twinning
+    <string name="without_twinning">Absence of twinnings</string>
+    <string name="simple_twinning">Formed by two crystals</string>
+    <string name="polysynthetic_twinning">Three or more crystalline planes are repeated alternately, according to the same law of twinning and with parallel twinning planes</string>
+    <string name="crossed_twinning">Polysynthetic twinning in two directions and blurred</string>
+    <string name="cyclic_twinning">When all the individuals of the twin are at a point</string>
+
+    //Reflectance
+    <string name="low_reflectance">&lt; 20%, little gleaming, it looks very dark</string>
+    <string name="medium_reflectance">20 – 40%, moderately gleaming</string>
+    <string name="strong_reflectance">40 – 60%, very gleaming</string>
+    <string name="very_strong_reflectance">&gt; 60%, extremely gleaming</string>
+
+    //Polishing hardness
+    <string name="soft_polishing_hardness">Crystals with a very marked scratch due to polishing and correspond to soft minerals (hardness less than 3 on the Mohs scale)</string>
+    <string name="medium_polishing_hardness">Crystals with a slightly marked scratch due to polishing and correspond to medium hard minerals (hardness between 3 and 5 on the Mohs scale)</string>
+    <string name="hard_polishing_hardness">Crystals with a scratch little or nothing marked due to polishing and correspond to hard minerals (hardness higher than 5 on the Mohs scale)</string>
+
+    //Anisotropism
+    <string name="isotropic_anisotropism">Does not reflect light when interposing the analyzer, section or mineral with high symmetry</string>
+    <string name="moderately_anisotropic_anisotropism">Little or moderately anisotropic, it reflects the light when interposing the analyzer and varies a lot of color by changing the orientation of the crystal with respect to the incident light</string>
+    <string name="strongly_anisotropic_anisotropism">Very anisotropic, reflects light when interposing the analyzer and varies a lot of color by changing the orientation of the crystal with respect to incident light</string>
+
+    //Internal reflections
+    <string name="yes_ir">Presence of light sparks when interposing the analyzer</string>
+    <string name="no_ir">Absence of sparks of light when interposing the analyzer</string>
 
     //MINERAL DATA
     <string name="crystal_shape">Crystal\'s shape</string>
