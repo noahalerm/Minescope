@@ -2,4 +2,189 @@
 <resources>
     //APP NAME
     <string name="app_name">Minescope</string>
+
+    //TITLES
+    <string name="transparent_minerals_filters_title">Identificadores de minerales transparentes</string>
+    <string name="opaque_minerals_filters_title">Identificadores de minerales opacos</string>
+    <string name="settings_title">Ajustes</string>
+
+    //SEARCH
+    <string name="search_bar">Búsqueda</string>
+
+    //LANGUAGES
+    <string name="en_lang">Inglés</string>
+    <string name="es_lang">Español</string>
+    <string name="cat_lang">Catalán</string>
+
+    //TABS
+    <string name="transparent_tab">TRANSPARENTE</string>
+    <string name="opaque_tab">OPACO</string>
+
+    //FILTERS
+
+    //Transparent
+    <string name="relief">Relieve</string>
+    <string name="color">Colores</string>
+    <string name="pleochroism">Pleocroísmo</string>
+    <string name="num_cleavage_directions">Nombre de la dirección de exfoliación</string>
+    <string name="angle_cleavage">Angulo entre dirección de exfoliación</string>
+    <string name="interference_color_order">Colores de interferencia (orden)</string>
+    <string name="extinction">Extinción</string>
+    <string name="twinning">Maclado</string>
+    <string name="interference_figure">Figura de interferencia</string>
+    <string name="optical_sign">Signo óptico</string>
+
+    //Opaque
+    <string name="reflectance">Reflectividad</string>
+    <string name="polishing_hardness">Resistencia al pulido</string>
+    <string name="anisotropism">Anisotropía</string>
+    <string name="interference_colors">Colores de interferencia</string>
+    <string name="internal_reflections">Reflexiones internas</string>
+
+    //FILTER OPTIONS
+    <string name="low">Bajo</string>
+    <string name="medium">Medio</string>
+    <string name="high">Alto</string>
+    <string name="colorless">Incoloro</string>
+    <string name="yellow">Amarillo</string>
+    <string name="pink">Rosado</string>
+    <string name="blue">Azul</string>
+    <string name="green">Verde</string>
+    <string name="brown">Marrón</string>
+    <string name="without">Sin</string>
+    <string name="soft">Débil</string>
+    <string name="strong">Fuerte</string>
+    <string name="three_or_more">3 o más</string>
+    <string name="right">Recto</string>
+    <string name="acute">Agudo</string>
+    <string name="isotropic">Isótropo</string>
+    <string name="first">1r</string>
+    <string name="second">2n</string>
+    <string name="third">3r</string>
+    <string name="fourth">4t</string>
+    <string name="anomalous">Anómalos</string>
+    <string name="masked">Enmascarados</string>
+    <string name="total">Total</string>
+    <string name="right_ex">Recta</string>
+    <string name="oblique">Oblicua</string>
+    <string name="undulose">Ondulada</string>
+    <string name="simple">Simple</string>
+    <string name="polysynthetic">Polisintética</string>
+    <string name="crossed">Graella</string>
+    <string name="cyclic">Cíclica</string>
+    <string name="uniaxial">Uniaxial</string>
+    <string name="biaxial">Biaxial</string>
+    <string name="positive">Positivo</string>
+    <string name="negative">Negativo</string>
+    <string name="white">Blanco</string>
+    <string name="gray">Gris</string>
+    <string name="low_ref">Baja</string>
+    <string name="medium_ref">Media</string>
+    <string name="strong_ref">Alta</string>
+    <string name="very_strong_ref">Muy alta</string>
+    <string name="without_or_weak">No presenta o débil</string>
+    <string name="strong_pleo">Fuerte</string>
+    <string name="soft_pol_hard">Baja</string>
+    <string name="medium_pol_hard">Mediana</string>
+    <string name="hard_pol_hard">Alta</string>
+    <string name="moderately_anisotropic">Débilmente anisótropo</string>
+    <string name="strongly_anisotropic">Fuertemente anisótropo</string>
+    <string name="purple">Morado</string>
+    <string name="masked_inter_reflect">Enmascarados por las reflexiones internas</string>
+    <string name="yes">Si</string>
+    <string name="no">No</string>
+
+    //FILTER OPTIONS DESCRIPTIONS
+
+    //Relief
+    <string name="low_relief">La línea de contorno del mineral no se ve</string>
+    <string name="medium_relief">La línea de contorno del mineral está poco marcada</string>
+    <string name="high_relief">La línea de contorno del mineral se ve muy bien</string>
+
+    //Color
+    <string name="colorless_color">Incluye todas las tonalidades de grises y blancos (por la luz blanca del microscopio), que pueden aparecer turbios por inclusiones y la alteración</string>
+    <string name="yellow_color">Tonos amarillentos</string>
+    <string name="pink_color">Tonos rosados</string>
+    <string name="blue_color">Tonos azulados, liláceos i morados</string>
+    <string name="green_color">Tonos verdosos</string>
+    <string name="brown_color">Tonos marronosos, rojizos i anaranjados</string>
+    <string name="white_color">Tonos blanquecinos</string>
+    <string name="pink_color_opaque">Tonos rosados, beige i liláceos</string>
+    <string name="blue_color_opaque">Tonos azulados</string>
+    <string name="gray_color">Tonos grisáceos que varian de más oscuro a más claro</string>
+    <string name="purple_color">Tonos liláceos</string>
+    <string name="masked_color">No se aprecian bien los colores de interferencia debido a la presencia de reflexiones internas</string>
+    <string name="without_color">No presenta colores de interferencia</string>
+
+    //Pleochroism
+    <string name="without_pleochroism">No varia el color/tonalidad del mineral al cambiar la orientación del cristal respecto a la luz incidente polarizada</string>
+    <string name="soft_pleochroism">Varia ligeramente el color/tonalidad del cristal al cambiar su orientación respecto a la luz incidente polarizada</string>
+    <string name="strong_pleochroism">Varia de forma muy marcada el color/tonalidad al cambiar la orientación del cristal respecto a la luz incidente polarizada</string>
+    <string name="without_or_weak_pleochroism">No cambia o varia muy poco la tonalidad del color al cambiar la orientación del cristal respecto a la luz incidente polarizada</string>
+    <string name="strong_pleochroism_opaque">Cambia la tonalidad del color al cambiar la orientación respecto a la luz incidente polarizada</string>
+
+    //Number of cleavage directions
+    <string name="zero_ncd">Absencia de discontinuidades regulares en cualquier sección del mineral, paralelas entre sí y relacionadas con la estructura cristalina del mineral</string>
+    <string name="one_ncd">Presencia de tan solo 1 dirección de discontinuidades paralelas entre sí y relacionadas con direcciones cristalográficas del mineral, pero pueden haber secciones sin ninguna dirección de exfoliación</string>
+    <string name="two_ncd">Presencia de hasta 2 direcciones de discontinuidades paralelas entre sí y relacionadas con direcciones cristalográficas del mineral (1 dirección en secciones alargadas, 2 direcciones en otras secciones)</string>
+    <string name="three_or_more_ncd">Presencia de hasta tres o más direcciones de discontinuidades paralelas entre sí y relacionadas con direcciones cristalográficas del mineral (se pueden ver dos o más direcciones de exfoliación en todas las secciones)</string>
+
+    //Interference color (order)
+    <string name="isotropic_ico">Ausencia de colores, se ve negro al interponer el analizador</string>
+    <string name="first_ico">Se observan colores grisáceos, blancos o amarillos de 1r orden</string>
+    <string name="second_ico">Presencia de colores de interferencia hasta 2o orden (colores intensos)</string>
+    <string name="third_ico">Presencia de colores de interferencia hasta 3r orden (tonos claros)</string>
+    <string name="fourth_ico">Presencia de colores de interferencia hasta 4o orden ("pasteles" o lechosos)</string>
+    <string name="anomalous_ico">Azules o morados que no corresponden a ningún orden</string>
+    <string name="masked_ico">El color própio del mineral esconde el color de interferencia</string>
+
+    //Extinction
+    <string name="total_extinction">Extinción completa (no pasa luz en ninguna posición del cristal respecto la luz incidente), se observa en secciones basales o bien en cualquier sección de minerales isótropos</string>
+    <string name="right_extinction">No pasa luz cuando las secciones longitudinales están orientadas paralelamente a las direcciones de polarización</string>
+    <string name="oblique_extinction">No pasa luz cuando las secciones longitudinales de los minerales se encuentran a un cierto ángulo de las direcciones de polarización</string>
+    <string name="undulose_extinction">Extinción anómala en que el cristal no se extingue completa y homogéneamente, al cambiar la orientación del cristal respecto a la luz incidente el cristal se va extinguiendo gradualmente a lo largo del cristal, aparece con la deformación del cristal</string>
+
+    //Twinning
+    <string name="without_twinning">Ausencia de maclas en los cristales</string>
+    <string name="simple_twinning">Formada por dos cristales</string>
+    <string name="polysynthetic_twinning">Tres o más planos cristalinos se repiten alternativamente, según una misma ley de maclado y con planos de maclado paralelos</string>
+    <string name="crossed_twinning">Macla polisintética en dos direcciones y difuminada</string>
+    <string name="cyclic_twinning">Cuando todos los individuos de la macla se encuentran en un punto</string>
+
+    //Reflectance
+    <string name="low_reflectance">&lt; 20%, poco reluciente, se ve muy oscuro</string>
+    <string name="medium_reflectance">20 – 40%, moderadamente reluciente</string>
+    <string name="strong_reflectance">40 – 60%, muy reluciente</string>
+    <string name="very_strong_reflectance">&gt; 60%, extremadamente reluciente</string>
+
+    //Polishing hardness
+    <string name="soft_polishing_hardness">Cristales con un rayado muy marcado debido al pulido y corresponden a minerales blandos (dureza inferior a 3 en la escala de Mohs)</string>
+    <string name="medium_polishing_hardness">Cristales con un rayado medianamente marcado debido al pulido y corresponden a minerales medianamente duros (dureza entre 3 y 5 en la escala de Mohs)</string>
+    <string name="hard_polishing_hardness">Cristales con un rayado poco o nada marcado debido al pulido y corresponden a minerales duros (dureza superior a 5 en la escala de Mohs)</string>
+
+    //Anisotropism
+    <string name="isotropic_anisotropism">No refleja la luz al interponer el analizador, sección o mineral de alta simetria</string>
+    <string name="moderately_anisotropic_anisotropism">Poco o moderadamente anisótropo, refleja la luz al interponer el analizador y varia mucho de color al cambiar la orientación del cristal respecto a la luz incidente</string>
+    <string name="strongly_anisotropic_anisotropism">Muy anisótropo, refleja luz al interponer el analizador y varia mucho de color al cambiar la orientación del cristal respecto a la luz incidente</string>
+
+    //Internal reflections
+    <string name="yes_ir">Presencia de chispas de luz al interponer el analizador</string>
+    <string name="no_ir">Ausencia de chispas de luz al interponer el analizador</string>
+
+    //MINERAL DATA
+    <string name="crystal_shape">Forma de los cristales</string>
+    <string name="alteration">Alteración</string>
+    <string name="zonation">Zonación</string>
+    <string name="cleavage">Exfoliación</string>
+    <string name="polishing_cleavage">Exfoliación al pulido</string>
+    <string name="associated_minerals">Minerales asociados</string>
+
+    //SAMPLE DATA
+    <string name="abundance">Abundancia</string>
+    <string name="other_minerals">Otros minerales</string>
+    <string name="morphology">Forma</string>
+
+    //OTHERS
+    <string name="language_input">Idioma</string>
+    <string name="petrographic_microscope">MICROSCOPIO PETROGRÁFICO</string>
 </resources>
