@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/sample_background"
-    android:paddingVertical="5dp">
+    android:paddingVertical="5dp"
+    android:paddingHorizontal="20dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -25,9 +26,8 @@
 
         <TextView
             android:id="@+id/sample_name"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:maxWidth="370dp"
             android:text="MINERAL"
             android:textColor="?attr/colorSecondary"
@@ -38,36 +38,33 @@
 
         <TextView
             android:id="@+id/sample_surname"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:maxWidth="370dp"
+            android:text="MINERAL SURNAME"
             android:textColor="?attr/colorSecondary"
             android:textSize="30sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sample_name"
-            tools:ignore="HardcodedText"
-            android:text="MINERAL SURNAME" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/sample_description"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
             android:maxWidth="370dp"
+            android:text="This is the description of the sample"
             android:textColor="?attr/colorPrimary"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sample_surname"
-            tools:ignore="HardcodedText"
-            android:text="This is the description of the sample" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/sample_coloration_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:maxWidth="370dp"
             android:textColor="?attr/colorSecondary"
@@ -80,23 +77,21 @@
 
         <TextView
             android:id="@+id/sample_coloration"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
             android:maxWidth="370dp"
+            android:text="This is the coloration of the sample"
             android:textColor="?attr/colorPrimary"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sample_coloration_title"
-            tools:ignore="HardcodedText"
-            android:text="This is the coloration of the sample" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/sample_pleochroism_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:maxWidth="370dp"
             android:textColor="?attr/colorSecondary"
@@ -109,23 +104,21 @@
 
         <TextView
             android:id="@+id/sample_pleochroism"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
             android:maxWidth="370dp"
+            android:text="This is the pleochroism of the sample"
             android:textColor="?attr/colorPrimary"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sample_pleochroism_title"
-            tools:ignore="HardcodedText"
-            android:text="This is the pleochroism of the sample" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/sample_abundance_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:maxWidth="370dp"
             android:textColor="?attr/colorSecondary"
@@ -138,23 +131,21 @@
 
         <TextView
             android:id="@+id/sample_abundance"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
             android:maxWidth="370dp"
+            android:text="This is the abundance of the sample"
             android:textColor="?attr/colorPrimary"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sample_abundance_title"
-            tools:ignore="HardcodedText"
-            android:text="This is the abundance of the sample" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/sample_other_minerals_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:maxWidth="370dp"
             android:textColor="?attr/colorSecondary"
@@ -167,23 +158,21 @@
 
         <TextView
             android:id="@+id/sample_other_minerals"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
             android:maxWidth="370dp"
+            android:text="This is the other minerals of the sample"
             android:textColor="?attr/colorPrimary"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sample_other_minerals_title"
-            tools:ignore="HardcodedText"
-            android:text="This is the other minerals of the sample" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/sample_relief_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:maxWidth="370dp"
             android:textColor="?attr/colorSecondary"
@@ -196,23 +185,21 @@
 
         <TextView
             android:id="@+id/sample_relief"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
             android:maxWidth="370dp"
+            android:text="This is the relief of the sample"
             android:textColor="?attr/colorPrimary"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sample_relief_title"
-            tools:ignore="HardcodedText"
-            android:text="This is the relief of the sample" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/sample_exfoliation_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:maxWidth="370dp"
             android:textColor="?attr/colorSecondary"
@@ -225,23 +212,21 @@
 
         <TextView
             android:id="@+id/sample_exfoliation"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
             android:maxWidth="370dp"
+            android:text="This is the exfoliation of the sample"
             android:textColor="?attr/colorPrimary"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sample_exfoliation_title"
-            tools:ignore="HardcodedText"
-            android:text="This is the exfoliation of the sample" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/sample_alteration_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:maxWidth="370dp"
             android:textColor="?attr/colorSecondary"
@@ -254,23 +239,21 @@
 
         <TextView
             android:id="@+id/sample_alteration"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
             android:maxWidth="370dp"
+            android:text="This is the alteration of the sample"
             android:textColor="?attr/colorPrimary"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sample_alteration_title"
-            tools:ignore="HardcodedText"
-            android:text="This is the alteration of the sample" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/sample_interference_colors_order_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:maxWidth="370dp"
             android:textColor="?attr/colorSecondary"
@@ -283,23 +266,21 @@
 
         <TextView
             android:id="@+id/sample_interference_colors_order"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
             android:maxWidth="370dp"
+            android:text="This is the interference colors order of the sample"
             android:textColor="?attr/colorPrimary"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sample_interference_colors_order_title"
-            tools:ignore="HardcodedText"
-            android:text="This is the interference colors order of the sample" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/sample_extintion_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:maxWidth="370dp"
             android:textColor="?attr/colorSecondary"
@@ -312,23 +293,21 @@
 
         <TextView
             android:id="@+id/sample_extintion"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
             android:maxWidth="370dp"
+            android:text="This is the extintion of the sample"
             android:textColor="?attr/colorPrimary"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sample_extintion_title"
-            tools:ignore="HardcodedText"
-            android:text="This is the extintion of the sample" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/sample_twinning_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:maxWidth="370dp"
             android:textColor="?attr/colorSecondary"
@@ -341,23 +320,21 @@
 
         <TextView
             android:id="@+id/sample_twinning"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
             android:maxWidth="370dp"
+            android:text="This is the twinning of the sample"
             android:textColor="?attr/colorPrimary"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sample_twinning_title"
-            tools:ignore="HardcodedText"
-            android:text="This is the twinning of the sample" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/sample_zoning_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:maxWidth="370dp"
             android:textColor="?attr/colorSecondary"
@@ -370,23 +347,21 @@
 
         <TextView
             android:id="@+id/sample_zoning"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
             android:maxWidth="370dp"
+            android:text="This is the zoning of the sample"
             android:textColor="?attr/colorPrimary"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sample_zoning_title"
-            tools:ignore="HardcodedText"
-            android:text="This is the zoning of the sample" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/sample_crystal_shape_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:maxWidth="370dp"
             android:textColor="?attr/colorSecondary"
@@ -399,17 +374,16 @@
 
         <TextView
             android:id="@+id/sample_crystal_shape"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
             android:maxWidth="370dp"
+            android:text="This is the crystal shape of the sample"
             android:textColor="?attr/colorPrimary"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sample_crystal_shape_title"
-            tools:ignore="HardcodedText"
-            android:text="This is the crystal shape of the sample" />
+            tools:ignore="HardcodedText" />
 
         <!-- AQUI COMIENZAN LAS CARACTERISTICAS DE LOS OPACOS -->
 
@@ -417,7 +391,6 @@
             android:id="@+id/sample_shape_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:maxWidth="370dp"
             android:textColor="?attr/colorSecondary"
@@ -430,23 +403,21 @@
 
         <TextView
             android:id="@+id/sample_shape"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
             android:maxWidth="370dp"
+            android:text="This is the shape of the sample"
             android:textColor="?attr/colorPrimary"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sample_shape_title"
-            tools:ignore="HardcodedText"
-            android:text="This is the shape of the sample" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/sample_cleavage_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:maxWidth="370dp"
             android:textColor="?attr/colorSecondary"
@@ -459,23 +430,21 @@
 
         <TextView
             android:id="@+id/sample_cleavage"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
             android:maxWidth="370dp"
+            android:text="This is the cleavage of the sample"
             android:textColor="?attr/colorPrimary"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sample_cleavage_title"
-            tools:ignore="HardcodedText"
-            android:text="This is the cleavage of the sample" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/sample_reflectivity_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:maxWidth="370dp"
             android:textColor="?attr/colorSecondary"
@@ -488,23 +457,21 @@
 
         <TextView
             android:id="@+id/sample_reflectivity"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
             android:maxWidth="370dp"
+            android:text="This is the reflectivity of the sample"
             android:textColor="?attr/colorPrimary"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sample_reflectivity_title"
-            tools:ignore="HardcodedText"
-            android:text="This is the reflectivity of the sample" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/sample_hardness_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:maxWidth="370dp"
             android:textColor="?attr/colorSecondary"
@@ -517,23 +484,21 @@
 
         <TextView
             android:id="@+id/sample_hardness"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
             android:maxWidth="370dp"
+            android:text="This is the hardness of the sample"
             android:textColor="?attr/colorPrimary"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sample_hardness_title"
-            tools:ignore="HardcodedText"
-            android:text="This is the hardness of the sample" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/sample_anisotropy_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:maxWidth="370dp"
             android:textColor="?attr/colorSecondary"
@@ -546,23 +511,21 @@
 
         <TextView
             android:id="@+id/sample_anisotropy"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
             android:maxWidth="370dp"
+            android:text="This is the anisotropy of the sample"
             android:textColor="?attr/colorPrimary"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sample_anisotropy_title"
-            tools:ignore="HardcodedText"
-            android:text="This is the anisotropy of the sample" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/sample_interference_colors_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:maxWidth="370dp"
             android:textColor="?attr/colorSecondary"
@@ -575,23 +538,21 @@
 
         <TextView
             android:id="@+id/sample_interference_colors"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
             android:maxWidth="370dp"
+            android:text="This is the interference colors of the sample"
             android:textColor="?attr/colorPrimary"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sample_interference_colors_title"
-            tools:ignore="HardcodedText"
-            android:text="This is the interference colors of the sample" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/sample_internal_reflections_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:maxWidth="370dp"
             android:textColor="?attr/colorSecondary"
@@ -604,17 +565,16 @@
 
         <TextView
             android:id="@+id/sample_internal_reflections"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
             android:maxWidth="370dp"
+            android:text="This is the internal reflections of the sample"
             android:textColor="?attr/colorPrimary"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sample_internal_reflections_title"
-            tools:ignore="HardcodedText"
-            android:text="This is the internal reflections of the sample" />
+            tools:ignore="HardcodedText" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card"
@@ -622,7 +582,6 @@
             android:layout_height="0dp"
             app:layout_constraintDimensionRatio="1:1"
             android:layout_margin="40dp"
-            android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             app:cardCornerRadius="700dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -647,7 +606,6 @@
             android:id="@+id/lpa_switch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="30dp"
             app:track="@drawable/custom_switch_track"
             android:thumb="@drawable/custom_switch_thumb"
@@ -659,7 +617,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
+            android:layout_marginStart="20dp"
             android:text="LPNA / LPA"
             android:textColor="?attr/colorSecondary"
             android:textSize="20sp"
@@ -672,9 +630,7 @@
             android:id="@+id/slider"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
-            android:layout_marginEnd="20dp"
             app:trackHeight="20dp"
             app:thumbColor="?attr/colorSecondary"
             app:trackColorInactive="?attr/colorPrimary"
