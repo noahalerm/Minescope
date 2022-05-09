@@ -36,16 +36,18 @@
 
     <TextView
         android:id="@+id/mineral_description"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
         android:layout_marginBottom="15dp"
         android:maxWidth="695dp"
         android:text="This is the description of the mineral"
         android:textColor="?attr/colorPrimary"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mineral_chemical_formula"
         tools:ignore="HardcodedText" />

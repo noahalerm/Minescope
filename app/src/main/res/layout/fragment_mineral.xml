@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/sample_background"
-    android:paddingVertical="5dp">
+    android:paddingVertical="5dp"
+    android:paddingHorizontal="20dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -25,435 +26,412 @@
 
         <TextView
             android:id="@+id/mineral_name"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:maxWidth="370dp"
             android:text="MINERAL"
             android:textColor="?attr/colorSecondary"
             android:textSize="50sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/close_btn"
             tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/mineral_chemical_formula"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:maxWidth="370dp"
+            android:text="MINERAL CHEMICAL FORMULA"
             android:textColor="?attr/colorSecondary"
             android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_name"
-            tools:ignore="HardcodedText"
-            android:text="MINERAL CHEMICAL FORMULA" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/mineral_colors_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:maxWidth="370dp"
+            android:text="@string/color"
+            android:textAllCaps="true"
             android:textColor="?attr/colorSecondary"
             android:textSize="30sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_chemical_formula"
-            tools:ignore="HardcodedText"
-            android:textAllCaps="true"
-            android:text="@string/color" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/mineral_colors"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
             android:maxWidth="370dp"
+            android:text="This is the colors of the mineral"
             android:textColor="?attr/colorPrimary"
             android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_colors_title"
-            tools:ignore="HardcodedText"
-            android:text="This is the colors of the mineral" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/mineral_pleochroism_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:maxWidth="370dp"
+            android:text="@string/pleochroism"
+            android:textAllCaps="true"
             android:textColor="?attr/colorSecondary"
             android:textSize="30sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_colors"
-            tools:ignore="HardcodedText"
-            android:textAllCaps="true"
-            android:text="@string/pleochroism" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/mineral_pleochroism"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
             android:maxWidth="370dp"
+            android:text="This is the pleochroism of the mineral"
             android:textColor="?attr/colorPrimary"
             android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_pleochroism_title"
-            tools:ignore="HardcodedText"
-            android:text="This is the pleochroism of the mineral" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/mineral_relief_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:maxWidth="370dp"
+            android:text="@string/relief"
+            android:textAllCaps="true"
             android:textColor="?attr/colorSecondary"
             android:textSize="30sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_pleochroism"
-            tools:ignore="HardcodedText"
-            android:textAllCaps="true"
-            android:text="@string/relief" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/mineral_relief"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
             android:maxWidth="370dp"
+            android:text="This is the relief of the mineral"
             android:textColor="?attr/colorPrimary"
             android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_relief_title"
-            tools:ignore="HardcodedText"
-            android:text="This is the relief of the mineral" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/mineral_exfoliation_direction_name_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:maxWidth="370dp"
+            android:text="@string/num_cleavage_directions"
+            android:textAllCaps="true"
             android:textColor="?attr/colorSecondary"
             android:textSize="30sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_relief"
-            tools:ignore="HardcodedText"
-            android:textAllCaps="true"
-            android:text="@string/num_cleavage_directions" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/mineral_exfoliation_direction_name"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
             android:maxWidth="370dp"
+            android:text="This is the exfoliation direction name of the mineral"
             android:textColor="?attr/colorPrimary"
             android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_exfoliation_direction_name_title"
-            tools:ignore="HardcodedText"
-            android:text="This is the exfoliation direction name of the mineral" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/mineral_exfoliation_direction_angles_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:maxWidth="370dp"
+            android:text="@string/angle_cleavage"
+            android:textAllCaps="true"
             android:textColor="?attr/colorSecondary"
             android:textSize="30sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_exfoliation_direction_name"
-            tools:ignore="HardcodedText"
-            android:textAllCaps="true"
-            android:text="@string/angle_cleavage" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/mineral_exfoliation_direction_angles"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
             android:maxWidth="370dp"
+            android:text="This is the exfoliation direction angles of the mineral"
             android:textColor="?attr/colorPrimary"
             android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_exfoliation_direction_angles_title"
-            tools:ignore="HardcodedText"
-            android:text="This is the exfoliation direction angles of the mineral" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/mineral_interference_colors_order_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:maxWidth="370dp"
+            android:text="@string/interference_color_order"
+            android:textAllCaps="true"
             android:textColor="?attr/colorSecondary"
             android:textSize="30sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_exfoliation_direction_angles"
-            tools:ignore="HardcodedText"
-            android:textAllCaps="true"
-            android:text="@string/interference_color_order"/>
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/mineral_interference_colors_order"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
             android:maxWidth="370dp"
+            android:text="This is the interference colors order of the mineral"
             android:textColor="?attr/colorPrimary"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_interference_colors_order_title"
-            tools:ignore="HardcodedText"
-            android:text="This is the interference colors order of the mineral" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/mineral_extintion_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:maxWidth="370dp"
+            android:text="@string/extinction"
+            android:textAllCaps="true"
             android:textColor="?attr/colorSecondary"
             android:textSize="30sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_interference_colors_order"
-            tools:ignore="HardcodedText"
-            android:textAllCaps="true"
-            android:text="@string/extinction" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/mineral_extintion"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
             android:maxWidth="370dp"
+            android:text="This is the extintion of the mineral"
             android:textColor="?attr/colorPrimary"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_extintion_title"
-            tools:ignore="HardcodedText"
-            android:text="This is the extintion of the mineral" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/mineral_twinning_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:maxWidth="370dp"
+            android:text="@string/twinning"
+            android:textAllCaps="true"
             android:textColor="?attr/colorSecondary"
             android:textSize="30sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_extintion"
-            tools:ignore="HardcodedText"
-            android:textAllCaps="true"
-            android:text="@string/twinning"/>
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/mineral_twinning"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
             android:maxWidth="370dp"
+            android:text="This is the twinning of the mineral"
             android:textColor="?attr/colorPrimary"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_twinning_title"
-            tools:ignore="HardcodedText"
-            android:text="This is the twinning of the mineral" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/mineral_interference_figure_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:maxWidth="370dp"
+            android:text="@string/interference_figure"
+            android:textAllCaps="true"
             android:textColor="?attr/colorSecondary"
             android:textSize="30sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_twinning"
-            tools:ignore="HardcodedText"
-            android:textAllCaps="true"
-            android:text="@string/interference_figure"/>
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/mineral_interference_figure"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
             android:maxWidth="370dp"
+            android:text="This is the interference figure of the mineral"
             android:textColor="?attr/colorPrimary"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_interference_figure_title"
-            tools:ignore="HardcodedText"
-            android:text="This is the interference figure of the mineral" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/mineral_optic_sign_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:maxWidth="370dp"
+            android:text="@string/optical_sign"
+            android:textAllCaps="true"
             android:textColor="?attr/colorSecondary"
             android:textSize="30sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_interference_figure"
-            tools:ignore="HardcodedText"
-            android:textAllCaps="true"
-            android:text="@string/optical_sign" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/mineral_optic_sign"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
             android:maxWidth="370dp"
+            android:text="This is the optic sign of the mineral"
             android:textColor="?attr/colorPrimary"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_optic_sign_title"
-            tools:ignore="HardcodedText"
-            android:text="This is the optic sign of the mineral" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/mineral_crystal_shape_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:maxWidth="370dp"
+            android:text="@string/crystal_shape"
+            android:textAllCaps="true"
             android:textColor="?attr/colorSecondary"
             android:textSize="30sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_optic_sign"
-            tools:ignore="HardcodedText"
-            android:textAllCaps="true"
-            android:text="@string/crystal_shape" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/mineral_crystal_shape"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
             android:maxWidth="370dp"
+            android:text="This is the crystal shape of the mineral"
             android:textColor="?attr/colorPrimary"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_crystal_shape_title"
-            tools:ignore="HardcodedText"
-            android:text="This is the crystal shape of the mineral" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/mineral_alteration_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:maxWidth="370dp"
+            android:text="@string/alteration"
+            android:textAllCaps="true"
             android:textColor="?attr/colorSecondary"
             android:textSize="30sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_crystal_shape"
-            tools:ignore="HardcodedText"
-            android:textAllCaps="true"
-            android:text="@string/alteration" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/mineral_alteration"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
             android:maxWidth="370dp"
+            android:text="This is the alteration of the mineral"
             android:textColor="?attr/colorPrimary"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_alteration_title"
-            tools:ignore="HardcodedText"
-            android:text="This is the alteration of the mineral" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/mineral_zoning_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:maxWidth="370dp"
+            android:text="@string/zonation"
+            android:textAllCaps="true"
             android:textColor="?attr/colorSecondary"
             android:textSize="30sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_alteration"
-            tools:ignore="HardcodedText"
-            android:textAllCaps="true"
-            android:text="@string/zonation" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/mineral_zoning"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
             android:maxWidth="370dp"
+            android:text="This is the zoning of the mineral"
             android:textColor="?attr/colorPrimary"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_zoning_title"
-            tools:ignore="HardcodedText"
-            android:text="This is the zoning of the mineral" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/mineral_exfoliation_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:maxWidth="370dp"
+            android:text="@string/cleavage"
+            android:textAllCaps="true"
             android:textColor="?attr/colorSecondary"
             android:textSize="30sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_zoning"
-            tools:ignore="HardcodedText"
-            android:textAllCaps="true"
-            android:text="@string/cleavage" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/mineral_exfoliation"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
             android:maxWidth="370dp"
+            android:text="This is the exfoliation of the mineral"
             android:textColor="?attr/colorPrimary"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_exfoliation_title"
-            tools:ignore="HardcodedText"
-            android:text="This is the exfoliation of the mineral" />
+            tools:ignore="HardcodedText" />
 
         <!-- AQUI COMIENZAN LAS CARACTERISTICAS DE LOS OPACOS -->
 
@@ -461,210 +439,195 @@
             android:id="@+id/mineral_reflectivity_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:maxWidth="370dp"
+            android:text="@string/reflectance"
+            android:textAllCaps="true"
             android:textColor="?attr/colorSecondary"
             android:textSize="30sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_exfoliation"
-            tools:ignore="HardcodedText"
-            android:textAllCaps="true"
-            android:text="@string/reflectance"/>
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/mineral_reflectivity"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
             android:maxWidth="370dp"
+            android:text="This is the reflectivity of the mineral"
             android:textColor="?attr/colorPrimary"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_reflectivity_title"
-            tools:ignore="HardcodedText"
-            android:text="This is the reflectivity of the mineral" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/mineral_hardness_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:maxWidth="370dp"
+            android:text="@string/polishing_hardness"
+            android:textAllCaps="true"
             android:textColor="?attr/colorSecondary"
             android:textSize="30sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_reflectivity"
-            tools:ignore="HardcodedText"
-            android:textAllCaps="true"
-            android:text="@string/polishing_hardness" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/mineral_hardness"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
             android:maxWidth="370dp"
+            android:text="This is the hardness of the mineral"
             android:textColor="?attr/colorPrimary"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_hardness_title"
-            tools:ignore="HardcodedText"
-            android:text="This is the hardness of the mineral" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/mineral_anisotropy_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:maxWidth="370dp"
+            android:text="@string/anisotropism"
+            android:textAllCaps="true"
             android:textColor="?attr/colorSecondary"
             android:textSize="30sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_hardness"
-            tools:ignore="HardcodedText"
-            android:textAllCaps="true"
-            android:text="@string/anisotropism" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/mineral_anisotropy"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
             android:maxWidth="370dp"
+            android:text="This is the anisotropy of the mineral"
             android:textColor="?attr/colorPrimary"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_anisotropy_title"
-            tools:ignore="HardcodedText"
-            android:text="This is the anisotropy of the mineral" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/mineral_interference_colors_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:maxWidth="370dp"
+            android:text="@string/interference_colors"
+            android:textAllCaps="true"
             android:textColor="?attr/colorSecondary"
             android:textSize="30sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_anisotropy"
-            tools:ignore="HardcodedText"
-            android:textAllCaps="true"
-            android:text="@string/interference_colors" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/mineral_interference_colors"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
             android:maxWidth="370dp"
+            android:text="This is the interference colors of the mineral"
             android:textColor="?attr/colorPrimary"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_interference_colors_title"
-            tools:ignore="HardcodedText"
-            android:text="This is the interference colors of the mineral" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/mineral_internal_reflections_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:maxWidth="370dp"
+            android:text="@string/internal_reflections"
+            android:textAllCaps="true"
             android:textColor="?attr/colorSecondary"
             android:textSize="30sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_interference_colors"
-            tools:ignore="HardcodedText"
-            android:textAllCaps="true"
-            android:text="@string/internal_reflections" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/mineral_internal_reflections"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
             android:maxWidth="370dp"
+            android:text="This is the internal reflections of the mineral"
             android:textColor="?attr/colorPrimary"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_internal_reflections_title"
-            tools:ignore="HardcodedText"
-            android:text="This is the internal reflections of the mineral" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/mineral_cleavage_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:maxWidth="370dp"
+            android:text="@string/polishing_cleavage"
+            android:textAllCaps="true"
             android:textColor="?attr/colorSecondary"
             android:textSize="30sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_internal_reflections"
-            tools:ignore="HardcodedText"
-            android:textAllCaps="true"
-            android:text="@string/polishing_cleavage" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/mineral_cleavage"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
             android:maxWidth="370dp"
+            android:text="This is the cleavage of the mineral"
             android:textColor="?attr/colorPrimary"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_cleavage_title"
-            tools:ignore="HardcodedText"
-            android:text="This is the cleavage of the mineral" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/mineral_asociated_minerals_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:maxWidth="370dp"
+            android:text="@string/associated_minerals"
+            android:textAllCaps="true"
             android:textColor="?attr/colorSecondary"
             android:textSize="30sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_cleavage"
-            tools:ignore="HardcodedText"
-            android:textAllCaps="true"
-            android:text="@string/associated_minerals" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/mineral_asociated_minerals"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
             android:maxWidth="370dp"
+            android:text="This is the asociated minerals of the mineral"
             android:textColor="?attr/colorPrimary"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_asociated_minerals_title"
-            tools:ignore="HardcodedText"
-            android:text="This is the asociated minerals of the mineral" />
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/mineral_petrographic_microscope"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:maxWidth="370dp"
             android:text="@string/petrographic_microscope"
@@ -678,14 +641,12 @@
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
-            android:layout_marginEnd="20dp"
             android:layout_marginBottom="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/mineral_petrographic_microscope"/>
+            app:layout_constraintTop_toBottomOf="@+id/mineral_petrographic_microscope" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
