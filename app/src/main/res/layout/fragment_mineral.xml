@@ -45,10 +45,13 @@
             android:text="MINERAL CHEMICAL FORMULA"
             android:textColor="?attr/colorSecondary"
             android:textSize="30sp"
+            android:lines="1"
+            android:autoSizeTextType="uniform"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mineral_name"
-            tools:ignore="HardcodedText" />
+            tools:ignore="HardcodedText"
+            tools:targetApi="o" />
 
         <TextView
             android:id="@+id/mineral_colors_title"
