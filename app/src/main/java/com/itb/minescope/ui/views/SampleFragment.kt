@@ -129,6 +129,8 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
 
         loadData()
 
+        //sampleSurname.visibility = View.GONE
+
         //ON CLICK
         //Close Button
         closeBtn.setOnClickListener {
