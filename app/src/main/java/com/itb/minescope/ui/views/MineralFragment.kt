@@ -1,9 +1,13 @@
 package com.itb.minescope.ui.views
 
+import android.os.Build
 import android.os.Bundle
+import android.text.Html
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.annotation.RequiresApi
+import androidx.core.text.HtmlCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -73,6 +77,7 @@ class MineralFragment : Fragment(R.layout.fragment_mineral) {
     private val viewModel: MinescopeViewModel by activityViewModels()
 
     //ON VIEW CREATED
+    @RequiresApi(Build.VERSION_CODES.N)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?){
         super.onViewCreated(view, savedInstanceState)
 
@@ -136,6 +141,7 @@ class MineralFragment : Fragment(R.layout.fragment_mineral) {
     /**
      * This method is used to load the mineral's data into the fragment.
      */
+    @RequiresApi(Build.VERSION_CODES.N)
     private fun loadData(){
         if (!arguments?.isEmpty!!){
             val id = arguments?.getInt("id")
@@ -152,7 +158,7 @@ class MineralFragment : Fragment(R.layout.fragment_mineral) {
 
             if (!isOpaque){
                 mineralName.text = transparentMineral?.name
-                mineralChemicalFormula.text = transparentMineral?.chemicalFormula
+                mineralChemicalFormula.text = Html.fromHtml(transparentMineral?.chemicalFormula, HtmlCompat.FROM_HTML_MODE_LEGACY)
                 mineralColors.text = transparentMineral?.colors
                 mineralPleochroism.text = transparentMineral?.pleochroism
                 mineralRelief.text = transparentMineral?.relief
@@ -190,7 +196,7 @@ class MineralFragment : Fragment(R.layout.fragment_mineral) {
             }
             else if (isOpaque){
                 mineralName.text = opaqueMineral?.name
-                mineralChemicalFormula.text = opaqueMineral?.chemicalFormula
+                mineralChemicalFormula.text = Html.fromHtml(transparentMineral?.chemicalFormula, HtmlCompat.FROM_HTML_MODE_LEGACY)
                 mineralColors.text = opaqueMineral?.colors
                 mineralPleochroism.text = opaqueMineral?.pleochroism
                 mineralReflectivity.text = opaqueMineral?.reflectivity

@@ -1,10 +1,12 @@
 package com.itb.minescope.ui.adapters
 
 import android.annotation.SuppressLint
+import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.text.HtmlCompat
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.itb.minescope.data.models.OpaqueMineral
@@ -137,11 +139,11 @@ class MineralsListAdapter(private val isOpaque: Boolean, private val viewModel: 
         fun bindData(transparentMineral: TransparentMineral?, opaqueMineral: OpaqueMineral?) {
             if (transparentMineral == null){
                 name.text = opaqueMineral?.name
-                chemicalFormula.text = opaqueMineral?.chemicalFormula
+                chemicalFormula.text = Html.fromHtml(opaqueMineral?.chemicalFormula, HtmlCompat.FROM_HTML_MODE_LEGACY)
                 description.text = opaqueMineral?.anisotropy
             }else{
                 name.text = transparentMineral.name
-                chemicalFormula.text = transparentMineral.chemicalFormula
+                chemicalFormula.text = Html.fromHtml(transparentMineral.chemicalFormula, HtmlCompat.FROM_HTML_MODE_LEGACY)
                 description.text = transparentMineral.alteration
             }
         }

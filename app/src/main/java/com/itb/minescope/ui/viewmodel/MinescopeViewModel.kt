@@ -45,7 +45,7 @@ class MinescopeViewModel: ViewModel() {
 
         //Minerals
         for(m in 1..20){
-            transparentMineralsList.add(TransparentMineral(m,"Serpentine $m"," Colorless / Yellow / Green ","Without / Soft","(Mg,Al,Fe,Mn,Ni,Zn)2-3(Si,Al,Fe)2O5(OH)4", "LOW","0/1",null,"1st / Anomalous","Right / Total","Without","Biaxial","Negative / Positive","In parallel aggregates of fibrous crystals (asbestos) in fractures or massive","It is an alteration mineral","Not present","Not appreciable", samplesOfTransparentMineralList))
+            transparentMineralsList.add(TransparentMineral(m,"Serpentine $m"," Colorless / Yellow / Green ","Without / Soft","(Mg,Al,Fe,Mn,Ni,Zn)<sub>2-3</sub>(Si,Al,Fe)<sub>2</sub>O<sub>5</sub>(OH)<sub>4</sub>", "LOW","0/1",null,"1st / Anomalous","Right / Total","Without","Biaxial","Negative / Positive","In parallel aggregates of fibrous crystals (asbestos) in fractures or massive","It is an alteration mineral","Not present","Not appreciable", samplesOfTransparentMineralList))
             transparentMineralsListLD.postValue(transparentMineralsList)
             opaqueMineralsList.add(OpaqueMineral(m,"Arsenopyrite $m","White / Yellow / Pink","Without or weak","FeAsS", "Strong","Hard","Moderately anisotropic / Strongly anisotropic","Yellow / Blue / Green / Brown","No","Not visible","Chalcopyrite, cobaltite, cubanite, enargite, galena, gold, jamesonite, oleidite, pyrrhotite, sphalerite, stannite, wolframite, among others", samplesOfOpaqueMineralList))
             opaqueMineralsListLD.postValue(opaqueMineralsList)
