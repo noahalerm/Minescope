@@ -52,7 +52,7 @@
             android:id="@+id/sample_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:maxWidth="370dp"
             android:text="This is the description of the sample"
             android:textColor="?attr/colorPrimary"
@@ -67,13 +67,13 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:maxWidth="370dp"
+            android:text="@string/color"
+            android:textAllCaps="true"
             android:textColor="?attr/colorSecondary"
             android:textSize="30sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sample_description"
-            tools:ignore="HardcodedText"
-            android:textAllCaps="true"
-            android:text="@string/color" />
+            app:layout_constraintTop_toBottomOf="@+id/play_icon"
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/sample_coloration"
@@ -568,10 +568,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
+            android:layout_marginBottom="20dp"
             android:maxWidth="370dp"
             android:text="This is the internal reflections of the sample"
             android:textColor="?attr/colorPrimary"
             android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sample_internal_reflections_title"
             tools:ignore="HardcodedText" />
@@ -580,13 +582,13 @@
             android:id="@+id/card"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_constraintDimensionRatio="1:1"
             android:layout_margin="40dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginTop="20dp"
             app:cardCornerRadius="700dp"
+            app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sample_internal_reflections">
+            app:layout_constraintTop_toBottomOf="@+id/sample_description">
 
             <ImageView
                 android:id="@+id/image"
@@ -665,9 +667,7 @@
             android:layout_height="60dp"
             android:layout_gravity="center"
             android:layout_marginTop="45dp"
-            android:layout_marginBottom="20dp"
             android:src="@drawable/play_icon"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/slider"
