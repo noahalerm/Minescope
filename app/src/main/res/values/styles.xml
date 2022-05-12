@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <attr name="logo_image" format="reference" />
+    <attr name="logo_gif" format="reference" />
 </resources>

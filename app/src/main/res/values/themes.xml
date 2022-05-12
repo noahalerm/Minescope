@@ -15,9 +15,10 @@
 
         //LOGO IMAGE
         <item name="logo_image">@drawable/launch_screen_light_vertical</item>
+        <item name="logo_gif">@drawable/logo_light_gif</item>
 
         //LAUNCH SCREEN
-        <item name="android:windowBackground">@drawable/launch_screen</item>
+        <!--<item name="android:windowBackground">@drawable/launch_screen</item>-->
 
         //FONT
 <!--        <item name="fontFamily">@font/permanent_marker</item>-->

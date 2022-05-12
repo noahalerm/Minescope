@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/navigation_graph"
-    app:startDestination="@id/listFragment">
+    app:startDestination="@id/launchScreen">
     app:startDestination="@id/listFragment">
 
     <fragment
@@ -58,4 +58,12 @@
         android:id="@+id/settingsFragment"
         android:name="com.itb.minescope.ui.views.SettingsFragment"
         android:label="SettingsFragment" />
+    <fragment
+        android:id="@+id/launchScreen"
+        android:name="com.itb.minescope.ui.views.LaunchScreen"
+        android:label="LaunchScreen" >
+        <action
+            android:id="@+id/launchToList"
+            app:destination="@id/listFragment" />
+    </fragment>
 </navigation>

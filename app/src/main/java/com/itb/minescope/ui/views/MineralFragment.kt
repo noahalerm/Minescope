@@ -196,7 +196,7 @@ class MineralFragment : Fragment(R.layout.fragment_mineral) {
             }
             else if (isOpaque){
                 mineralName.text = opaqueMineral?.name
-                mineralChemicalFormula.text = Html.fromHtml(transparentMineral?.chemicalFormula, HtmlCompat.FROM_HTML_MODE_LEGACY)
+                mineralChemicalFormula.text = Html.fromHtml(opaqueMineral?.chemicalFormula, HtmlCompat.FROM_HTML_MODE_LEGACY)
                 mineralColors.text = opaqueMineral?.colors
                 mineralPleochroism.text = opaqueMineral?.pleochroism
                 mineralReflectivity.text = opaqueMineral?.reflectivity
