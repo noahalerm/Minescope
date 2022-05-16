@@ -73,8 +73,10 @@ class MinescopeViewModel: ViewModel() {
             val response2 = withContext(Dispatchers.IO) { repository.getTransparentMinerals("en")}
             if (response.isSuccessful) {
                 val mineral = response.body()!!
+                Log.d("MINERAL", mineral.toString())
                 opaqueMineralsList.addAll(mineral)
                 opaqueMineralsListLD.postValue(opaqueMineralsList)
+                Log.d("LIST", opaqueMineralsList.toString())
             }
             else{
                 Log.e("Error :", response.message())
