@@ -211,7 +211,7 @@ class MineralFragment : Fragment(R.layout.fragment_mineral) {
                 mineralAssociatedMinerals.text = opaqueMineral?.associatedMinerals
                 val principalAdapter = SamplesListAdapter(true)
                 viewModel.samplesOfOpaqueMineralListLD.observe(viewLifecycleOwner,{principalAdapter.setOpaqueMineralSamplesList(
-                    it.filter { min -> min.mineralId == id } as MutableList<OpaqueMineralSample>) })
+                    it.filter { min -> min.id_mineral == id } as MutableList<OpaqueMineralSample>) })
                 recyclerView.adapter = principalAdapter
 
                 //LAYOUT UPDATE

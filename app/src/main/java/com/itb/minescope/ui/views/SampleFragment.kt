@@ -35,7 +35,7 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
 
     //Data
     private lateinit var sampleName: TextView
-    private lateinit var sampleSurname: TextView
+    //private lateinit var sampleSurname: TextView
     private lateinit var sampleDescription: TextView
     private lateinit var sampleColoration: TextView
     private lateinit var samplePleochroism: TextView
@@ -90,7 +90,7 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
         playIcon = view.findViewById(R.id.play_icon)
         forwardIcon = view.findViewById(R.id.forward_icon)
         sampleName = view.findViewById(R.id.sample_name)
-        sampleSurname = view.findViewById(R.id.sample_surname)
+        //sampleSurname = view.findViewById(R.id.sample_surname)
         sampleDescription = view.findViewById(R.id.sample_description)
         sampleColoration = view.findViewById(R.id.sample_coloration)
         samplePleochroism = view.findViewById(R.id.sample_pleochroism)
@@ -303,7 +303,7 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
 
             if (!isOpaque){
                 sampleName.text = transparentMineralSample?.name
-                sampleSurname.text = transparentMineralSample?.name
+                //sampleSurname.text = transparentMineralSample?.name
                 sampleDescription.text = transparentMineralSample?.alteration
                 sampleColoration.text = transparentMineralSample?.coloration
                 samplePleochroism.text = transparentMineralSample?.pleochroism
@@ -339,25 +339,25 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
                 sampleInternalReflections.visibility = View.GONE
             }
             else if (isOpaque){
-                sampleName.text = opaqueMineralSample?.name
-                sampleSurname.text = opaqueMineralSample?.name
-                sampleDescription.text = opaqueMineralSample?.cleavage
-                sampleColoration.text = opaqueMineralSample?.coloration
-                samplePleochroism.text = opaqueMineralSample?.pleochroism
-                sampleAbundance.text = opaqueMineralSample?.abundance.toString()
-                sampleOtherMinerals.text = opaqueMineralSample?.otherMinerals
-                sampleShape.text = opaqueMineralSample?.shape
-                sampleCleavage.text = opaqueMineralSample?.cleavage
-                sampleReflectivity.text = opaqueMineralSample?.reflectivity
-                sampleHardness.text = opaqueMineralSample?.hardness
-                sampleAnisotropy.text = opaqueMineralSample?.anisotropy
-                sampleInterferenceColors.text = opaqueMineralSample?.interferenceColors
-                sampleInternalReflections.text = opaqueMineralSample?.internalReflections
+                sampleName.text = opaqueMineralSample?.nom
+                //sampleSurname.text = opaqueMineralSample?.nom
+                sampleDescription.text = opaqueMineralSample?.exfoliacio_polit
+                sampleColoration.text = opaqueMineralSample?.coloracio
+                samplePleochroism.text = opaqueMineralSample?.pleocroisme
+                sampleAbundance.text = opaqueMineralSample?.abundancia.toString()
+                sampleOtherMinerals.text = opaqueMineralSample?.altres_minerals
+                sampleShape.text = opaqueMineralSample?.forma
+                sampleCleavage.text = opaqueMineralSample?.exfoliacio_polit
+                sampleReflectivity.text = opaqueMineralSample?.reflectivitat
+                sampleHardness.text = opaqueMineralSample?.resistencia_polit
+                sampleAnisotropy.text = opaqueMineralSample?.anisotropia
+                sampleInterferenceColors.text = opaqueMineralSample?.colors_interferencia
+                sampleInternalReflections.text = opaqueMineralSample?.reflexions_internes
                 //IMAGE INITIALIZATION
-                Picasso.get().load(opaqueMineralSample?.imageLPNA+"1.jpg")
+                Picasso.get().load(opaqueMineralSample?.lpna+"1.jpg")
                     .noFade().placeholder(image.drawable).into(image)
-                viewModel.currentLPA = opaqueMineralSample?.imageLPA!!
-                viewModel.currentLPNA = opaqueMineralSample.imageLPNA
+                viewModel.currentLPA = opaqueMineralSample?.lpa!!
+                viewModel.currentLPNA = opaqueMineralSample.lpna
                 //LAYOUT UPDATE
                 sampleReliefTitle.visibility = View.GONE
                 sampleRelief.visibility = View.GONE

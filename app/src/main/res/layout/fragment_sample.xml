@@ -41,6 +41,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxWidth="370dp"
+            android:visibility="gone"
             android:text="MINERAL SURNAME"
             android:textColor="?attr/colorSecondary"
             android:textSize="30sp"

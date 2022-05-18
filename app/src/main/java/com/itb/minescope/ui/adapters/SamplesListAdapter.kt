@@ -93,11 +93,11 @@ class SamplesListAdapter(private val isOpaque: Boolean) : RecyclerView.Adapter<S
          */
         fun bindData(transparentMineralSample: TransparentMineralSample?, opaqueMineralSample: OpaqueMineralSample?) {
             if (transparentMineralSample == null){
-                sampleNameAndSurname.text = opaqueMineralSample?.name
-                sampleShortDesc.text = opaqueMineralSample?.cleavage
-                Picasso.get().load(opaqueMineralSample?.imageLPA+"1.jpg")
+                sampleNameAndSurname.text = opaqueMineralSample?.nom
+                sampleShortDesc.text = opaqueMineralSample?.exfoliacio_polit
+                Picasso.get().load(opaqueMineralSample?.lpa+"1.jpg")
                     .noFade().placeholder(sampleLPA.drawable).into(sampleLPA)
-                Picasso.get().load(opaqueMineralSample?.imageLPNA+"1.jpg")
+                Picasso.get().load(opaqueMineralSample?.lpna+"1.jpg")
                     .noFade().placeholder(sampleLPNA.drawable).into(sampleLPNA)
             }else{
                 sampleNameAndSurname.text = transparentMineralSample.name

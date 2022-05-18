@@ -1,3 +1,3 @@
 package com.itb.minescope.data.models
 
-data class OpaqueMineralSample(var id: Int, var mineralId: Int, val imageLPA: String, val imageLPNA: String,  var name: String, var coloration: String, var pleochroism: String, var abundance: Float, var otherMinerals: String, var shape: String, var cleavage: String, var reflectivity: String, var hardness: String, var anisotropy: String, var interferenceColors: String, var internalReflections: String)
+data class OpaqueMineralSample(var id: Int, var id_mineral: Int, val lpa: String, val lpna: String, var nom: String, var coloracio: String, var pleocroisme: String, var abundancia: Float, var altres_minerals: String, var forma: String, var exfoliacio_polit: String, var reflectivitat: String, var resistencia_polit: String, var anisotropia: String, var colors_interferencia: String, var reflexions_internes: String)
