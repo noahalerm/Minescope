@@ -100,11 +100,11 @@ class SamplesListAdapter(private val isOpaque: Boolean) : RecyclerView.Adapter<S
                 Picasso.get().load(opaqueMineralSample?.lpna+"1.jpg")
                     .noFade().placeholder(sampleLPNA.drawable).into(sampleLPNA)
             }else{
-                sampleNameAndSurname.text = transparentMineralSample.name
-                sampleShortDesc.text = transparentMineralSample.alteration
-                Picasso.get().load(transparentMineralSample.imageLPA+"1.jpg")
+                sampleNameAndSurname.text = transparentMineralSample.nom
+                sampleShortDesc.text = transparentMineralSample.alteracio
+                Picasso.get().load(transparentMineralSample.lpa+"1.jpg")
                     .noFade().placeholder(sampleLPA.drawable).into(sampleLPA)
-                Picasso.get().load(transparentMineralSample.imageLPNA+"1.jpg")
+                Picasso.get().load(transparentMineralSample.lpna+"1.jpg")
                     .noFade().placeholder(sampleLPNA.drawable).into(sampleLPNA)
             }
         }

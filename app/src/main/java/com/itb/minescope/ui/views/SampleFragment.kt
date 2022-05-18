@@ -302,26 +302,26 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
             }
 
             if (!isOpaque){
-                sampleName.text = transparentMineralSample?.name
+                sampleName.text = transparentMineralSample?.nom
                 //sampleSurname.text = transparentMineralSample?.name
-                sampleDescription.text = transparentMineralSample?.alteration
-                sampleColoration.text = transparentMineralSample?.coloration
-                samplePleochroism.text = transparentMineralSample?.pleochroism
-                sampleAbundance.text = transparentMineralSample?.abundance.toString()
-                sampleOtherMinerals.text = transparentMineralSample?.otherMinerals
-                sampleRelief.text = transparentMineralSample?.relief
-                sampleExfoliation.text = transparentMineralSample?.exfoliation
-                sampleAlteration.text = transparentMineralSample?.alteration
-                sampleInterferenceColorsOrder.text = transparentMineralSample?.interferenceColorsOrder
-                sampleExtinction.text = transparentMineralSample?.extinction
-                sampleTwinning.text = transparentMineralSample?.twinning
-                sampleZoning.text = transparentMineralSample?.zoning
-                sampleCrystalShape.text = transparentMineralSample?.crystalShape
+                sampleDescription.text = transparentMineralSample?.alteracio
+                sampleColoration.text = transparentMineralSample?.color
+                samplePleochroism.text = transparentMineralSample?.pleocroisme
+                sampleAbundance.text = transparentMineralSample?.abundancia.toString()
+                sampleOtherMinerals.text = transparentMineralSample?.altres_minerals
+                sampleRelief.text = transparentMineralSample?.relleu
+                sampleExfoliation.text = transparentMineralSample?.exfoliacio
+                sampleAlteration.text = transparentMineralSample?.alteracio
+                sampleInterferenceColorsOrder.text = transparentMineralSample?.colors_interferencia
+                sampleExtinction.text = transparentMineralSample?.extincio
+                sampleTwinning.text = transparentMineralSample?.maclat
+                sampleZoning.text = transparentMineralSample?.zonacio
+                sampleCrystalShape.text = transparentMineralSample?.forma_cristalls
                 //IMAGE INITIALIZATION
-                Picasso.get().load(transparentMineralSample?.imageLPNA+"1.jpg")
+                Picasso.get().load(transparentMineralSample?.lpna+"1.jpg")
                     .noFade().placeholder(image.drawable).into(image)
-                viewModel.currentLPA = transparentMineralSample?.imageLPA!!
-                viewModel.currentLPNA = transparentMineralSample.imageLPNA
+                viewModel.currentLPA = transparentMineralSample?.lpa!!
+                viewModel.currentLPNA = transparentMineralSample.lpna
                 //LAYOUT UPDATE
                 sampleShapeTitle.visibility = View.GONE
                 sampleShape.visibility = View.GONE

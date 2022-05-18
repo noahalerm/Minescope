@@ -9,7 +9,6 @@ import com.itb.minescope.data.models.OpaqueMineral
 import com.itb.minescope.data.models.OpaqueMineralSample
 import com.itb.minescope.data.models.TransparentMineralSample
 import com.itb.minescope.data.repository.Repository
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -52,7 +51,7 @@ class MinescopeViewModel: ViewModel() {
     //        samplesOfOpaqueMineralList.add(OpaqueMineralSample(m,m,"https://ddd.uab.cat/pub/minescope/ansmas_lpa/ansmas_lpa_", "https://ddd.uab.cat/pub/minescope/ansmas_lpna/ansmas_lpna_","Massive arsenopyrite","White with a slight creamy tone","Weak, It is easier to see in the center of the image",80F,"Gangue 20%","Allotriomorphic","Not visible","Strong","Not visible","Strong","Blue, gray and brownish tones","Not present"))
     //        samplesOfOpaqueMineralListLD.postValue(samplesOfOpaqueMineralList)
     //    }
-//
+    //
     //    //Minerals
     //    for(m in 1..20){
     //        transparentMineralsList.add(TransparentMineral(m,"Serpentine $m"," Colorless / Yellow / Green ","Without / Soft","(Mg,Al,Fe,Mn,Ni,Zn)<sub>2-3</sub>(Si,Al,Fe)<sub>2</sub>O<sub>5</sub>(OH)<sub>4</sub>", "LOW","0/1",null,"1st / Anomalous","Right / Total","Without","Biaxial","Negative / Positive","In parallel aggregates of fibrous crystals (asbestos) in fractures or massive","It is an alteration mineral","Not present","Not appreciable", samplesOfTransparentMineralList))
@@ -60,7 +59,7 @@ class MinescopeViewModel: ViewModel() {
     //        opaqueMineralsList.add(OpaqueMineral(m,"Arsenopyrite $m","White / Yellow / Pink","Without or weak","FeAsS", "Strong","Hard","Moderately anisotropic / Strongly anisotropic","Yellow / Blue / Green / Brown","No","Not visible","Chalcopyrite, cobaltite, cubanite, enargite, galena, gold, jamesonite, oleidite, pyrrhotite, sphalerite, stannite, wolframite, among others", samplesOfOpaqueMineralList))
     //        opaqueMineralsListLD.postValue(opaqueMineralsList)
     //    }
-//
+    //
     //    loadData()
     //}
 
@@ -68,6 +67,11 @@ class MinescopeViewModel: ViewModel() {
         changeLanguage(lan())
     }
 
+    //METHODS
+
+    /**
+     * This method is used to obtain the current device's language.
+     */
     private fun lan(): String {
         val lan = Locale.getDefault().displayLanguage
         var lanStr = "en"
@@ -81,12 +85,18 @@ class MinescopeViewModel: ViewModel() {
         return lanStr
     }
 
+    /**
+     * This method is used to change the app's language.
+     */
     fun changeLanguage(lan: String){
         viewModelScope.launch {
             opaqueMineralsList.clear()
             transparentMineralsList.clear()
+
             val response = withContext(Dispatchers.IO) { repository.getOpaqueMinerals(lan)}
             val response2 = withContext(Dispatchers.IO) { repository.getTransparentMinerals(lan)}
+
+            //OPAQUE MINERALS
             if (response.isSuccessful) {
                 val mineral = response.body()!!
                 Log.d("MINERAL", mineral.toString())
@@ -97,6 +107,8 @@ class MinescopeViewModel: ViewModel() {
             else{
                 Log.e("Error :", response.message())
             }
+
+            //TRANSPARENT MINERALS
             if(response2.isSuccessful) {
                 val mineral = response2.body()!!
                 transparentMineralsList.addAll(mineral)
@@ -107,5 +119,4 @@ class MinescopeViewModel: ViewModel() {
             }
         }
     }
-
 }
