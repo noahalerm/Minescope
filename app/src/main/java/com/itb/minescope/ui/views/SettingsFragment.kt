@@ -8,8 +8,10 @@ import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.itb.minescope.R
+import com.itb.minescope.ui.viewmodel.MinescopeViewModel
 
 import java.util.Locale
 
@@ -18,6 +20,9 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
     //Layout Elements
     private lateinit var closeBtn: ImageView
     private lateinit var themeInput: AutoCompleteTextView
+
+    //View Model
+    private val viewModel: MinescopeViewModel by activityViewModels()
 
     //ON VIEW CREATED
     override fun onViewCreated(view: View, savedInstanceState: Bundle?){
@@ -58,5 +63,12 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
         val config: Configuration = resources.configuration
         config.setLocale(locale)
         resources.updateConfiguration(config, resources.displayMetrics)
+
+        if (locale.toString() != "es") {
+            viewModel.changeLanguage(locale.toString())
+        }
+        else{
+            viewModel.changeLanguage("sp")
+        }
     }
 }

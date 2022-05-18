@@ -13,6 +13,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import java.util.*
 
 class MinescopeViewModel: ViewModel() {
     //ATTRIBUTES
@@ -64,13 +65,28 @@ class MinescopeViewModel: ViewModel() {
     //}
 
     init {
-        loadData()
+        changeLanguage(lan())
     }
 
-    private fun loadData(){
+    private fun lan(): String {
+        val lan = Locale.getDefault().displayLanguage
+        var lanStr = "en"
+
+        when(lan){
+            "English" -> lanStr = "en"
+            "español" -> lanStr = "sp"
+            "català" -> lanStr = "ca"
+        }
+
+        return lanStr
+    }
+
+    fun changeLanguage(lan: String){
         viewModelScope.launch {
-            val response = withContext(Dispatchers.IO) { repository.getOpaqueMinerals("en")}
-            val response2 = withContext(Dispatchers.IO) { repository.getTransparentMinerals("en")}
+            opaqueMineralsList.clear()
+            transparentMineralsList.clear()
+            val response = withContext(Dispatchers.IO) { repository.getOpaqueMinerals(lan)}
+            val response2 = withContext(Dispatchers.IO) { repository.getTransparentMinerals(lan)}
             if (response.isSuccessful) {
                 val mineral = response.body()!!
                 Log.d("MINERAL", mineral.toString())
