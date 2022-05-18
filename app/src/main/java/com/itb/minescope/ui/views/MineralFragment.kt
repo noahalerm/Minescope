@@ -151,7 +151,7 @@ class MineralFragment : Fragment(R.layout.fragment_mineral) {
             var transparentMineral: TransparentMineral? = null
 
             if (isOpaque!!) {
-                 opaqueMineral = viewModel.opaqueMineralsList.filter { it.idMineral == id }[0]
+                 opaqueMineral = viewModel.opaqueMineralsList.filter { it.id == id }[0]
             }else{
                 transparentMineral = viewModel.transparentMineralsList.filter { it.id == id }[0]
             }
@@ -195,20 +195,20 @@ class MineralFragment : Fragment(R.layout.fragment_mineral) {
                 mineralAssociatedMinerals.visibility = View.GONE
             }
             else if (isOpaque){
-                mineralName.text = opaqueMineral?.name
-                if (opaqueMineral?.chemicalFormula != null)
-                    mineralChemicalFormula.text = Html.fromHtml(opaqueMineral.chemicalFormula, HtmlCompat.FROM_HTML_MODE_LEGACY)
+                mineralName.text = opaqueMineral?.nom
+                if (opaqueMineral?.formula != null)
+                    mineralChemicalFormula.text = Html.fromHtml(opaqueMineral.formula, HtmlCompat.FROM_HTML_MODE_LEGACY)
                 else
                     mineralChemicalFormula.visibility = View.GONE
-                mineralColors.text = opaqueMineral?.color
-                mineralPleochroism.text = opaqueMineral?.pleochroism
-                mineralReflectivity.text = opaqueMineral?.reflectance
-                mineralHardness.text = opaqueMineral?.polishingHardness
-                mineralAnisotropy.text = opaqueMineral?.anisotropism
-                mineralInterferenceColors.text = opaqueMineral?.interference_colors
-                mineralInternalReflections.text = opaqueMineral?.internalReflections
-                mineralCleavage.text = opaqueMineral?.polishingCleavage
-                mineralAssociatedMinerals.text = opaqueMineral?.associatedMinerals
+                mineralColors.text = opaqueMineral?.colors
+                mineralPleochroism.text = opaqueMineral?.pleocroisme
+                mineralReflectivity.text = opaqueMineral?.reflectivitat
+                mineralHardness.text = opaqueMineral?.resistencia_polit
+                mineralAnisotropy.text = opaqueMineral?.anisotropia
+                mineralInterferenceColors.text = opaqueMineral?.colors_interferencia
+                mineralInternalReflections.text = opaqueMineral?.reflexions_internes
+                mineralCleavage.text = opaqueMineral?.exfoliacio_polit
+                mineralAssociatedMinerals.text = opaqueMineral?.minerals_associats
                 val principalAdapter = SamplesListAdapter(true)
                 viewModel.samplesOfOpaqueMineralListLD.observe(viewLifecycleOwner,{principalAdapter.setOpaqueMineralSamplesList(
                     it.filter { min -> min.mineralId == id } as MutableList<OpaqueMineralSample>) })
