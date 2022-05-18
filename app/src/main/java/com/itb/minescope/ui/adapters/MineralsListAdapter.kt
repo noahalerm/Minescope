@@ -66,20 +66,20 @@ class MineralsListAdapter(private val isOpaque: Boolean, private val viewModel: 
 
         //FILTERS
         if (viewModel.opaqueFilters != null) {
-            if (filters!!.color != "")
-                opaqueMinerals = opaqueMinerals.filter { it.color.lowercase().contains(filters.color.lowercase()) }.toMutableList()
-            if (filters.reflectance != "")
-                opaqueMinerals = opaqueMinerals.filter { it.reflectance.lowercase().contains(filters.reflectance.lowercase()) }.toMutableList()
-            if (filters.pleochroism != "")
-                opaqueMinerals = opaqueMinerals.filter { it.pleochroism.lowercase().contains(filters.pleochroism.lowercase()) }.toMutableList()
-            if (filters.polishingHardness != "")
-                opaqueMinerals = opaqueMinerals.filter { it.polishingHardness.lowercase().contains(filters.polishingHardness.lowercase()) }.toMutableList()
-            if (filters.anisotropism != "")
-                opaqueMinerals = opaqueMinerals.filter { it.anisotropism.lowercase().contains(filters.anisotropism.lowercase()) }.toMutableList()
-            if (filters.interference_colors != "")
-                opaqueMinerals = opaqueMinerals.filter { it.interference_colors.lowercase().contains(filters.interference_colors.lowercase()) }.toMutableList()
-            if (filters.internalReflections != "")
-                opaqueMinerals = opaqueMinerals.filter { it.internalReflections.lowercase().contains(filters.internalReflections.lowercase()) }.toMutableList()
+            if (filters!!.colors != "")
+                opaqueMinerals = opaqueMinerals.filter { it.colors.lowercase().contains(filters.colors.lowercase()) }.toMutableList()
+            if (filters.reflectivitat != "")
+                opaqueMinerals = opaqueMinerals.filter { it.reflectivitat.lowercase().contains(filters.reflectivitat.lowercase()) }.toMutableList()
+            if (filters.pleocroisme != "")
+                opaqueMinerals = opaqueMinerals.filter { it.pleocroisme.lowercase().contains(filters.pleocroisme.lowercase()) }.toMutableList()
+            if (filters.resistencia_polit != "")
+                opaqueMinerals = opaqueMinerals.filter { it.resistencia_polit.lowercase().contains(filters.resistencia_polit.lowercase()) }.toMutableList()
+            if (filters.anisotropia != "")
+                opaqueMinerals = opaqueMinerals.filter { it.anisotropia.lowercase().contains(filters.anisotropia.lowercase()) }.toMutableList()
+            if (filters.colors_interferencia != "")
+                opaqueMinerals = opaqueMinerals.filter { it.colors_interferencia.lowercase().contains(filters.colors_interferencia.lowercase()) }.toMutableList()
+            if (filters.reflexions_internes != "")
+                opaqueMinerals = opaqueMinerals.filter { it.reflexions_internes.lowercase().contains(filters.reflexions_internes.lowercase()) }.toMutableList()
         }
         notifyDataSetChanged()
     }
@@ -105,7 +105,7 @@ class MineralsListAdapter(private val isOpaque: Boolean, private val viewModel: 
         if (isOpaque) {
             holder.bindData(null, opaqueMinerals[position])
             holder.itemView.setOnClickListener {
-                val action = ListFragmentDirections.listToMineral(opaqueMinerals[position].idMineral, isOpaque)
+                val action = ListFragmentDirections.listToMineral(opaqueMinerals[position].id, isOpaque)
                 Navigation.findNavController(holder.itemView).navigate(action)
             }
         }else{
@@ -142,10 +142,10 @@ class MineralsListAdapter(private val isOpaque: Boolean, private val viewModel: 
         @RequiresApi(Build.VERSION_CODES.N)
         fun bindData(transparentMineral: TransparentMineral?, opaqueMineral: OpaqueMineral?) {
             if (transparentMineral == null){
-                name.text = opaqueMineral?.name
-                if (opaqueMineral?.chemicalFormula != null)
-                    chemicalFormula.text = Html.fromHtml(opaqueMineral.chemicalFormula, HtmlCompat.FROM_HTML_MODE_LEGACY)
-                description.text = opaqueMineral?.anisotropism
+                name.text = opaqueMineral?.nom
+                if (opaqueMineral?.formula != null)
+                    chemicalFormula.text = Html.fromHtml(opaqueMineral.formula, HtmlCompat.FROM_HTML_MODE_LEGACY)
+                description.text = opaqueMineral?.anisotropia
             }else{
                 name.text = transparentMineral.name
                 chemicalFormula.text = Html.fromHtml(transparentMineral.chemicalFormula, HtmlCompat.FROM_HTML_MODE_LEGACY)

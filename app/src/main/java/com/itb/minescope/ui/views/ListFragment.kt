@@ -106,7 +106,7 @@ class ListFragment : Fragment(R.layout.fragment_list) {
             val principalAdapter = MineralsListAdapter(isOpaque, viewModel)
 
             if (searchedText != null)
-                viewModel.opaqueMineralsListLD.observe(viewLifecycleOwner,{principalAdapter.setOpaqueMineralsList(it.filter { mineral -> mineral.name.lowercase().contains(searchedText.lowercase()) }.toMutableList()) })
+                viewModel.opaqueMineralsListLD.observe(viewLifecycleOwner,{principalAdapter.setOpaqueMineralsList(it.filter { mineral -> mineral.nom.lowercase().contains(searchedText.lowercase()) }.toMutableList()) })
             else
                 viewModel.opaqueMineralsListLD.observe(viewLifecycleOwner,{principalAdapter.setOpaqueMineralsList(it) })
 
