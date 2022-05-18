@@ -157,22 +157,22 @@ class MineralFragment : Fragment(R.layout.fragment_mineral) {
             }
 
             if (!isOpaque){
-                mineralName.text = transparentMineral?.name
-                mineralChemicalFormula.text = Html.fromHtml(transparentMineral?.chemicalFormula, HtmlCompat.FROM_HTML_MODE_LEGACY)
+                mineralName.text = transparentMineral?.nom
+                mineralChemicalFormula.text = Html.fromHtml(transparentMineral?.formula, HtmlCompat.FROM_HTML_MODE_LEGACY)
                 mineralColors.text = transparentMineral?.colors
-                mineralPleochroism.text = transparentMineral?.pleochroism
-                mineralRelief.text = transparentMineral?.relief
-                mineralExfoliationDirectionName.text = transparentMineral?.exfoliationDirectionName
-                mineralExfoliationDirectionAngles.text = transparentMineral?.exfoliationDirectionAngles
-                mineralInterferenceColorsOrder.text = transparentMineral?.interferenceColorsOrder
-                mineralExtintion.text = transparentMineral?.extinction
-                mineralTwinning.text = transparentMineral?.twinning
-                mineralInterferenceFigure.text = transparentMineral?.interferenceFigure
-                mineralOpticSign.text = transparentMineral?.opticSign
-                mineralCrystalShape.text = transparentMineral?.crystalShape
-                mineralAlteration.text = transparentMineral?.alteration
-                mineralZoning.text = transparentMineral?.zoning
-                mineralExfoliation.text = transparentMineral?.exfoliation
+                mineralPleochroism.text = transparentMineral?.pleocroisme
+                mineralRelief.text = transparentMineral?.relleu
+                mineralExfoliationDirectionName.text = transparentMineral?.nom_dir_exfoliacio
+                mineralExfoliationDirectionAngles.text = transparentMineral?.angle_dir_exfoliacio
+                mineralInterferenceColorsOrder.text = transparentMineral?.colors_interferencia
+                mineralExtintion.text = transparentMineral?.extincio
+                mineralTwinning.text = transparentMineral?.maclat
+                mineralInterferenceFigure.text = transparentMineral?.figura_interferencia
+                mineralOpticSign.text = transparentMineral?.signe_optic
+                mineralCrystalShape.text = transparentMineral?.forma_cristalls
+                mineralAlteration.text = transparentMineral?.alteracio
+                mineralZoning.text = transparentMineral?.zonacio
+                mineralExfoliation.text = transparentMineral?.exfoliacio
                 val principalAdapter = SamplesListAdapter(false)
                 viewModel.samplesOfTransparentMineralListLD.observe(viewLifecycleOwner,{principalAdapter.setTransparentMineralSamplesList(
                     it.filter { min -> min.mineralId == id } as MutableList<TransparentMineralSample>) })

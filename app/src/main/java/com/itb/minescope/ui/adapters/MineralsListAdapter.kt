@@ -34,26 +34,26 @@ class MineralsListAdapter(private val isOpaque: Boolean, private val viewModel: 
 
         //FILTERS
         if (viewModel.transparentFilters != null) {
-            if (filters!!.relief != "")
-                transparentMinerals = transparentMinerals.filter { it.relief.lowercase().contains(filters.relief.lowercase()) }.toMutableList()
+            if (filters!!.relleu != "")
+                transparentMinerals = transparentMinerals.filter { it.relleu.lowercase().contains(filters.relleu.lowercase()) }.toMutableList()
             if (filters.colors != "")
                 transparentMinerals = transparentMinerals.filter { it.colors.lowercase().contains(filters.colors.lowercase()) }.toMutableList()
-            if (filters.pleochroism != "")
-                transparentMinerals = transparentMinerals.filter { it.pleochroism.lowercase().contains(filters.pleochroism.lowercase()) }.toMutableList()
-            if (filters.exfoliationDirectionName != "")
-                transparentMinerals = transparentMinerals.filter { it.exfoliationDirectionName.lowercase().contains(filters.exfoliationDirectionName.lowercase()) }.toMutableList()
-            if (filters.exfoliationDirectionAngles != "")
-                transparentMinerals = transparentMinerals.filter { it.exfoliationDirectionAngles!!.lowercase().contains(filters.exfoliationDirectionAngles!!.lowercase()) }.toMutableList()
-            if (filters.interferenceColorsOrder != "")
-                transparentMinerals = transparentMinerals.filter { it.interferenceColorsOrder.lowercase().contains(filters.interferenceColorsOrder.lowercase()) }.toMutableList()
-            if (filters.extinction != "")
-                transparentMinerals = transparentMinerals.filter { it.extinction!!.lowercase().contains(filters.extinction!!.lowercase()) }.toMutableList()
-            if (filters.twinning != "")
-                transparentMinerals = transparentMinerals.filter { it.twinning!!.lowercase().contains(filters.twinning!!.lowercase()) }.toMutableList()
-            if (filters.interferenceFigure != "")
-                transparentMinerals = transparentMinerals.filter { it.interferenceFigure!!.lowercase().contains(filters.interferenceFigure!!.lowercase()) }.toMutableList()
-            if (filters.opticSign != "")
-                transparentMinerals = transparentMinerals.filter { it.opticSign!!.lowercase().contains(filters.opticSign!!.lowercase()) }.toMutableList()
+            if (filters.pleocroisme != "")
+                transparentMinerals = transparentMinerals.filter { it.pleocroisme.lowercase().contains(filters.pleocroisme.lowercase()) }.toMutableList()
+            if (filters.nom_dir_exfoliacio != "")
+                transparentMinerals = transparentMinerals.filter { it.nom_dir_exfoliacio.lowercase().contains(filters.nom_dir_exfoliacio.lowercase()) }.toMutableList()
+            if (filters.angle_dir_exfoliacio != "")
+                transparentMinerals = transparentMinerals.filter { it.angle_dir_exfoliacio!!.lowercase().contains(filters.angle_dir_exfoliacio!!.lowercase()) }.toMutableList()
+            if (filters.colors_interferencia != "")
+                transparentMinerals = transparentMinerals.filter { it.colors_interferencia.lowercase().contains(filters.colors_interferencia.lowercase()) }.toMutableList()
+            if (filters.extincio != "")
+                transparentMinerals = transparentMinerals.filter { it.extincio!!.lowercase().contains(filters.extincio!!.lowercase()) }.toMutableList()
+            if (filters.maclat != "")
+                transparentMinerals = transparentMinerals.filter { it.maclat!!.lowercase().contains(filters.maclat!!.lowercase()) }.toMutableList()
+            if (filters.figura_interferencia != "")
+                transparentMinerals = transparentMinerals.filter { it.figura_interferencia!!.lowercase().contains(filters.figura_interferencia!!.lowercase()) }.toMutableList()
+            if (filters.signe_optic != "")
+                transparentMinerals = transparentMinerals.filter { it.signe_optic!!.lowercase().contains(filters.signe_optic!!.lowercase()) }.toMutableList()
         }
         notifyDataSetChanged()
     }
@@ -147,9 +147,9 @@ class MineralsListAdapter(private val isOpaque: Boolean, private val viewModel: 
                     chemicalFormula.text = Html.fromHtml(opaqueMineral.formula, HtmlCompat.FROM_HTML_MODE_LEGACY)
                 description.text = opaqueMineral?.anisotropia
             }else{
-                name.text = transparentMineral.name
-                chemicalFormula.text = Html.fromHtml(transparentMineral.chemicalFormula, HtmlCompat.FROM_HTML_MODE_LEGACY)
-                description.text = transparentMineral.alteration
+                name.text = transparentMineral.nom
+                chemicalFormula.text = Html.fromHtml(transparentMineral.formula, HtmlCompat.FROM_HTML_MODE_LEGACY)
+                description.text = transparentMineral.alteracio
             }
         }
     }
