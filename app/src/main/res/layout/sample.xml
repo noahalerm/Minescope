@@ -10,7 +10,7 @@
     <TextView
         android:id="@+id/sample_namesurname"
         android:layout_width="wrap_content"
-        android:maxWidth="370dp"
+        android:maxWidth="360dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="5dp"
@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="5dp"
-        android:maxWidth="370dp"
+        android:maxWidth="360dp"
         android:text="This is the description of the sample"
         android:textColor="?attr/colorPrimary"
         android:textSize="15sp"
@@ -54,7 +54,6 @@
             android:scaleType="fitCenter"
             android:scaleX="1.2"
             android:scaleY="1.2"
-            android:src="@drawable/sepentina"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -80,7 +79,6 @@
             android:scaleType="fitCenter"
             android:scaleX="1.2"
             android:scaleY="1.2"
-            android:src="@drawable/sepentina"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

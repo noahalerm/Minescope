@@ -145,11 +145,12 @@ class MineralsListAdapter(private val isOpaque: Boolean, private val viewModel: 
                 name.text = opaqueMineral?.nom
                 if (opaqueMineral?.formula != null)
                     chemicalFormula.text = Html.fromHtml(opaqueMineral.formula, HtmlCompat.FROM_HTML_MODE_LEGACY)
-                description.text = opaqueMineral?.anisotropia
+                description.text = opaqueMineral?.colors
             }else{
                 name.text = transparentMineral.nom
-                chemicalFormula.text = Html.fromHtml(transparentMineral.formula, HtmlCompat.FROM_HTML_MODE_LEGACY)
-                description.text = transparentMineral.alteracio
+                if (transparentMineral?.formula != null)
+                    chemicalFormula.text = Html.fromHtml(transparentMineral.formula, HtmlCompat.FROM_HTML_MODE_LEGACY)
+                description.text = transparentMineral.colors
             }
         }
     }
