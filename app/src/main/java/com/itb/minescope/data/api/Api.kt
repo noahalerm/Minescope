@@ -54,6 +54,10 @@ interface Api {
     @GET("/{lan}/transparentminerals/{idMineral}/transparentsamples")
     suspend fun getTransparentSample(@Path("lan") lan: String, @Path("idMineral") idMineral: Int): Response<List<TransparentMineralSample>>
 
+    // SHORT CALL
+    @GET("/{lan}/transparentsamples")
+    suspend fun getAllTransparentSamples(@Path("lan") lan: String): Response<List<TransparentMineralSample>>
+
     //ES
     //@GET("/sp/transparentminerals/{idMineral}/transparentsamples")
     //fun getTransparentSampleES(@Path("idMineral") idMineral: Int): Call<List<TransparentMineralSample>>
@@ -66,6 +70,9 @@ interface Api {
     @GET("/{lan}/opaqueminerals/{idMineral}/opaquesamples")
     suspend fun getOpaqueSample(@Path("lan") lan: String, @Path("idMineral") idMineral: Int): Response<List<OpaqueMineralSample>>
 
+    // SHORT CALL
+    @GET("/{lan}/opaquesamples")
+    suspend fun getAllOpaqueSamples(@Path("lan") lan: String): Response<List<OpaqueMineralSample>>
     //ES
     //@GET("/sp/opaqueminerals/{idMineral}/opaquesamples")
     //fun getOpaqueSampleES(@Path("idMineral") idMineral: Int): Call<List<OpaqueMineralSample>>

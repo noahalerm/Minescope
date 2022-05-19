@@ -92,9 +92,13 @@ class MinescopeViewModel: ViewModel() {
         viewModelScope.launch {
             opaqueMineralsList.clear()
             transparentMineralsList.clear()
+            samplesOfOpaqueMineralList.clear()
+            samplesOfTransparentMineralList.clear()
 
             val response = withContext(Dispatchers.IO) { repository.getOpaqueMinerals(lan)}
             val response2 = withContext(Dispatchers.IO) { repository.getTransparentMinerals(lan)}
+            val response3 = withContext(Dispatchers.IO) { repository.getOpaqueMineralSamples(lan)}
+            val response4 = withContext(Dispatchers.IO) { repository.getTransparentMineralSamples(lan)}
 
             //OPAQUE MINERALS
             if (response.isSuccessful) {
@@ -116,6 +120,26 @@ class MinescopeViewModel: ViewModel() {
             }
             else{
                 Log.e("Error :", response2.message())
+            }
+
+            //OPAQUE SAMPLES MINERALS
+            if (response3.isSuccessful) {
+                val mineral = response3.body()!!
+                samplesOfOpaqueMineralList.addAll(mineral)
+                samplesOfOpaqueMineralListLD.postValue(samplesOfOpaqueMineralList)
+            }
+            else{
+                Log.e("Error :", response3.message())
+            }
+
+            //TRANSPARENT SAMPLES MINERALS
+            if(response4.isSuccessful) {
+                val mineral = response4.body()!!
+                samplesOfTransparentMineralList.addAll(mineral)
+                samplesOfTransparentMineralListLD.postValue(samplesOfTransparentMineralList)
+            }
+            else{
+                Log.e("Error :", response4.message())
             }
         }
     }

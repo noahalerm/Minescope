@@ -210,10 +210,10 @@ class MineralFragment : Fragment(R.layout.fragment_mineral) {
                 mineralCleavage.text = opaqueMineral?.exfoliacio_polit
                 mineralAssociatedMinerals.text = opaqueMineral?.minerals_associats
                 val principalAdapter = SamplesListAdapter(true)
-//                viewModel.samplesOfOpaqueMineralListLD.observe(viewLifecycleOwner,{principalAdapter.setOpaqueMineralSamplesList(
-//                    it.filter { min -> min.id_mineral == id } as MutableList<OpaqueMineralSample>) })
-                viewModel.opaqueMineralsListLD.observe(viewLifecycleOwner,{principalAdapter.setOpaqueMineralSamplesList(
-                    opaqueMineral!!.opaqueSamplesList as MutableList<OpaqueMineralSample>) })
+                viewModel.samplesOfOpaqueMineralListLD.observe(viewLifecycleOwner,{principalAdapter.setOpaqueMineralSamplesList(
+                    it.filter { min -> min.id_mineral == id } as MutableList<OpaqueMineralSample>) })
+                //viewModel.opaqueMineralsListLD.observe(viewLifecycleOwner,{principalAdapter.setOpaqueMineralSamplesList(
+                //    opaqueMineral!!.opaqueSamplesList as MutableList<OpaqueMineralSample>) })
                 recyclerView.adapter = principalAdapter
 
                 //LAYOUT UPDATE
