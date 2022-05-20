@@ -109,12 +109,31 @@ class FiltersFragment : Fragment(R.layout.fragment_filters) {
             }
         })
 
+        //FILTER NAME SET UP
+        relief.text = relief.text.toString()+": "
+        colorTransparent.text = colorTransparent.text.toString()+": "
+        pleochroismTransparent.text = pleochroismTransparent.text.toString()+": "
+        cleavageDirections.text = cleavageDirections.text.toString()+": "
+        cleavageAngle.text = cleavageAngle.text.toString()+": "
+        interferenceColorOrder.text = interferenceColorOrder.text.toString()+": "
+        extinction.text = extinction.text.toString()+": "
+        twinning.text = twinning.text.toString()+": "
+        interferenceFigure.text = interferenceFigure.text.toString()+": "
+        opticalSign.text = opticalSign.text.toString()+": "
+        colorOpaque.text = colorOpaque.text.toString()+": "
+        reflectance.text = reflectance.text.toString()+": "
+        pleochroismOpaque.text = pleochroismOpaque.text.toString()+": "
+        polishingHardness.text = polishingHardness.text.toString()+": "
+        anisotropism.text = anisotropism.text.toString()+": "
+        interferenceColors.text = interferenceColors.text.toString()+": "
+        internalReflections.text = internalReflections.text.toString()+": "
+
         //ON CLICK
 
         //Logo
         logo.setOnClickListener {
             //NAVIGATION
-            findNavController().popBackStack()
+            findNavController().navigate(R.id.listFragment)
         }
 
         //Check Icon
